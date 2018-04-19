@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_zui_jin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.overseas.overseas.mine.LiShiActivity">
+
+    <LinearLayout
+        android:background="@color/shihuangse"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dip">
+        <ImageView
+            android:id="@+id/back_img"
+            android:padding="15dp"
+            android:src="@drawable/back"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+        <TextView
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:text="@string/activity_login_title"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_register"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="@string/activity_login_register"
+            android:gravity="center"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dip"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dip">
+            <TextView
+                android:layout_marginLeft="15dip"
+                android:id="@+id/tv_show_pop"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/xiala"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:text="+86"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_margin="15dip"
+                android:background="#999"
+                android:layout_width="1dip"
+                android:layout_height="match_parent"></View>
+            <EditText
+                android:background="@null"
+                android:id="@+id/edt_phone_number"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:hint="@string/activity_login_put_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:layout_marginRight="15dip"
+            android:layout_marginLeft="15dip"
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"></View>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dip">
+            <ImageView
+                android:layout_marginLeft="15dip"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/mima"
+                android:layout_width="25dip"
+                android:layout_height="25dip" />
+            <EditText
+                android:background="@null"
+                android:id="@+id/edt_password"
+                android:paddingLeft="15dip"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:hint="@string/activity_login_put_pass"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:layout_marginRight="15dip"
+            android:layout_marginLeft="15dip"
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"></View>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dip">
+            <ImageView
+                android:layout_marginLeft="15dip"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/yanzhengma"
+                android:layout_width="25dip"
+                android:layout_height="25dip" />
+            <EditText
+                android:background="@null"
+                android:id="@+id/edt_code"
+                android:paddingLeft="15dip"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:hint="@string/activity_login_put_code"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:id="@+id/img_getcode"
+                android:layout_marginRight="15dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/yanzhengmaa"
+                android:layout_gravity="center_vertical"
+                android:layout_width="100dip"
+                android:layout_height="35dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_login"
+        android:textColor="#fff"
+        android:text="@string/activity_login_title"
+        android:layout_marginRight="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/round_shihuangse"
+        android:layout_width="match_parent"
+        android:layout_height="45dip" />
+</LinearLayout>

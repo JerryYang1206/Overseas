@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="15dip"
+            android:layout_gravity="bottom"
+            android:src="@drawable/deful_touxiang"
+            android:layout_width="40dip"
+            android:layout_height="40dip" />
+        <TextView
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:textColor="#222"
+            android:textSize="16sp"
+            android:text="简小姐"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip" />
+        <TextView
+            android:layout_marginLeft="10dip"
+            android:gravity="center_vertical"
+            android:layout_gravity="bottom"
+            android:textColor="#999"
+            android:textSize="14sp"
+            android:text="2018.1.11"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="40dip" />
+        <TextView
+            android:layout_marginRight="10dip"
+            android:background="@drawable/round_red"
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:textColor="@color/shihuangse"
+            android:textSize="16sp"
+            android:text="好评"
+            android:layout_width="75dip"
+            android:layout_height="30dip" />
+    </LinearLayout>
+    <com.overseas.overseas.view.LetterSpacingTextView
+        android:id="@+id/tv_content"
+        android:layout_marginTop="5dip"
+        android:lineSpacingExtra="5dp"
+        android:textSize="15sp"
+        android:textColor="#333"
+        android:text="活动内容展示,活动内容展示,活动内容展示活动内容展示活动内容展示，活动内容展示活动内容展示，活动内容展示"
+        android:layout_marginLeft="65dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_marginTop="10dip"
+        android:background="#eee"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"></View>
+</LinearLayout>

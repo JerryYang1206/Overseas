@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@color/shihuangse"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dip">
+        <ImageView
+            android:id="@+id/back_img"
+            android:src="@drawable/back"
+            android:padding="15dp"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+        <LinearLayout
+            android:background="@drawable/round_white"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="35dip">
+            <ImageView
+                android:layout_marginLeft="15dip"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/sousuo"
+                android:layout_width="20dip"
+                android:layout_height="20dip" />
+            <EditText
+                android:background="@null"
+                android:paddingLeft="10dip"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="13sp"
+                android:hint="@string/activity_search_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:text="@string/activity_search"
+            android:id="@+id/tv_search"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:background="#fff"
+        android:layout_marginTop="10dip"
+        android:id="@+id/mrecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

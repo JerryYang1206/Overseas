@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_lishi_new_house"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.overseas.overseas.mine.LishiShangyeActivity">
+    <com.overseas.overseas.view.VerticalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:background="@color/shihuangse"
+            android:layout_width="match_parent"
+            android:layout_height="255dip">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_vidio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v4.view.ViewPager>
+            <ImageView
+                android:layout_marginTop="10dip"
+                android:id="@+id/img_back"
+                android:padding="15dip"
+                android:src="@drawable/back"
+                android:layout_width="50dip"
+                android:layout_height="50dip" />
+            <ImageView
+                android:layout_marginTop="10dip"
+                android:id="@+id/img_share"
+                android:layout_alignParentRight="true"
+                android:padding="14dip"
+                android:src="@drawable/shar"
+                android:layout_width="50dip"
+                android:layout_height="50dip" />
+            <ImageView
+                android:layout_marginTop="10dip"
+                android:id="@+id/img_start"
+                android:layout_marginRight="50dp"
+                android:layout_alignParentRight="true"
+                android:padding="14dip"
+                android:src="@drawable/shoucang"
+                android:layout_width="50dip"
+                android:layout_height="50dip" />
+            <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip">
+                <ImageView
+                    android:src="@drawable/touming"
+                    android:layout_width="65dip"
+                    android:layout_height="50dip" />
+                <TextView
+                    android:id="@+id/tv_to_num"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="15dp"
+                    android:text="1"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tv_suiyi"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@id/tv_to_num"
+                    android:textColor="#fff"
+                    android:text="/"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_toRightOf="@id/tv_suiyi"
+                    android:id="@+id/tv_all_num"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="5dp"
+                    android:text="10"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dip">
+            <TextView
+                android:paddingLeft="15dip"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:textColor="#333"
+                android:text="泰和·金府大厦"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+        <View
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"></View>
+        <LinearLayout
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dip">
+            <TextView
+                android:paddingLeft="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/activity_details_price"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:textColor="@color/shihuangse"
+                android:paddingLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="17500元/㎡"
+                android:textSize="14sp"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_See_More"
+                android:layout_marginRight="5dip"
+                android:paddingLeft="15dip"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:textColor="#888"
+                android:text="@string/activity_details_seemore"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:layout_marginRight="10dip"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/gengduo"
+                android:layout_width="15dip"
+                android:layout_height="15dip" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dip">
+            <TextView
+                android:paddingLeft="15dip"
+                android:gravity="center_vertical"
+                android:text="@string/activity_details_mianji"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:textColor="#333"
+                android:paddingLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="175㎡"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:layout_marginRight="15dip"
+            android:layout_marginLeft="15dip"
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"></View>
+        <LinearLayout
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dip">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dip"
+                android:src="@drawable/dingwei"
+                android:layout_width="15dip"
+                android:layout_height="15dip" />
+            <TextView
+                android:textColor="#333"
+                android:paddingLeft="5dip"
+                android:gravity="center_vertical"
+                android:text="东京-西马地铁口200米"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:layout_marginRight="15dip"
+            android:layout_marginLeft="15dip"
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"></View>
+        <TextView
+            android:background="#fff"
+            android:paddingLeft="15dip"
+            android:gravity="center_vertical"
+            android:text="@string/activity_details_huxing"
+            android:layout_width="match_parent"
+            android:layout_height="45dip" />
+
+        <android.support.v7.widget.RecyclerView
+            android:background="#fff"
+            android:id="@+id/Huxing_Recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:orientation="vertical"
+            android:layout_marginTop="10dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/yinying"
+            android:layout_width="match_parent"
+            android:layout_height="100dip">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dip">
+                <ImageView
+                    android:src="@drawable/phont"
+                    android:layout_width="25dip"
+                    android:layout_height="25dip" />
+                <TextView
+                    android:paddingLeft="10dip"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:textColor="@color/shihuangse"
+                    android:text="400-026-0323"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dip">
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:textColor="#333"
+                    android:text="@string/activity_details_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_marginRight="22dip"
+            android:layout_marginLeft="22dip"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dip">
+            <TextView
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:textColor="#ffa726"
+                android:text="@string/activity_details_bianjia"
+                android:background="@drawable/border_shihuangse"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="45dip" />
+            <TextView
+                android:layout_marginLeft="10dip"
+                android:gravity="center"
+                android:textColor="#ffa726"
+                android:text="@string/activity_details_kaipan"
+                android:background="#ffd09c"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="45dip" />
+        </LinearLayout>
+        <TextView
+            android:paddingLeft="20dip"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:text="@string/activity_details_zhoubian"
+            android:layout_width="match_parent"
+            android:layout_height="50dip" />
+        <LinearLayout
+            android:background="@drawable/bg_map"
+            android:layout_width="match_parent"
+            android:layout_height="120dip">
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dip">
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/shangchang"
+                    android:layout_width="25dip"
+                    android:layout_height="25dip" />
+                <TextView
+                    android:textColor="#666"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="@string/activity_details_shop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/xuexiao"
+                    android:layout_width="25dip"
+                    android:layout_height="25dip" />
+                <TextView
+                    android:textColor="#666"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="@string/activity_details_school"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/youeryuan"
+                    android:layout_width="25dip"
+                    android:layout_height="25dip" />
+                <TextView
+                    android:textColor="#666"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="@string/activity_details_youeryuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/yiyuan"
+                    android:layout_width="25dip"
+                    android:layout_height="25dip" />
+                <TextView
+                    android:textColor="#666"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:text="@string/activity_details_yiyuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:background="#eee"
+            android:layout_width="match_parent"
+            android:layout_height="5dip"></View>
+        <LinearLayout
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dip">
+            <TextView
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/shihuangse"
+                android:text="蒋先生"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <View
+                android:layout_gravity="center_vertical"
+                android:background="#eee"
+                android:layout_width="1dip"
+                android:layout_height="15dip"></View>
+            <TextView
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/shihuangse"
+                android:text="12345678901"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    </com.overseas.overseas.view.VerticalScrollView>
+</LinearLayout>

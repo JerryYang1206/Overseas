@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:textColor="#444"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dip"
+        android:text="A"
+        android:background="#eee"
+        android:layout_width="match_parent"
+        android:layout_height="30dip" />
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:background="#fff"
+        android:nestedScrollingEnabled="false"
+        android:id="@+id/mrecycler_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.overseas.overseas.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/app_style"
+        android:orientation="vertical">
+        <RadioGroup
+            android:id="@+id/rgp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="3dp">
+            <!--注意是drawableTop-->
+            <RadioButton
+                android:id="@+id/rb_Game"
+                style="@style/bottom_tab_style"
+                android:drawableTop="@drawable/tab_game_selector"
+                android:text="@string/activity_main_weichar"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_Okami"
+                style="@style/bottom_tab_style"
+                android:drawableTop="@drawable/tab_mine_selector"
+                android:text="@string/activity_main_mine"
+                />
+
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C7977F</color>
+    <color name="colorPrimaryDark">#C7977F</color>
+    <color name="colorAccent">#C7977F</color>
+
+    <color name="app_style">#fdfdfd</color>
+    <color name="red">#ff5147</color>
+    <color name="huise">#999999</color>
+
+    <color name="shihuangse">#C7977F</color>
+    <color name="textblack">#333333</color>
+    <color name="backgourd">#F5F5F5</color>
+    <color name="yellow2">#F3BE5A</color>
+    <color name="text_black">#444444</color>
+
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <!--<com.overseas.overseas.view.SlidingMenu-->
+        <!--android:id="@+id/slidingMenu"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <LinearLayout
+            android:id="@+id/layout_all_height"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dip">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="120dip">
+                <ImageView
+                    android:src="@drawable/house"
+                    android:layout_marginLeft="15dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="132dip"
+                    android:layout_height="90dip" />
+                <LinearLayout
+                    android:layout_marginLeft="10dip"
+                    android:orientation="vertical"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dip"
+                        android:textSize="14sp"
+                        android:textColor="#333"
+                        android:text="泰和·金府大厦"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dip"
+                        />
+                    <LinearLayout
+                        android:layout_marginTop="10dip"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dip"
+                        >
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/dingwei"
+                            android:layout_width="15dip"
+                            android:layout_height="15dip" />
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:textSize="13sp"
+                            android:text="东京"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dip"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dip"
+                        >
+                        <TextView
+                            android:gravity="center_vertical"
+                            android:textSize="13sp"
+                            android:text="3室1厅"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:layout_marginLeft="10dip"
+                            android:gravity="center_vertical"
+                            android:textSize="13sp"
+                            android:text="175㎡"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginRight="10dip"
+                    android:textColor="@color/shihuangse"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:text="17500万"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="120dip">
+
+                <TextView
+                    android:id="@+id/menuText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="删除"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:background="@color/red"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    <!--</com.overseas.overseas.view.SlidingMenu>-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee"></View>
+
+</LinearLayout>

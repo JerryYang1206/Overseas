@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_lishi_new_house"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.overseas.overseas.mine.LishiNewHouseActivity">
+    <com.overseas.overseas.view.VerticalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:background="@color/shihuangse"
+                android:layout_width="match_parent"
+                android:layout_height="255dip">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_vidio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true">
+                </android.support.v4.view.ViewPager>
+
+                <ImageView
+                    android:layout_marginTop="10dip"
+                    android:id="@+id/img_back"
+                    android:padding="15dip"
+                    android:src="@drawable/back"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+                <ImageView
+                    android:layout_marginTop="10dip"
+                    android:id="@+id/img_share"
+                    android:layout_alignParentRight="true"
+                    android:padding="14dip"
+                    android:src="@drawable/shar"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+                <ImageView
+                    android:layout_marginTop="10dip"
+                    android:id="@+id/img_start"
+                    android:layout_marginRight="50dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="14dip"
+                    android:src="@drawable/shoucang"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip" />
+                <RelativeLayout
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dip">
+                    <ImageView
+                        android:src="@drawable/touming"
+                        android:layout_width="65dip"
+                        android:layout_height="50dip" />
+                    <TextView
+                        android:id="@+id/tv_to_num"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="15dp"
+                        android:text="1"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:id="@+id/tv_suiyi"
+                        android:layout_marginLeft="5dip"
+                        android:layout_toRightOf="@id/tv_to_num"
+                        android:textColor="#fff"
+                        android:text="/"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:layout_toRightOf="@id/tv_suiyi"
+                        android:id="@+id/tv_all_num"
+                        android:textColor="#fff"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dip">
+                <TextView
+                    android:paddingLeft="15dip"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="#333"
+                    android:text="格林豪泰酒店"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:paddingBottom="20dip"
+                android:paddingTop="10dip"
+                android:background="#fff"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip">
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="@color/shihuangse"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="17500万"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_mianji"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="@color/shihuangse"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="175㎡"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip">
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_huibao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="20%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_water"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="是"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip">
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_louceng"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="5层"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_nianfen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="2010.11.10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dip">
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_gouzao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="住宅"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="0dip"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_turang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="土壤肥沃"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginRight="15dip"
+                    android:layout_marginLeft="15dip"
+                    android:background="#eee"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"></View>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_shebei"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="所处交通便利赴京多处大型商场环境地段 "
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_waiguan"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="所处交通便利赴京多处大型商场环境地段 "
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_neiguan"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="********************************外观相关信息    "
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_chezhan"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="距啊手机客户吃饭商业街1000米"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_jingdian"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="时间划分为客人突发那个啊但是官方要去米   "
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_shangyejie"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="交通便利"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+                        <TextView
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="@string/activity_details_jutiweizhi"
+                            android:layout_width="70dip"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="具体位置信息展示、精确到都、道、府、县"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:paddingLeft="15dip"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="35dip">
+
+                       <ImageView
+                           android:layout_gravity="center_vertical"
+                           android:src="@drawable/dingwei"
+                           android:layout_width="15dip"
+                           android:layout_height="15dip" />
+
+                        <TextView
+                            android:layout_marginLeft="5dip"
+                            android:textColor="#000"
+                            android:textSize="14sp"
+                            android:gravity="center_vertical"
+                            android:text="花香满橙小区"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.overseas.overseas.view.VerticalScrollView>
+</LinearLayout>

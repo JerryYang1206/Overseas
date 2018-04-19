@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_zui_jin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.overseas.overseas.mine.ZuiJinActivity">
+
+    <LinearLayout
+        android:background="@color/shihuangse"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dip">
+        <ImageView
+            android:id="@+id/back_img"
+            android:padding="15dp"
+            android:src="@drawable/back"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+        <TextView
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:text="@string/activity_language_setting"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_baocun"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="@string/activity_language_save"
+            android:layout_gravity="center_vertical"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/language_layout"
+        android:background="#fff"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dip">
+        <TextView
+            android:clickable="false"
+            android:paddingLeft="15dip"
+            android:gravity="center_vertical"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:text="@string/activity_language_chinase"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/img_check_zhongwen"
+            android:clickable="false"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="15dip"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/check"
+            android:layout_width="15dip"
+            android:layout_height="15dip" />
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:background="#eee"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"></View>
+    <LinearLayout
+        android:id="@+id/about_layout"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dip">
+        <TextView
+            android:clickable="false"
+            android:paddingLeft="15dip"
+            android:gravity="center_vertical"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:text="@string/activity_language_japan"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/img_check_riwen"
+            android:src="@drawable/check"
+            android:clickable="false"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="15dip"
+            android:layout_gravity="center_vertical"
+            android:layout_width="15dip"
+            android:layout_height="15dip" />
+    </LinearLayout>
+</LinearLayout>
