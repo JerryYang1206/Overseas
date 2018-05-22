@@ -1,9 +1,12 @@
 package com.overseas.overseas.base;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -13,12 +16,15 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.overseas.overseas.MainActivity;
 import com.overseas.overseas.R;
+
+import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
 
 public class LoginActivity extends BaseActivity {
 
@@ -45,6 +51,12 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                1);
     }
 
     @OnClick({R.id.back_img, R.id.tv_register, R.id.img_getcode, R.id.btn_login,R.id.tv_show_pop})
@@ -59,7 +71,13 @@ public class LoginActivity extends BaseActivity {
             case R.id.img_getcode:
                 break;
             case R.id.btn_login:
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                HashMap<String, Boolean> hashMap = new HashMap<>();
+                //会话类型 以及是否聚合显示
+                hashMap.put(Conversation.ConversationType.PRIVATE.getName(), false);
+//        hashMap.put(Conversation.ConversationType.PUSH_SERVICE.getName(),true);
+//        hashMap.put(Conversation.ConversationType.SYSTEM.getName(),true);
+                RongIM.getInstance().startConversationList(this, hashMap);
                 finish();
                 break;
             case R.id.tv_show_pop:

@@ -12,14 +12,18 @@ import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseFragment;
 import com.overseas.overseas.fragment.MineFragment;
 import com.overseas.overseas.fragment.WeiChartFragment;
+import com.overseas.overseas.im.ImManager;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
 
 public class MainActivity extends BaseActivity {
 
@@ -35,6 +39,7 @@ public class MainActivity extends BaseActivity {
     private BaseFragment preFragment;
     private long preTime;
     private int position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,14 @@ public class MainActivity extends BaseActivity {
         ultimateBar.setImmersionBar(false);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+//        HashMap<String, Boolean> hashMap = new HashMap<>();
+//        //会话类型 以及是否聚合显示
+//        hashMap.put(Conversation.ConversationType.PRIVATE.getName(), false);
+////        hashMap.put(Conversation.ConversationType.PUSH_SERVICE.getName(),true);
+////        hashMap.put(Conversation.ConversationType.SYSTEM.getName(),true);
+//        RongIM.getInstance().startConversationList(this, hashMap);
+
         initData();
         //设置Tab
         initsetradio();
@@ -64,6 +77,7 @@ public class MainActivity extends BaseActivity {
         drawablemine.setBounds(0, 0, 80, 80);
         rbOkami.setCompoundDrawables(null, drawablemine, null, null);
     }
+
     private void initListener() {
         rgp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -114,6 +128,7 @@ public class MainActivity extends BaseActivity {
         }
         preFragment = to;//将要显示的fragment当然就成为了下一次切换的preFragment
     }
+
     @Override
     public void onBackPressed() {
         if (System.currentTimeMillis() > preTime + 2000) {

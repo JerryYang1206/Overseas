@@ -19,6 +19,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
+import com.overseas.overseas.more.NewHouseMoreActivity;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
@@ -61,6 +62,13 @@ public class LishiNewHouseActivity extends BaseActivity {
         ButterKnife.bind(this);
         initData();
         initViewPager();
+
+        findViewById(R.id.tv_See_More).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LishiNewHouseActivity.this, NewHouseMoreActivity.class));
+            }
+        });
     }
 
     private void initViewPager() {

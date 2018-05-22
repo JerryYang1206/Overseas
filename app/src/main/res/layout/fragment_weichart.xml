@@ -27,11 +27,17 @@
             android:layout_width="50dip"
             android:layout_height="50dip" />
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:background="#fff"
-        android:layout_marginTop="10dip"
-        android:id="@+id/mrecycler"
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:background="#fff"-->
+        <!--android:layout_marginTop="10dip"-->
+        <!--android:id="@+id/mrecycler"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+    <!--</android.support.v7.widget.RecyclerView>-->
+
+    <fragment
+        android:id="@+id/conversationlist"
+        android:name="io.rong.imkit.fragment.ConversationListFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent" />
 </LinearLayout>

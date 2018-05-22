@@ -1,11 +1,14 @@
 package com.overseas.overseas.fragment;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseFragment;
+import com.overseas.overseas.im.MyExtensionModule;
 import com.overseas.overseas.mine.LiShiActivity;
 import com.overseas.overseas.mine.LianxirenActivity;
 import com.overseas.overseas.mine.MyDataActivity;
@@ -13,10 +16,16 @@ import com.overseas.overseas.mine.PingJiaActivity;
 import com.overseas.overseas.mine.SettingActivity;
 import com.overseas.overseas.view.CircleImageView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import io.rong.imkit.DefaultExtensionModule;
+import io.rong.imkit.IExtensionModule;
+import io.rong.imkit.RongExtensionManager;
+import io.rong.imkit.RongIM;
 
 /**
  * Created by Administrator on 2018/1/18.
@@ -79,8 +88,14 @@ public class MineFragment extends BaseFragment {
                 startActivity(intent1);
                 break;
             case R.id.Lianxiren_Layout:
-                Intent intent2 = new Intent(mContext, LianxirenActivity.class);
-                startActivity(intent2);
+//                Intent intent2 = new Intent(mContext, LianxirenActivity.class);
+//                startActivity(intent2);
+
+                setMyExtensionModule();
+                if (RongIM.getInstance() != null) {
+                    Log.e("MainActivity", "创建单聊");
+                    RongIM.getInstance().startPrivateChat(getActivity(), "123456", "单聊");
+                }
                 break;
             case R.id.Setting_Layout:
                 Intent intent3 = new Intent(mContext, SettingActivity.class);
@@ -94,6 +109,23 @@ public class MineFragment extends BaseFragment {
 //                Intent intent5 = new Intent(mContext, ManagerActivity.class);
 //                startActivity(intent5);
                 break;
+        }
+    }
+
+    public void setMyExtensionModule() {
+        List<IExtensionModule> moduleList = RongExtensionManager.getInstance().getExtensionModules();
+        IExtensionModule defaultModule = null;
+        if (moduleList != null) {
+            for (IExtensionModule module : moduleList) {
+                if (module instanceof DefaultExtensionModule) {
+                    defaultModule = module;
+                    break;
+                }
+            }
+            if (defaultModule != null) {
+                RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
+                RongExtensionManager.getInstance().registerExtensionModule(new MyExtensionModule());
+            }
         }
     }
 }

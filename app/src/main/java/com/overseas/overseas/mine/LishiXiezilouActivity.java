@@ -1,5 +1,6 @@
 package com.overseas.overseas.mine;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
+import com.overseas.overseas.more.XieZiLouMoreActivity;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
@@ -49,6 +51,13 @@ public class LishiXiezilouActivity extends BaseActivity {
         ButterKnife.bind(this);
         initData();
         initViewPager();
+
+        findViewById(R.id.tv_See_More).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LishiXiezilouActivity.this, XieZiLouMoreActivity.class));
+            }
+        });
     }
 
     private void initViewPager() {

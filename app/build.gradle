@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    compileSdkVersion 27
+    buildToolsVersion '27.0.0'
     defaultConfig {
         applicationId "com.overseas.overseas"
         minSdkVersion 17
@@ -10,6 +10,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
     buildTypes {
         release {
@@ -22,6 +25,7 @@ android {
             maven { url "https://jitpack.io" }
         }
     }
+
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
             def requested = details.requested
@@ -45,11 +49,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile project(':multi-image-selector')
-    compile 'com.lzy.net:okgo:2.1.4'
+    compile 'com.lzy.net:okgo:3.0.4'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-//    compile ('com.github.LuckSiege.PictureSelector:picture_library:v2.1.1'){
-//        exclude group: 'com.github.bumptech.glide'
-//    }
+    //    compile ('com.github.LuckSiege.PictureSelector:picture_library:v2.1.1'){
+    //        exclude group: 'com.github.bumptech.glide'
+    //    }
     compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.1'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
@@ -64,4 +68,17 @@ dependencies {
     //启动页全屏
     compile 'org.zackratos:ultimatebar:1.1.1'
     compile 'com.contrarywind:Android-PickerView:3.2.6'
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile project(':CallKit')
+    compile 'com.android.support:support-v4:27.0.0'
+    compile 'com.github.w446108264:XhsEmoticonsKeyboard:2.0.4'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
 }
