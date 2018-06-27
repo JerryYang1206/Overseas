@@ -238,4 +238,13 @@
     <string name="zhongguofangyuan">中国房源</string>
     <string name="geyue">个月</string>
     <string name="jiazaizhong">加载中</string>
+    <string name="quxiao">取消</string>
+    <string name="hujiao">呼叫</string>
+    <string name="quxiaoshoucangchenggong">取消收藏成功</string>
+    <string name="shoucangchenggong">收藏成功</string>
+    <string name="zhengzaidakaibaiduditu">正在打开百度地图</string>
+    <string name="baidudituweianzhuang">百度地图未安装或版本过低</string>
+    <string name="cainixihuan">猜你喜欢</string>
+    <string name="weiliao">微聊</string>
+    <string name="dianhua">电话</string>
 </resources>

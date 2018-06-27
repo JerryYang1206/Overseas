@@ -113,10 +113,10 @@ public class MainActivity extends BaseActivity {
             }
         } else {
             //to已经被添加
+            }
             // from隐藏
             if (from != null) {
                 ft.hide(from);
-            }
             //显示to
             if (to != null) {
                 ft.show(to).commit();//不要忘记commit
@@ -132,7 +132,8 @@ public class MainActivity extends BaseActivity {
             preTime = System.currentTimeMillis();
         } else {
             super.onBackPressed();//相当于finish()
-            realBack();//删除所有引用
+            removeAllActivitys();//删除所有引用
+
         }
     }
 }

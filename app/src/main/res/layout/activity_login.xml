@@ -102,35 +102,6 @@
             android:background="#eee"
             android:layout_width="match_parent"
             android:layout_height="1dip"></View>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dip">
-            <ImageView
-                android:layout_marginLeft="15dip"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/yanzhengma"
-                android:layout_width="25dip"
-                android:layout_height="25dip" />
-            <EditText
-                android:background="@null"
-                android:id="@+id/edt_code"
-                android:paddingLeft="15dip"
-                android:gravity="center_vertical"
-                android:textSize="15sp"
-                android:hint="@string/activity_login_put_code"
-                android:layout_width="0dip"
-                android:layout_weight="1"
-                android:layout_height="match_parent" />
-            <ImageView
-                android:id="@+id/img_getcode"
-                android:layout_marginRight="15dip"
-                android:scaleType="fitXY"
-                android:src="@drawable/yanzhengmaa"
-                android:layout_gravity="center_vertical"
-                android:layout_width="100dip"
-                android:layout_height="35dip" />
-        </LinearLayout>
     </LinearLayout>
     <Button
         android:id="@+id/btn_login"

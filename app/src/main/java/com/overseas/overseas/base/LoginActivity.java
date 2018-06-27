@@ -52,8 +52,6 @@ public class LoginActivity extends BaseActivity {
     EditText edtPassword;
     @BindView(R.id.edt_code)
     EditText edtCode;
-    @BindView(R.id.img_getcode)
-    ImageView imgGetcode;
     @BindView(R.id.btn_login)
     Button btnLogin;
     @BindView(R.id.tv_show_pop)
@@ -78,7 +76,7 @@ public class LoginActivity extends BaseActivity {
                 1);
     }
 
-    @OnClick({R.id.back_img, R.id.tv_register, R.id.img_getcode, R.id.btn_login,R.id.tv_show_pop})
+    @OnClick({R.id.back_img, R.id.tv_register, R.id.btn_login,R.id.tv_show_pop})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back_img:
@@ -94,9 +92,6 @@ public class LoginActivity extends BaseActivity {
             case R.id.tv_register:
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 finish();
-                break;
-            case R.id.img_getcode:
-                getImgCode();
                 break;
             case R.id.btn_login:
                 initLoginNet();
@@ -116,9 +111,6 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
-    private void getImgCode() {
-
-    }
 
     private void initLoginNet() {
         if (TextUtils.isEmpty(edtPhoneNumber.getText().toString())) {

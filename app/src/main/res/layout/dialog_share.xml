@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#f4f4f4"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textColor="@color/shihuangse"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="分享"
+        android:layout_width="match_parent"
+        android:layout_height="40dip" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="150dip">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dip">
+                <LinearLayout
+                    android:id="@+id/weiliao_layout"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:src="@drawable/weiliao_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginTop="5dip"
+                        android:textColor="#444"
+                        android:text="微聊"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/weixin_layout"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:src="@drawable/weixin_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginTop="5dip"
+                        android:textColor="#444"
+                        android:text="微信"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/pengyouquan_layout"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:src="@drawable/frind_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginTop="5dip"
+                        android:textColor="#444"
+                        android:text="朋友圈"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dip">
+                <LinearLayout
+                    android:id="@+id/weibo_layout"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:src="@drawable/weibo_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginTop="5dip"
+                        android:textColor="#444"
+                        android:text="微博"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dip"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_dismiss"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:text="取消"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="50dip" />
+</LinearLayout>

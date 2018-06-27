@@ -14,6 +14,8 @@ import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 
+import com.overseas.overseas.base.LoginActivity;
+
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
@@ -43,7 +45,18 @@ public class MyUtils {
         res = simpleDateFormat.format(date);
         return res;
     }
-
+    public static boolean isLogin(Context context){
+        String token = SharedPreferencesUtils.getInstace(context).getStringPreference("token", "");
+        if (token != null && !token.equals("")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static void StartLoginActivity(Context context){
+        Intent intent=new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
+    }
     //正则6-16位数字或字母
     public static boolean isPswRuleNO(String mobiles) {
         Pattern p = Pattern

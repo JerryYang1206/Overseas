@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.multidex.MultiDex;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.lzy.okgo.OkGo;
@@ -19,17 +20,14 @@ import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
 import com.overseas.overseas.bean.LoginBean;
-import com.overseas.overseas.im.TalkExtensionModule;
 import com.overseas.overseas.utils.CacheUtils;
 import com.overseas.overseas.utils.Constants;
+import com.overseas.overseas.utils.SharedPreferencesUtils;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-import io.rong.imkit.DefaultExtensionModule;
-import io.rong.imkit.IExtensionModule;
-import io.rong.imkit.RongExtensionManager;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
@@ -48,8 +46,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        CacheUtils.init(this);
         application = this;
+        CacheUtils.init(application);
 //        SDKInitializer.initialize(this);
         setOkGo();//OkGo----第三方网络框架
         initRc();
@@ -178,7 +176,13 @@ public class MyApplication extends Application {
     public static Context getGloableContext() {
         return application.getApplicationContext();
     }
-
+    public static boolean isJapanese(){
+        String location = SharedPreferencesUtils.getInstace(application.getApplicationContext()).getStringPreference("city", "");
+        if (!TextUtils.isEmpty(location) && TextUtils.equals(location, "ja")) {
+            return true;
+        }
+        return false;
+    }
     public static String getUserToken(){
         LoginBean.DatasBean datasBean = CacheUtils.get(Constants.USERINFO);
         if (datasBean != null) {

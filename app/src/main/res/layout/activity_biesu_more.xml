@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/view_more_header"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dip"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dip"
+                    android:layout_height="13dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dip"
+                    android:background="@color/shihuangse"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dip"
+                    android:text="@string/string_jibenxinxi"
+                    android:textColor="#444"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_wujianmingcheng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_wujianmingcheng"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_shoujia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_shoujia"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_huxing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_huxing"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_dongcengshu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_dongcengshu"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_tudimianji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_tudimianji"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_jianzumianji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_jianzumianji"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_suoyouquan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_suoyouquan"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_jianzunianfen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_jianzhunianfen"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_jianzushejigongsi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_jianzhushejigongsi"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_jianzugouzao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_jianzhugouzao"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_chaoxiang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_chaoxiang"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_jianzufugailv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_jianzhufugai"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_rongjilv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_rongjilv"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_rujuriqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_rujuriqi"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_xianzhuang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_xianzhuang"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_tingchechang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_tingchechang"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_gongkaiqingbaori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_gongkaiqingbaori"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dip"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dip"
+                    android:layout_height="13dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dip"
+                    android:background="@color/shihuangse"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dip"
+                    android:text="@string/string_shiwaixinxi"
+                    android:textColor="#444"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_diduan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_diduan"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_jutiweizhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_jutiweizhi"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_zhuyaochezhan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_zhuyaochezhan"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_chezhanjuli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_chezhanjuli"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_daolulinjiejuli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_daolulinjiejuli"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_tudi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_tudi"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dip"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dip"
+                    android:layout_height="13dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dip"
+                    android:background="@color/shihuangse"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dip"
+                    android:text="@string/string_shineixinxi"
+                    android:textColor="#444"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_shineishebei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_shineishebei"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_chufang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_chufang"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_weishengjian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_weishengjian"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_yushi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_yushi"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dip"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dip"
+                    android:layout_height="13dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dip"
+                    android:background="@color/shihuangse"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dip"
+                    android:text="@string/string_baozhangxinxi"
+                    android:textColor="#444"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_xingneng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_xingneng"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_zhengmingshu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_zhengmingshu"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_xiacibaozhang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_xiacibaozhang"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dip"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dip"
+                    android:layout_height="13dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dip"
+                    android:background="@color/shihuangse"></View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dip"
+                    android:text="@string/string_beizhuxinxi"
+                    android:textColor="#444"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="6dip"
+                android:layout_marginTop="6dip"
+                android:paddingLeft="15dip"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="@string/string_beizhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/act_biesu_beizhu"
+                    android:textColor="#222"
+                    android:textSize="14sp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
