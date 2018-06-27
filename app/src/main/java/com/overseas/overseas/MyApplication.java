@@ -1,7 +1,27 @@
 package com.overseas.overseas;
 
+import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
+
+import com.baidu.mapapi.SDKInitializer;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cache.CacheEntity;
+import com.lzy.okgo.cache.CacheMode;
+import com.lzy.okgo.cookie.CookieJarImpl;
+import com.lzy.okgo.cookie.store.DBCookieStore;
+import com.lzy.okgo.https.HttpsUtils;
+import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
+import com.lzy.okgo.model.HttpHeaders;
+import com.lzy.okgo.model.HttpParams;
+
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+
+import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by Administrator on 2017/8/24.

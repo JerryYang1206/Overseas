@@ -1,22 +1,29 @@
 package com.overseas.overseas.fragment;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseFragment;
 import com.overseas.overseas.mine.LiShiActivity;
-import com.overseas.overseas.mine.LianxirenActivity;
+import com.overseas.overseas.mine.ManagerActivity;
 import com.overseas.overseas.mine.MyDataActivity;
 import com.overseas.overseas.mine.PingJiaActivity;
 import com.overseas.overseas.mine.SettingActivity;
 import com.overseas.overseas.view.CircleImageView;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import io.rong.imkit.DefaultExtensionModule;
+import io.rong.imkit.IExtensionModule;
+import io.rong.imkit.RongExtensionManager;
+import io.rong.imkit.RongIM;
 
 /**
  * Created by Administrator on 2018/1/18.

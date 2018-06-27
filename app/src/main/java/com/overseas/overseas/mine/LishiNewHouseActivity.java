@@ -1,6 +1,7 @@
 package com.overseas.overseas.mine;
 
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -15,10 +16,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.MapPoi;
+import com.baidu.mapapi.map.MapStatus;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.UiSettings;
+import com.baidu.mapapi.model.LatLng;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
+import com.overseas.overseas.map.MapActivity;
+import com.overseas.overseas.map.MyLocationListenner;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
@@ -46,6 +59,8 @@ public class LishiNewHouseActivity extends BaseActivity {
     ImageView imgStart;
     @BindView(R.id.tv_See_More)
     TextView tvSeeMore;
+    @BindView(R.id.bmapView)
+    MapView bmapView;
     private LiebiaoAdapter mLiebiaoAdapter;
     private List<String> mList = new ArrayList();
     private List<Fragment> mBaseFragmentList = new ArrayList<>();
@@ -91,12 +106,12 @@ public class LishiNewHouseActivity extends BaseActivity {
     }
 
     private void initMap() {
-        mapView.removeViewAt(1);//隐藏logo
-        mapView.removeViewAt(2);//隐藏比例尺
-        mapView.showZoomControls(false);// 隐藏缩放控件
+        bmapView .removeViewAt(1);//隐藏logo
+        bmapView.removeViewAt(2);//隐藏比例尺
+        bmapView.showZoomControls(false);// 隐藏缩放控件
 
 
-        mBaiduMap = mapView.getMap();
+        mBaiduMap = bmapView.getMap();
 
         UiSettings uiSettings = mBaiduMap.getUiSettings();
 //        uiSettings. setScrollGesturesEnabled(false);//禁用平移的功能
