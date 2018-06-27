@@ -18,6 +18,20 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
     </style>
+    <!--loading网络加载中的-->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- //设置背景 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- //去掉边框 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- //设置半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- //设置无标题 -->
+        <item name="android:windowFullscreen">false</item>
+        <!-- //设置全屏 -->
+        <item name="android:windowIsFloating">true</item>
+    </style>
     <!--默认样式-->
     <style name="picture.default.style1" parent="Theme.AppCompat.Light.DarkActionBar"></style>
     <!--购买界面底部tab的style-->

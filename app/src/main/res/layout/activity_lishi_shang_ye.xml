@@ -136,7 +136,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="17500万"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                     </LinearLayout>
                     <LinearLayout
@@ -335,7 +335,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="@string/activity_details_waiguan"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                         <TextView
                             android:textColor="#000"
@@ -354,7 +354,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="@string/activity_details_neiguan"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                         <TextView
                             android:textColor="#000"
@@ -373,7 +373,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="@string/activity_details_chezhan"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                         <TextView
                             android:textColor="#000"
@@ -392,7 +392,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="@string/activity_details_jingdian"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                         <TextView
                             android:textColor="#000"
@@ -411,7 +411,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="@string/activity_details_shangyejie"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                         <TextView
                             android:textColor="#000"
@@ -430,7 +430,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="@string/activity_details_jutiweizhi"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                         <TextView
                             android:textColor="#000"

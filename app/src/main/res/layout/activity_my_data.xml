@@ -77,14 +77,17 @@
             android:layout_width="0dip"
             android:layout_weight="1"
             android:layout_height="match_parent" />
-        <TextView
+        <EditText
             android:id="@+id/tv_name"
-            android:textSize="15dip"
-            android:layout_marginRight="10dip"
-            android:gravity="center"
-            android:text="sense"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dip"
+            android:gravity="right|center_vertical"
+            android:background="@null"
+            android:cursorVisible="false"
+            android:minWidth="100dp"
+            android:text="sense"
+            android:textSize="15dip"/>
     </LinearLayout>
     <View
         android:layout_marginRight="10dip"

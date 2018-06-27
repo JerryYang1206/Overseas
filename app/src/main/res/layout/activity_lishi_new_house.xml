@@ -296,13 +296,18 @@
             android:background="@drawable/bg_map"
             android:layout_width="match_parent"
             android:layout_height="120dip">
-
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="80dip">
             <LinearLayout
+                android:id="@+id/shop_layout"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:layout_width="0dip"
@@ -321,6 +326,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/school_layout"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:layout_width="0dip"
@@ -339,6 +345,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/youeryuan_layout"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:layout_width="0dip"
@@ -357,6 +364,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/yiyuan_layout"
                 android:gravity="center"
                 android:layout_weight="1"
                 android:layout_width="0dip"
@@ -375,37 +383,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
-        <View
-            android:background="#eee"
-            android:layout_width="match_parent"
-            android:layout_height="5dip"></View>
-        <LinearLayout
-            android:background="#fff"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dip">
-            <TextView
-                android:gravity="center"
-                android:textSize="16sp"
-                android:textColor="@color/shihuangse"
-                android:text="蒋先生"
-                android:layout_width="0dip"
-                android:layout_weight="1"
-                android:layout_height="match_parent" />
-            <View
-                android:layout_gravity="center_vertical"
-                android:background="#eee"
-                android:layout_width="1dip"
-                android:layout_height="15dip"></View>
-            <TextView
-                android:gravity="center"
-                android:textSize="16sp"
-                android:textColor="@color/shihuangse"
-                android:text="12345678901"
-                android:layout_width="0dip"
-                android:layout_weight="1"
-                android:layout_height="match_parent" />
-        </LinearLayout>
+
     </LinearLayout>
     </com.overseas.overseas.view.VerticalScrollView>
 </LinearLayout>

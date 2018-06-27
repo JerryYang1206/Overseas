@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+
+        android:paddingRight="15dip"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dip"
+        android:background="@drawable/location_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:padding="10dip"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:orientation="vertical"
+            android:layout_height="match_parent" >
+            <TextView
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:text="泰和，金府大院"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"/>
+            <TextView
+                android:textColor="#666"
+                android:textSize="13sp"
+                android:gravity="center_vertical"
+                android:text="南四环新宫地铁站南800米"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <View
+            android:layout_marginRight="10dip"
+            android:layout_gravity="center_vertical"
+            android:background="#eee"
+            android:layout_width="1dip"
+            android:layout_height="25dip">
+
+        </View>
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/luxian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

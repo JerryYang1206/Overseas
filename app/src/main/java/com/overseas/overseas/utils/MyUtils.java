@@ -43,6 +43,15 @@ public class MyUtils {
         res = simpleDateFormat.format(date);
         return res;
     }
+
+    //正则6-16位数字或字母
+    public static boolean isPswRuleNO(String mobiles) {
+        Pattern p = Pattern
+                .compile("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$");
+        Matcher m = p.matcher(mobiles);
+        System.out.println(m.matches() + "---");
+        return m.matches();
+    }
     /**
      * 根据图片的url路径获得Bitmap对象
      * @param url
@@ -72,6 +81,17 @@ public class MyUtils {
         return bitmap;
 
     }
+
+    public static boolean isJa(Context context) {
+        String location = SharedPreferencesUtils.getInstace(context).getStringPreference("city", "");
+//        String country = CacheUtils.get(Constants.COUNTRY);
+        if (location != null && location.equals("ja")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static String secToTime(int time) {
         String timeStr = null;
         int hour = 0;

@@ -147,7 +147,7 @@ public class LishiZuHouseActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.img_share, R.id.img_start, R.id.tv_See_More})
+    @OnClick({R.id.img_share, R.id.img_start, R.id.tv_See_More,R.id.img_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.img_share:
@@ -155,6 +155,9 @@ public class LishiZuHouseActivity extends BaseActivity {
                 break;
             case R.id.img_start:
                 Toast.makeText(this, "收藏", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.img_back:
+                finish();
                 break;
             case R.id.tv_See_More:
                 Intent intent = new Intent(LishiZuHouseActivity.this, SeeMoreActivity.class);

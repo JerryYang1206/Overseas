@@ -8,6 +8,7 @@ import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseFragment;
 import com.overseas.overseas.mine.LiShiActivity;
 import com.overseas.overseas.mine.LianxirenActivity;
+import com.overseas.overseas.mine.ManagerActivity;
 import com.overseas.overseas.mine.MyDataActivity;
 import com.overseas.overseas.mine.PingJiaActivity;
 import com.overseas.overseas.mine.SettingActivity;
@@ -37,6 +38,8 @@ public class MineFragment extends BaseFragment {
     LinearLayout LishiLayout;
     @BindView(R.id.PingJun_Layout)
     LinearLayout PingJunLayout;
+    @BindView(R.id.Manager_Layout)
+    LinearLayout Manager_Layout;
 
     @Override
     protected View initView() {
@@ -67,7 +70,7 @@ public class MineFragment extends BaseFragment {
 
 
 
-    @OnClick({R.id.PingJia_Layout, R.id.Lianxiren_Layout, R.id.Setting_Layout, R.id.Lishi_Layout, R.id.PingJun_Layout,R.id.myData})
+    @OnClick({R.id.PingJia_Layout, R.id.Lianxiren_Layout, R.id.Setting_Layout, R.id.Lishi_Layout, R.id.PingJun_Layout,R.id.myData,R.id.Manager_Layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.myData:
@@ -90,9 +93,9 @@ public class MineFragment extends BaseFragment {
                 Intent intent4 = new Intent(mContext, LiShiActivity.class);
                 startActivity(intent4);
                 break;
-            case R.id.PingJun_Layout:
-//                Intent intent5 = new Intent(mContext, ManagerActivity.class);
-//                startActivity(intent5);
+            case R.id.Manager_Layout:
+                Intent intent5 = new Intent(mContext, ManagerActivity.class);
+                startActivity(intent5);
                 break;
         }
     }

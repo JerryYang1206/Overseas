@@ -43,7 +43,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
     ImageView backImg;
     @BindView(R.id.dropDownMenu)
     DropDownMenu mDropDownMenu;
-    private String headers[] = {"类型", "时间"};
+
     private List<View> popupViews = new ArrayList<>();
     private SwipeMenuRecyclerView mrecycler;
     private List<String> mList=new ArrayList();
@@ -56,6 +56,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
         ButterKnife.bind(this);
         EventBus.getDefault().register(LiShiActivity.this);
         initView();
+
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void myEvent(CloseSelectBean messageEvent) {
@@ -64,6 +65,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
         }
     }
     private void initView() {
+        String headers[] = {getResources().getString(R.string.leixing), getResources().getString(R.string.shijian)};
 
         /**
          * 第一个界面

@@ -145,9 +145,7 @@ public class LishiHaiwaiActivity extends BaseActivity {
         });
     }
 
-    @OnClick(R.id.img_back)
-    public void onClick() {
-    }
+
 
 
     class MyAdapter extends FragmentStatePagerAdapter {
@@ -166,9 +164,12 @@ public class LishiHaiwaiActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.img_share, R.id.img_start})
+    @OnClick({R.id.img_share, R.id.img_start,R.id.img_back})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.img_back:
+                finish();
+                break;
             case R.id.img_share:
                 Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show();
                 break;

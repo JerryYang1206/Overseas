@@ -47,7 +47,6 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -77,19 +76,35 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- SD卡读取权限，用户写入离线定位数据 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <!-- 百度地图权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- //获取设备网络状态，禁用后无法获取网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- //网络权限，当禁用后，无法进行检索等相关业务 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- //读取设备硬件信息，统计数据 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- //读取系统信息，包含系统版本等信息，用作统计 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- //获取设备的网络状态，鉴权所需网络代理 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- //允许sd卡写权限，需写入地图数据，禁用后无法显示地图 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- //获取统计数据 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- //鉴权所需该权限获取进程列表 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- //使用步行AR导航，配置Camera权限 -->
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/flc_logo"
         android:label="@string/app_name"
@@ -102,6 +117,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 百度地图开始 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="lSbZb4iLUxhYnHr90z6ZNERBF6MzjEg3" />
+        <!-- 百度地图结束 -->
         <activity android:name=".mine.MyDataActivity" />
         <activity android:name=".mine.PingJiaActivity" />
         <activity android:name=".mine.ZuiJinActivity" />
@@ -117,17 +137,18 @@
         <activity android:name=".base.LoginActivity" />
         <activity android:name=".base.GuidePageActivity" />
         <activity android:name=".mine.ManagerActivity" />
-        <activity android:name=".mine.LianxirenActivity"></activity>
-        <activity android:name=".mine.LishiShangyeActivity"></activity>
-        <activity android:name=".mine.LishiZuHouseActivity"></activity>
-        <activity android:name=".mine.LishiOldHouseActivity"></activity>
-        <activity android:name=".mine.LishiGaoerfuActivity"></activity>
-        <activity android:name=".mine.LishiXiezilouActivity"></activity>
-        <activity android:name=".mine.LishiTudiActivity"></activity>
-        <activity android:name=".mine.LishiHaiwaiActivity"></activity>
-        <activity android:name=".mine.LishiZhongGuoActivity"></activity>
-        <activity android:name=".mine.MineBindPhoneActivity"></activity>
-        <activity android:name=".mine.ChangePhoneActivity"></activity>
+        <activity android:name=".mine.LianxirenActivity" />
+        <activity android:name=".mine.LishiShangyeActivity" />
+        <activity android:name=".mine.LishiZuHouseActivity" />
+        <activity android:name=".mine.LishiOldHouseActivity" />
+        <activity android:name=".mine.LishiGaoerfuActivity" />
+        <activity android:name=".mine.LishiXiezilouActivity" />
+        <activity android:name=".mine.LishiTudiActivity" />
+        <activity android:name=".mine.LishiHaiwaiActivity" />
+        <activity android:name=".mine.LishiZhongGuoActivity" />
+        <activity android:name=".mine.MineBindPhoneActivity" />
+        <activity android:name=".mine.ChangePhoneActivity" />
+        <activity android:name=".map.MapActivity"></activity>
     </application>
 
 </manifest>

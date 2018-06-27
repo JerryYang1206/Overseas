@@ -132,4 +132,14 @@
     <string name="dialog_canner">取消</string>
     <string name="dialog_sure">确认</string>
     <string name="geren_erweima">个人二维码</string>
+    <string name="leixing">类型</string>
+    <string name="shijian">时间</string>
+    <string name="ershoufang">二手房</string>
+    <string name="zufang">租房</string>
+    <string name="xinfang">新房</string>
+    <string name="haiwaidichan">海外地产</string>
+    <string name="shangyedichan">商业地产</string>
+    <string name="zhongguofangyuan">中国房源</string>
+    <string name="geyue">个月</string>
+    <string name="jiazaizhong">加载中</string>
 </resources>

@@ -44,12 +44,17 @@
             android:layout_width="match_parent"
             android:layout_height="50dip"
             android:orientation="horizontal">
-            <ImageView
-                android:layout_width="25dip"
-                android:layout_height="25dip"
-                android:layout_gravity="center_vertical"
+            <TextView
                 android:layout_marginLeft="15dip"
-                android:src="@drawable/icon_phone"/>
+                android:id="@+id/tv_show_pop"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/xiala"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:text="+86"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
             <EditText
                 android:id="@+id/edt_phone"
                 android:layout_width="match_parent"

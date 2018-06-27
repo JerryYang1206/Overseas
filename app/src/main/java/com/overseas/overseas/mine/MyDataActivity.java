@@ -1,5 +1,6 @@
 package com.overseas.overseas.mine;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -58,7 +60,7 @@ public class MyDataActivity extends BaseActivity {
     @BindView(R.id.layout_Erweima)
     LinearLayout layoutErweima;
     @BindView(R.id.tv_name)
-    TextView tvName;
+    EditText tvName;
     @BindView(R.id.tv_shengri)
     TextView tvShengri;
     @BindView(R.id.ll_man)
@@ -82,7 +84,7 @@ public class MyDataActivity extends BaseActivity {
         initLunarPicker();//初始化时间选择器
     }
 
-    @OnClick({R.id.see_large_photo, R.id.select_photo, R.id.back_img, R.id.layout_Erweima, R.id.tv_name, R.id.tv_shengri, R.id.ll_man, R.id.ll_woman,R.id.ll_bing_number})
+    @OnClick({R.id.see_large_photo, R.id.select_photo, R.id.back_img, R.id.layout_Erweima,R.id. tv_name, R.id.tv_shengri, R.id.ll_man, R.id.ll_woman,R.id.ll_bing_number})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.see_large_photo:
@@ -97,7 +99,8 @@ public class MyDataActivity extends BaseActivity {
             case R.id.layout_Erweima:
                 showcallDialog();
                 break;
-            case R.id.tv_name:
+            case R.id. tv_name:
+//                initListener();
                 showNickName();
                 break;
             case R.id.tv_shengri:
@@ -116,7 +119,35 @@ public class MyDataActivity extends BaseActivity {
                 break;
         }
     }
+    private void initListener() {
+        tvName.setOnTouchListener(new View.OnTouchListener() {
 
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    tvName.setCursorVisible(true);// 再次点击显示光标
+                }
+                return false;
+            }
+        });
+        tvName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                tvName.setCursorVisible(false);// 再次点击显示光标
+            }
+        });
+    }
     //修改昵称
     private void showNickName() {
         if (popWiw == null) {

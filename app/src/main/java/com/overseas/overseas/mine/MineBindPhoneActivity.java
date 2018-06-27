@@ -22,7 +22,7 @@ public class MineBindPhoneActivity extends BaseActivity implements View.OnClickL
     @BindView(R.id.back_img)
     ImageView backImg;
     @BindView(R.id.edt_phone)
-    EditText edtPhone;
+    TextView edtPhone;
     @BindView(R.id.edt_code)
     EditText edtCode;
     @BindView(R.id.tv_getcode)

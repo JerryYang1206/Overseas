@@ -229,7 +229,7 @@
                             android:textSize="14sp"
                             android:gravity="center_vertical"
                             android:text="南北"
-                            android:layout_width="70dip"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent" />
                     </LinearLayout>
                     <LinearLayout
@@ -355,7 +355,7 @@
                         android:textSize="14sp"
                         android:gravity="center_vertical"
                         android:text="@string/activity_details_jutiweizhi"
-                        android:layout_width="70dip"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent" />
                     <TextView
                         android:textColor="#000"

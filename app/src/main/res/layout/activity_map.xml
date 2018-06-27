@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_peripheralfacilities"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".map.MapActivity">
+
+    <LinearLayout
+        android:background="@color/shihuangse"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dip">
+        <ImageView
+            android:id="@+id/back_img"
+            android:padding="15dp"
+            android:src="@drawable/back"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+        <TextView
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:text="房源名称展示"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:padding="14dip"
+            android:id="@+id/message_char"
+            android:src="@drawable/message"
+            android:gravity="center"
+            android:layout_width="50dip"
+            android:layout_height="50dip" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/permapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.baidu.mapapi.map.MapView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioGroup
+            android:paddingRight="10dip"
+            android:paddingLeft="10dip"
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <RadioButton
+                android:padding="10dp"
+                android:id="@+id/radiobank"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:text="商场"
+                android:gravity="center"
+                android:drawableLeft="@drawable/shop_selector"
+                android:textColor="@drawable/tab_text_selector"
+                />
+
+            <RadioButton
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:id="@+id/radiobus"
+                android:gravity="center"
+                android:drawableLeft="@drawable/school_selector"
+                android:textColor="@drawable/tab_text_selector"
+                android:text="学校" />
+            <RadioButton
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/radiosubw"
+                android:drawableLeft="@drawable/youeryuan_selector"
+                android:textColor="@drawable/tab_text_selector"
+                android:text="幼儿园" />
+            <RadioButton
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioedut"
+                android:gravity="center"
+                android:drawableLeft="@drawable/yiyuan_selector"
+                android:textColor="@drawable/tab_text_selector"
+                android:text="医院" />
+        </RadioGroup>
+
+    </LinearLayout>
+    <LinearLayout
+        android:paddingRight="10dip"
+        android:paddingLeft="10dip"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dip">
+        <View
+            android:id="@+id/view1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@color/shihuangse"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="2dip"></View>
+        <View
+            android:visibility="invisible"
+            android:id="@+id/view2"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@color/shihuangse"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="2dip"></View>
+        <View
+            android:visibility="invisible"
+            android:id="@+id/view3"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@color/shihuangse"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="2dip"></View>
+        <View
+            android:visibility="invisible"
+            android:id="@+id/view4"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@color/shihuangse"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="2dip"></View>
+    </LinearLayout>
+</LinearLayout>

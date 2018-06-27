@@ -63,7 +63,8 @@ public class WeiChartFragment extends BaseFragment {
         liebiaoAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(mContext, "暂未集成环信SDK", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(mContext, ManagerActivity.class));
+                Toast.makeText(mContext, "暂未集成SDK", Toast.LENGTH_SHORT).show();
             }
         });
     }

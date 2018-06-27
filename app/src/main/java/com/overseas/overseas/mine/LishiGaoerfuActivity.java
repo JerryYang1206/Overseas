@@ -35,6 +35,8 @@ public class LishiGaoerfuActivity extends BaseActivity {
     ImageView imgShare;
     @BindView(R.id.img_start)
     ImageView imgStart;
+    @BindView(R.id.img_back)
+    ImageView imgBack;
     private List<String> mList = new ArrayList();
     private List<Fragment> mBaseFragmentList = new ArrayList<>();
     private FragmentManager fm;
@@ -52,15 +54,15 @@ public class LishiGaoerfuActivity extends BaseActivity {
     }
 
     private void initViewPager() {
-        if (mBaseFragmentList.size()<=0){
+        if (mBaseFragmentList.size() <= 0) {
             mBaseFragmentList.add(new VidioFragment());
             mBaseFragmentList.add(new BannerFragment());
             mBaseFragmentList.add(new BannerFragment());
             mBaseFragmentList.add(new BannerFragment());
         }
-        tvAllNum.setText(mBaseFragmentList.size()+"");
+        tvAllNum.setText(mBaseFragmentList.size() + "");
         fm = getSupportFragmentManager();
-        myAdapter=new MyAdapter(fm);
+        myAdapter = new MyAdapter(fm);
         vpVidio.setAdapter(myAdapter);
         vpVidio.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -71,7 +73,7 @@ public class LishiGaoerfuActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 tvToNum.setText((position + 1) + "");
-                if (position==1){
+                if (position == 1) {
                     JZVideoPlayer.releaseAllVideos();
                 }
             }
@@ -96,6 +98,7 @@ public class LishiGaoerfuActivity extends BaseActivity {
         super.onPause();
         JZVideoPlayer.releaseAllVideos();
     }
+
     private void initData() {
         if (mList.size() <= 0) {
             mList.add("");
@@ -122,9 +125,12 @@ public class LishiGaoerfuActivity extends BaseActivity {
         }
     }
 
-    @OnClick({R.id.img_share, R.id.img_start})
+    @OnClick({R.id.img_share, R.id.img_start,R.id.img_back})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.img_back:
+                finish();
+                break;
             case R.id.img_share:
                 Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show();
                 break;

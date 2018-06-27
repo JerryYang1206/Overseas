@@ -55,7 +55,7 @@ class SecView {
     private void initData() {
         if (mList.size()<=0){
             for (int i = 0; i < 6; i++) {
-                mList.add(new OneCheckBean(false,(i+1)+"个月"));
+                mList.add(new OneCheckBean(false,(i+1)+context.getResources().getString(R.string.geyue)));
             }
 
         }

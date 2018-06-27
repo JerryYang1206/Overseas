@@ -2,16 +2,20 @@ package com.overseas.overseas.mine;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseDialog;
+import com.overseas.overseas.base.LoginActivity;
 import com.overseas.overseas.base.XieyiActivity;
+import com.overseas.overseas.utils.SharedPreferencesUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,12 +31,23 @@ public class SettingActivity extends BaseActivity {
     LinearLayout aboutLayout;
     @BindView(R.id.finish_login)
     Button finishLogin;
+    @BindView(R.id.tv_city)
+    TextView tvCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
+        String city = SharedPreferencesUtils.getInstace(this).getStringPreference("city", "");
+        if (!TextUtils.isEmpty(city)){
+            if (city.equals("zh")){
+                tvCity.setText(R.string.activity_language_chinase);
+            }else if (city.equals("ja")){
+                tvCity.setText(R.string.activity_language_japan);
+            }
+        }
+
     }
 
     @OnClick({R.id.back_img, R.id.language_layout, R.id.about_layout, R.id.finish_login})
@@ -42,11 +57,11 @@ public class SettingActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.language_layout:
-                Intent intent=new Intent(SettingActivity.this,LanguageActivity.class);
+                Intent intent = new Intent(SettingActivity.this, LanguageActivity.class);
                 startActivity(intent);
                 break;
             case R.id.about_layout:
-                Intent intent1=new Intent(SettingActivity.this,XieyiActivity.class);
+                Intent intent1 = new Intent(SettingActivity.this, XieyiActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.finish_login:
@@ -54,6 +69,7 @@ public class SettingActivity extends BaseActivity {
                 break;
         }
     }
+
     private void showcallDialog() {
         BaseDialog.Builder builder = new BaseDialog.Builder(SettingActivity.this);
         //设置dialogpadding
@@ -82,12 +98,15 @@ public class SettingActivity extends BaseActivity {
         btnclear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                removeAllActivitys();
+                startActivity(new Intent(SettingActivity.this, LoginActivity.class));
                 dialog.dismiss();
             }
         });
         btndismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 dialog.dismiss();
             }
         });

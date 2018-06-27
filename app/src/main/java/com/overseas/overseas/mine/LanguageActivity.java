@@ -1,6 +1,5 @@
 package com.overseas.overseas.mine;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import com.overseas.overseas.MainActivity;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
-import com.overseas.overseas.base.LancherActivity;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
 
 import java.util.Locale;
@@ -42,6 +40,8 @@ public class LanguageActivity extends BaseActivity {
     Resources resources;
     DisplayMetrics dm;
     Configuration config;
+
+    String city = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,25 +72,21 @@ public class LanguageActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_baocun:
-                finish();
+                Locale jaLocale = new Locale(city);
+                config.locale = jaLocale;
+                resources.updateConfiguration(config, dm);
+                SharedPreferencesUtils.getInstace(this).setStringPreference("city", city);
+                recrete();
                 break;
             case R.id.language_layout:
                 imgCheckZhongwen.setVisibility(View.VISIBLE);
                 imgCheckRiwen.setVisibility(View.GONE);
-                Locale myLocale = new Locale("zh");
-                config.locale = myLocale;
-                resources.updateConfiguration(config, dm);
-                SharedPreferencesUtils.getInstace(this).setStringPreference("city", "zh");
-                recrete();
+                city = "zh";
                 break;
             case R.id.about_layout:
                 imgCheckZhongwen.setVisibility(View.GONE);
                 imgCheckRiwen.setVisibility(View.VISIBLE);
-                Locale jaLocale = new Locale("ja");
-                config.locale = jaLocale;
-                resources.updateConfiguration(config, dm);
-                SharedPreferencesUtils.getInstace(this).setStringPreference("city", "ja");
-                recrete();
+                city = "ja";
                 break;
         }
     }

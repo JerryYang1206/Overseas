@@ -61,7 +61,7 @@ public class PingJiaActivity extends BaseActivity {
         @Override
         protected void convert(BaseViewHolder helper,String item) {
             LetterSpacingTextView tv_content = helper.getView(R.id.tv_content);
-            tv_content.setSpacing(5);
+            tv_content.setSpacing(3);
             tv_content.setText("活动内容展示,活动内容展示,活动内容展示活动内容展示活动内容展示，活动内容展示活动内容展示");
         }
     }

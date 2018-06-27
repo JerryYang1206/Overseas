@@ -48,12 +48,12 @@ class FirstView {
     }
     private void initData() {
         if (mList.size()<=0){
-            mList.add(new OneCheckBean(false,"二手房"));
-            mList.add(new OneCheckBean(false,"租房"));
-            mList.add(new OneCheckBean(false,"新房"));
-            mList.add(new OneCheckBean(false,"海外地产"));
-            mList.add(new OneCheckBean(false,"商业地产"));
-            mList.add(new OneCheckBean(false,"中国房源"));
+            mList.add(new OneCheckBean(false,context.getResources().getString(R.string.ershoufang)));
+            mList.add(new OneCheckBean(false,context.getResources().getString(R.string.zufang)));
+            mList.add(new OneCheckBean(false,context.getResources().getString(R.string.xinfang)));
+            mList.add(new OneCheckBean(false,context.getResources().getString(R.string.haiwaidichan)));
+            mList.add(new OneCheckBean(false,context.getResources().getString(R.string.shangyedichan)));
+            mList.add(new OneCheckBean(false,context.getResources().getString(R.string.zhongguofangyuan)));
         }
         if (mLiebiaoAdapter == null) {
             mLiebiaoAdapter = new LiebiaoAdapter(R.layout.leixing_item,mList);
