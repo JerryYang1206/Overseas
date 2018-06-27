@@ -19,6 +19,7 @@ import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
 import com.overseas.overseas.bean.LoginBean;
+import com.overseas.overseas.im.TalkExtensionModule;
 import com.overseas.overseas.utils.CacheUtils;
 import com.overseas.overseas.utils.Constants;
 
@@ -26,6 +27,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import io.rong.imkit.DefaultExtensionModule;
+import io.rong.imkit.IExtensionModule;
+import io.rong.imkit.RongExtensionManager;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
@@ -44,6 +48,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        CacheUtils.init(this);
         application = this;
 //        SDKInitializer.initialize(this);
         setOkGo();//OkGo----第三方网络框架
@@ -74,7 +79,24 @@ public class MyApplication extends Application {
             });
         }
 
-//        setMyExtensionModule();
+        setMyExtensionModule();
+    }
+
+    public void setMyExtensionModule() {
+//        List<IExtensionModule> moduleList = RongExtensionManager.getInstance().getExtensionModules();
+//        IExtensionModule defaultModule = null;
+//        if (moduleList != null) {
+//            for (IExtensionModule module : moduleList) {
+//                if (module instanceof DefaultExtensionModule) {
+//                    defaultModule = module;
+//                    break;
+//                }
+//            }
+//            if (defaultModule != null) {
+//                RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
+//                RongExtensionManager.getInstance().registerExtensionModule(new TalkExtensionModule());
+//            }
+//        }
     }
 
     /**
@@ -198,16 +220,8 @@ public class MyApplication extends Application {
     public static void logOut(){
         String language = CacheUtils.get(Constants.COUNTRY);
 
-        String setting = "";
-        if (CacheUtils.get(Constants.MANAGER_T) == null) {
-            setting = "1";
-        } else {
-            setting = CacheUtils.get(Constants.MANAGER_T);
-        }
-
         CacheUtils.removeAll();
         CacheUtils.put(Constants.COUNTRY, language);
-        CacheUtils.put(Constants.MANAGER_T, setting);
 
         if (RongIM.getInstance() != null) {
 

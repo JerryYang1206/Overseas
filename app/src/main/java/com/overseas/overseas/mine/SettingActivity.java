@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseDialog;
@@ -98,6 +99,7 @@ public class SettingActivity extends BaseActivity {
         btnclear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MyApplication.logOut();
                 removeAllActivitys();
                 startActivity(new Intent(SettingActivity.this, LoginActivity.class));
                 dialog.dismiss();

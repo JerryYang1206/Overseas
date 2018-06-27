@@ -145,17 +145,6 @@
         <activity android:name=".base.LoginActivity" />
         <activity android:name=".base.GuidePageActivity" />
         <activity android:name=".mine.ManagerActivity" />
-        <activity android:name=".mine.LianxirenActivity"></activity>
-        <activity android:name=".mine.LishiShangyeActivity"></activity>
-        <activity android:name=".mine.LishiZuHouseActivity"></activity>
-        <activity android:name=".mine.LishiOldHouseActivity"></activity>
-        <activity android:name=".mine.LishiGaoerfuActivity"></activity>
-        <activity android:name=".mine.LishiXiezilouActivity"></activity>
-        <activity android:name=".mine.LishiTudiActivity"></activity>
-        <activity android:name=".mine.LishiHaiwaiActivity"></activity>
-        <activity android:name=".mine.LishiZhongGuoActivity"></activity>
-        <activity android:name=".mine.MineBindPhoneActivity"></activity>
-        <activity android:name=".mine.ChangePhoneActivity"></activity>
 
         <activity
             android:name=".MainActivity"
@@ -177,9 +166,6 @@
 
         <!--会话界面-->
         <!--添加配置信息-->
-        <activity
-            android:name=".im.ChatActivity"
-        />
 
         <activity
             android:name=".im.RongChatActivity"
