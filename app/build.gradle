@@ -9,6 +9,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters "armeabi-v7a", "x86"
@@ -69,9 +70,12 @@ dependencies {
     compile 'org.zackratos:ultimatebar:1.1.1'
     compile 'com.contrarywind:Android-PickerView:3.2.6'
     compile 'com.google.code.gson:gson:2.8.2'
-    compile project(':CallKit')
+    compile project(':IMKit')
     compile 'com.android.support:support-v4:27.0.0'
-    compile 'com.github.w446108264:XhsEmoticonsKeyboard:2.0.4'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.orhanobut:hawk:2.0.1'
+    compile 'com.android.support:customtabs:25.1.0'
 }
 
 repositories {

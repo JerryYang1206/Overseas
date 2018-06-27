@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rc_name">融曇</string>
+
+    <!-- discussion_notification_msg -->
+    <string name="rc_discussion_nt_msg_for_rename">"%1$s ディスカッショングループの名称を修正します %2$s"</string>
+    <string name="rc_discussion_nt_msg_for_added">"%1$s さんが %2$s さんをディスカッショングループに招待する"</string>
+    <string name="rc_discussion_nt_msg_for_add">"%1$s さんが%2$d何名会員をディスカッショングループに招待する"</string>
+    <string name="rc_discussion_nt_msg_for_exit">"%1$s ディスカッショングループに退出しました"</string>
+    <string name="rc_discussion_nt_msg_for_removed">"さんがあなたはディスカッショングループに退出されました"</string>
+    <string name="rc_discussion_nt_msg_for_who_removed">"BさんがAさんはディスカッショングループに退出されました"</string>
+    <string name="rc_discussion_nt_msg_for_you">"あなた"</string>
+    <string name="rc_discussion_nt_msg_for_is_open_invite_open">"%1$s さんはメンバー招待が有効になっています"</string>
+    <string name="rc_discussion_nt_msg_for_is_open_invite_close">"%1$s さんはメンバー招待機能を閉じました"</string>
+
+    <string name="rc_conversation_list_my_private_conversation">私のプライベート相談</string>
+    <string name="rc_conversation_list_my_group">私のグループ</string>
+    <string name="rc_conversation_list_my_discussion">私のディスカッショングループ</string>
+    <string name="rc_conversation_list_my_chatroom">私のチャットルーム</string>
+    <string name="rc_conversation_list_my_customer_service">顧客サービスリスト</string>
+    <string name="rc_conversation_list_system_conversation">システムメッセージ</string>
+    <string name="rc_conversation_list_app_public_service">公共サービスの利用</string>
+    <string name="rc_conversation_list_public_service">公共サービス</string>
+    <string name="rc_conversation_list_dialog_set_top">この会話はトップに設定する</string>
+    <string name="rc_conversation_list_dialog_cancel_top">トップに設定を取り消し</string>
+    <string name="rc_conversation_list_dialog_remove">会話リストから削除する</string>
+    <string name="rc_conversation_list_popup_set_top">トップに設定をしました</string>
+    <string name="rc_conversation_list_popup_cancel_top">トップに設定を取り消し</string>
+    <string name="rc_conversation_List_operation_failure">操作が失敗しました</string>
+    <string name="rc_conversation_list_default_discussion_name">"ディスカッショングループ"</string>
+    <string name="rc_conversation_list_empty_prompt">"チャット履歴はありません"</string>
+    <string name="rc_conversation_list_not_connected">"まだリンクされていません!"</string>
+
+    <string name="rc_message_content_image">[画像]</string>
+    <string name="rc_message_content_voice">[音声]</string>
+    <string name="rc_message_content_rich_text">[分享]</string>
+    <string name="rc_message_content_location">[位置]</string>
+    <string name="rc_message_content_draft">[下書き]</string>
+    <string name="rc_message_content_mentioned">[誰か@私]</string>
+    <string name="rc_message_content_file">[ドキュメント]</string>
+
+    <string name="rc_dialog_item_message_delete">メッセージを除去する</string>
+    <string name="rc_dialog_item_message_copy">メッセージを複製</string>
+    <string name="rc_dialog_item_message_recall">メッセージを撤回する</string>
+    <string name="rc_recall_failed">撤回が失敗した</string>
+    <string name="rc_you_recalled_a_message">あなたは１つメッセージを撤回しました</string>
+    <string name="rc_recalled_a_message">１つメッセージを撤回しました</string>
+
+    <string name="rc_message_unread_count">"···"</string>
+    <string name="rc_input_voice">押すとお話できます</string>
+
+    <string name="rc_setting_name">設定</string>
+    <string name="rc_setting_clear_msg_prompt">チャットメッセージを削除してもよろしいですか？</string>
+    <string name="rc_setting_clear_msg_name">チャットメッセージをクリアする</string>
+    <string name="rc_setting_clear_msg_fail">チャットメッセージのクリアに失敗しました</string>
+    <string name="rc_setting_clear_msg_success">チャットメッセージを正常に消去しました</string>
+    <string name="rc_setting_set_top">トップにする</string>
+    <string name="rc_setting_set_top_fail">トップの設定に失敗しました</string>
+    <string name="rc_setting_conversation_notify">新しいメッセージ通知</string>
+    <string name="rc_setting_conversation_notify_fail">新しいメッセージ通知を設定できません</string>
+    <string name="rc_setting_get_conversation_notify_fail">新しいメッセージ通知を取得できませんでした</string>
+
+    <string name="rc_dialog_cancel">取り消す</string>
+    <string name="rc_dialog_ok">確定</string>
+    <string name="rc_input_send">発送</string>
+
+    <string name="rc_plugins_location">位置</string>
+
+    <string name="rc_plugins_camera">カメラ</string>
+    <string name="rc_plugins_files">ドキュメント</string>
+
+    <string name="rc_voice_rec">指をスワイプして送信をキャンセルする</string>
+    <string name="rc_voice_cancel">指を離れて送信をキャンセルする</string>
+    <string name="rc_voice_short">録音時間が短すぎます</string>
+    <string name="rc_voice_failure">録音に失敗しました！</string>
+    <string name="rc_voice_too_long">录制时间超长</string>
+    <string name="rc_voip_occupying">サウンドチャンネルが使用されています。後でもう一度お試しください</string>
+
+
+    <string name="rc_pub_service_info_description">機能紹介</string>
+    <string name="rc_pub_service_info_enter">公開番号を入力してください</string>
+    <string name="rc_pub_service_info_follow">見て見ましょう</string>
+    <string name="rc_pub_service_info_unfollow">アンフォロー</string>
+    <string name="rc_pub_service_info_account">公開番号：%s</string>
+
+    <string name="rc_notice_network_unavailable">現在のネットワークは利用できません。ネットワーク設定を確認してください</string>
+    <string name="rc_notice_disconnect">サーバーに接続できません</string>
+    <string name="rc_notice_tick">このアカウントは既に他の端末にログインしています</string>
+    <string name="rc_notice_connecting">サーバーに接続する</string>
+    <string name="rc_notice_create_discussion">ディスカッショングループの作成</string>
+    <string name="rc_notice_create_discussion_fail">ディスカッショングループの作成に失敗しました</string>
+    <string name="rc_notice_enter_chatroom">チャットルームに入る</string>
+    <string name="rc_notice_input_conversation_error">セッションはまだ作成されていません</string>
+    <string name="rc_notice_data_is_loading">データの読み込み</string>
+    <string name="rc_notice_load_data_fail">データの取得に失敗しました</string>
+    <string name="rc_notice_download_fail">ダウンロードに失敗しました!</string>
+    <string name="rc_notice_select_one_picture_at_last">少なくとも1枚の写真を選択してください</string>
+
+    <string name="rc_message_unknown">現在のバージョンでは、このメッセージの一時的な表示はサポートされていません</string>
+    <string name="rc_new_messages">新しいメッセージ1個</string>
+    <string name="rc_info_not_in_discussion">あなたはこのディスカッショングループに参加していません</string>
+    <string name="rc_info_not_in_group">あなたはこのグループにいません</string>
+    <string name="rc_info_not_in_chatroom">あなたはこのチャットルームにいません</string>
+    <string name="rc_rejected_by_blacklist_prompt">あなたのメッセージは送信されましたが、相手から拒否されました</string>
+    <string name="rc_info_forbidden_to_talk">あなたのスピーチは禁止されています</string>
+    <string name="rc_forbidden_in_chatroom">あなたのスピーチは禁止されています、メッセージを送信できませんでした</string>
+    <string name="rc_kicked_from_chatroom">あなたはチャットルームから退去されまし</string>
+    <string name="rc_join_chatroom_failure">チャットルームへの参加に失敗しました</string>
+
+    <string name="rc_send_format">発送(%1$s)</string>
+    <string name="rc_yesterday_format">昨日</string>
+    <string name="rc_year_format">年</string>
+    <string name="rc_month_format">月</string>
+    <string name="rc_day_format">日</string>
+    <string name="rc_monday_format">月曜日</string>
+    <string name="rc_tuesday_format">火曜日</string>
+    <string name="rc_wednesday_format">水曜日</string>
+    <string name="rc_thuresday_format">木曜日</string>
+    <string name="rc_friday_format">金曜日</string>
+    <string name="rc_saturday_format">土曜日</string>
+    <string name="rc_sunsay_format">日曜日</string>
+    <string name="rc_daybreak_format">早朝</string>
+    <string name="rc_morning_format">午前</string>
+    <string name="rc_noon_format">正午</string>
+    <string name="rc_afternoon_format">午後</string>
+    <string name="rc_night_format">夜</string>
+    <string name="rc_waiting">待っている</string>
+    <string name="rc_file_not_exist">ファイルが存在しません</string>
+    <string name="rc_network_is_busy">ネットワークがビジー状態です</string>
+    <string name="rc_network_error">ネットワーク接続エラー</string>
+    <string name="rc_called_on_hook">相手が電話を切った</string>
+    <string name="rc_called_is_calling">相手が電話している</string>
+    <string name="rc_exit_calling">コールインタフェースを終了するかどうか？</string>
+    <string name="rc_yes">はい</string>
+    <string name="rc_called_not_accept">相手は答えなかった</string>
+    <string name="rc_called_accept">相手方は通話要求を受け入れた</string>
+    <string name="rc_plugins_voip">音声通話</string>
+    <string name="rc_read_all">全部読む</string>
+
+    <string name="rc_voip_cpu_error">申し訳ありませんが、この機能はモデルでは一時的にサポートされていません</string>
+
+    <string name="rc_cs_evaluate_human">今回のサービスにコメントしてください</string>
+    <string name="rc_cs_evaluate_robot">ロボットがあなたの問題を解決しましたか？</string>
+    <string name="rc_cs_submit">提出する</string>
+    <string name="rc_cs_cancel">取り消す</string>
+
+    <!-- LargePictureActivity -->
+    <string name="rc_save_picture">画像を保存</string>
+    <string name="rc_save_picture_at">画像を%sに保存する</string>
+    <string name="rc_src_file_not_found">元のファイルは存在しません</string>
+
+    <string name="rc_blacklist_prompt">あなたはブラックリストに載っています</string>
+    <string name="rc_cs_select_group">ご相談内容を選択してください</string>
+    <string name="rc_search">検索</string>
+    <string name="rc_choose_members">連絡先を選択</string>
+
+    <string name="rc_ac_file_download_preview">ファイルのプレビュー</string>
+    <string name="rc_ac_file_manager_category_title">カテゴリで探す</string>
+    <string name="rc_ac_file_manager_category_file">ドキュメント</string>
+    <string name="rc_ac_file_manager_category_video">ビデオ</string>
+    <string name="rc_ac_file_manager_category_audio">オーディオ</string>
+    <string name="rc_ac_file_manager_category_picture">その他</string>
+    <string name="rc_ac_file_manager_dir_title">ディレクトリで検索</string>
+    <string name="rc_ac_file_manager_mobile_memory">電話機のメモリ</string>
+    <string name="rc_ac_file_manager_SD_card">SDカード</string>
+    <string name="rc_ac_file_manager_SD_card_one">SDカード1</string>
+    <string name="rc_ac_file_manager_SD_card_two">SDカード2</string>
+    <string name="rc_fr_storage_folder_list_search">検索</string>
+    <string name="rc_fr_storage_folder_list_no_files">%1$sの中のファイルを読み取れません</string>
+    <string name="rc_ad_folder_files_number">%1$sファイル</string>
+    <string name="rc_ad_folder_no_files">空のフォルダ</string>
+    <string name="rc_ad_file_size">サイズ:%1$s</string>
+    <string name="rc_ac_file_download_btn">ダウンロードを開始する</string>
+    <string name="rc_ac_file_download_progress_tv">ダウンロード中...(%1$s/%2$s)</string>
+    <string name="rc_ac_file_download_open_file_btn">他のアプリで開く</string>
+    <string name="rc_ac_file_send_preview">ファイルを送信する</string>
+    <string name="rc_ad_send_file_no_select_file">発送</string>
+    <string name="rc_ad_send_file_select_file">発送(%1$s/20)</string>
+    <string name="rc_fr_no_file_message">%1$sファイルがない</string>
+    <string name="rc_fr_loading_file_message">読み込み中...</string>
+    <string name="rc_fr_file_category_title_text">テキスト</string>
+    <string name="rc_fr_file_category_title_video">ビデオ</string>
+    <string name="rc_fr_file_category_title_audio">オーディオ</string>
+    <string name="rc_fr_file_category_title_other">その他</string>
+    <string name="rc_fr_file_category_title_sd">SDカード</string>
+    <string name="rc_fr_file_category_title_ram">電話機のメモリ</string>
+    <string name="rc_ac_file_preview_can_not_open_file">ファイルを開くことができません</string>
+    <string name="rc_ac_file_preview_begin_download">ダウンロードを開始する</string>
+    <string name="rc_ac_file_preview_downloaded">ダウンロードをしました</string>
+    <string name="rc_ac_file_preview_download_error">ダウンロードを失敗した</string>
+    <string name="rc_ac_file_preview_download_cancel">キャンセルされたダウンロード</string>
+    <string name="rc_ac_file_preview_deleted">ファイルが期限切れになったか、またはクリアされました</string>
+    <string name="rc_fr_file_list_most_selected_files">最大20のファイルのみを選択できます</string>
+    <string name="rc_ac_file_download_request_permission">設定で読み取りと書き込みの権限を開く必要があります</string>
+    <string name="rc_ac_file_download_request_permission_sure">確定</string>
+    <string name="rc_ac_file_download_request_permission_cancel">取り消す</string>
+    <string name="rc_read_receipt_status">%d人が読んでいます</string>
+
+    <string name="rc_item_quit_groups">グループを退出する</string>
+    <string name="rc_item_dismiss_groups">グループを解散する</string>
+    <string name="rc_item_join_group">グループを加入する</string>
+    <string name="rc_item_to_join_group">グループを加入する</string>
+
+    <string name="rc_item_remove_group_before_str">将</string>
+    <string name="rc_item_remove_group_after_str">グループを除去する</string>
+    <string name="rc_item_create_group">グループを作成する</string>
+    <string name="rc_item_created_group">%1$sさんがグループを作成しました</string>
+    <string name="rc_item_invitation">%1$sは%2$sが招待してグループに参加する</string>
+    <string name="rc_item_etc">等</string>
+    <string name="rc_item_remove_group_member">%1$sはグループから%2$sを取り除いた</string>
+    <string name="rc_item_remove_self">%1$sは%2$sによって除去された</string>
+    <string name="rc_item_change_group_name">%1$sさんはグループ名を%2$sに変更しました</string>
+    <string name="rc_item_you">あなた</string>
+    <string name="rc_item_divided_string">、</string>
+    <string name="rc_item_group_notification_summary">[グループ通知]</string>
+
+
+    <string name="rc_android.permission.CAMERA">カメラ</string>
+    <string name="rc_android.permission.ACCESS_FINE_LOCATION">位置情報</string>
+    <string name="rc_android.permission.ACCESS_COARSE_LOCATION">位置情報</string>
+    <string name="rc_android.permission.RECORD_AUDIO">マイク</string>
+    <string name="rc_android.permission.READ_EXTERNAL_STORAGE">保管スペース</string>
+    <string name="rc_android.permission.WRITE_EXTERNAL_STORAGE">保管スペース</string>
+
+    <string name="rc_real_time_location_summary">私は位置共有を開始した</string>
+    <string name="rc_real_time_location_sharing">位置共有を開始した</string>
+    <string name="rc_dialog_button_clear">クリア</string>
+
+    <string name="rc_user_recalled_message">%sさんがメッセージを撤回しました</string>
+
+    <string name="rc_cs_evaluate">レビュー</string>
+    <string name="rc_cs_evaluate_title">今回はサービスを評価してください</string>
+    <string name="rc_cs_very_satisfactory">非常に満足</string>
+    <string name="rc_cs_satisfactory">満足</string>
+    <string name="rc_cs_average">一般的</string>
+    <string name="rc_cs_unsatisfactory">不満足</string>
+    <string name="rc_cs_very_unsatisfactory">非常に不満</string>
+    <string name="rc_cs_resolved_or_not">あなたの問題を解決しましたか？</string>
+    <string name="rc_cs_submit_evaluate_content">レビューを提出する</string>
+    <string name="rc_cs_please_comment">私たちのサービスに提案してようこそ~</string>
+    <string name="rc_cs_please_leave_message">メッセージを残してください、私たちはできるだけ早くあなたに返信します。</string>
+    <string name="rc_cs_leave_message">メッセージ</string>
+    <string name="rc_cs_submit_message">メッセージを提出する</string>
+    <string name="rc_cs_message_submited">メッセージが送信されました</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rc_action_bar_back">戻る</string>
+    <string name="rc_action_bar_ok">確定</string>
+
+    <string name="rc_plugin_location">位置</string>
+    <string name="rc_plugin_image">画像</string>
+    <string name="rc_plugin_location_message">位置を送ります</string>
+    <string name="rc_plugin_location_sharing">リアルタイムの位置を共有する</string>
+    <string name="rc_audio_input">押すとお話できます</string>
+    <string name="rc_audio_input_hover">離すとそれが送り出されます</string>
+    <string name="rc_ext_send">発送</string>
+    <string name="rc_ext_exit_location_sharing_confirm">共有を終了</string>
+    <string name="rc_ext_cancel">取り消す</string>
+    <string name="rc_location_fetching">取得中&#8230;&#8230;</string>
+    <string name="rc_location_fail">位置決め失敗</string>
+    <string name="rc_location_sharing_exceed_max">最大位置共有人数を超えます</string>
+    <string name="rc_you_are_sharing_location">あなたが位置を共有しています</string>
+    <string name="rc_other_is_sharing_location">%s位置を共有しています</string>
+    <string name="rc_others_are_sharing_location">%dただ今位置を共有している人数</string>
+    <string name="rc_real_time_join_notification">位置共有を加入すると，チャット中の他の人もあなたの位置を見えます。加入を確定します</string>
+    <string name="rc_ext_warning">ヒント</string>
+    <string name="rc_ext_exit_location_sharing">位置共有を終了しますか</string>
+    <string name="rc_real_time_exit_notification">会話を終了すると位置共有も終わりになります，終了を確定します</string>
+
+    <string name="rc_ext_location_permission_failed">設定の中の位置のアクセス許可が必要です</string>
+
+    <!-- PictureSelectorActivity -->
+    <string name="rc_picsel_toolbar">画像</string>
+    <string name="rc_picsel_toolbar_send">発送</string>
+    <string name="rc_picsel_toolbar_send_num">発送(%d/9)</string>
+    <string name="rc_picsel_pictype">画像</string>
+    <string name="rc_picsel_toolbar_preview">プレビュー</string>
+    <string name="rc_picsel_toolbar_preview_num">プレビュー(%d)</string>
+    <string name="rc_picsel_selected_max">画像が最大9枚まで選択できます</string>
+    <string name="rc_picsel_take_picture">写真を撮る</string>
+    <string name="rc_picsel_catalog_allpic">全ての画像</string>
+    <string name="rc_picsel_catalog_number">%d枚数</string>
+
+    <!-- PicturePreviewActivity -->
+    <string name="rc_picprev_origin">元画像</string>
+    <string name="rc_picprev_origin_size">元画像(%s)</string>
+    <string name="rc_picprev_select">選択</string>
+
+    <string name="rc_network_exception">ネットの異常で後ほどやり直してください</string>
+    <string name="rc_permission_grant_needed">設定の中のアクセス許可が必要です</string>
+    <string name="rc_permission_microphone">（マイク）</string>
+    <string name="rc_permission_microphone_and_camera">（マイク、カメラ）</string>
+    <string name="rc_permission_camera">（カメラ）</string>
+    <string name="rc_android.settings.action.MANAGE_OVERLAY_PERMISSION">フローティングウィンドウ</string>
+
+    <string name="rc_confirm">確認する</string>
+    <string name="rc_cancel">取り消す</string>
+</resources>

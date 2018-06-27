@@ -23,4 +23,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/MiPush_SDK_Client_3_2_2.jar')
+    compile files('libs/AMap_Channel_Location_V1.4.0_20160708.jar')
 }
