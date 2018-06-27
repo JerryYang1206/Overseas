@@ -24,13 +24,16 @@
             android:textColor="@color/white"
             android:textSize="18sp" />
 
-        <ImageView
-            android:id="@+id/activity_chat_phone"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <CheckBox
+            android:background="@drawable/chat_collection"
+            android:button="@null"
+            android:id="@+id/activity_chat_star"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:layout_alignParentRight="true"
-            android:padding="15dp"
-             />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            />
     </RelativeLayout>
 
     <fragment

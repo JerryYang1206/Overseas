@@ -87,7 +87,7 @@ public class LoginBean {
         private Object period;
         private Object counts;
         private String pic;
-        private Object nickname;
+        private String nickname;
         private String sex;
         private Object wechatId;
         private long caeateTime;
@@ -197,11 +197,11 @@ public class LoginBean {
             this.pic = pic;
         }
 
-        public Object getNickname() {
+        public String getNickname() {
             return nickname;
         }
 
-        public void setNickname(Object nickname) {
+        public void setNickname(String nickname) {
             this.nickname = nickname;
         }
 

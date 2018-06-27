@@ -25,13 +25,20 @@ import com.overseas.overseas.MainActivity;
 import com.overseas.overseas.R;
 import com.overseas.overseas.bean.LoginBean;
 import com.overseas.overseas.callback.DialogCallback;
+import com.overseas.overseas.im.RcConnect;
+import com.overseas.overseas.utils.CacheUtils;
+import com.overseas.overseas.utils.Constants;
 import com.overseas.overseas.utils.MyUrls;
 import com.overseas.overseas.utils.MyUtils;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
 
+import java.util.HashMap;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
 
 public class LoginActivity extends BaseActivity {
 
@@ -159,15 +166,12 @@ public class LoginActivity extends BaseActivity {
                                     SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("token",loginBean.getDatas().getToken()+"");
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
-//                                    RcConnect.rongCloudConection(loginBean.getDatas().getRongCloudToken());
-//
-//                                    CacheUtils.put(Constants.USERINFO, loginBean.getDatas());
-//                                    HashMap<String, Boolean> hm = new HashMap<>();
-//                                    //会话类型 以及是否聚合显示
-//                                    hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
-//                                    //        hashMap.put(Conversation.ConversationType.PUSH_SERVICE.getName(),true);
-//                                    //        hashMap.put(Conversation.ConversationType.SYSTEM.getName(),true);
-//                                    RongIM.getInstance().startConversationList(LoginActivity.this, hm);
+                                    RcConnect.rongCloudConection(loginBean.getDatas().getRongCloudToken());
+
+                                    CacheUtils.put(Constants.USERINFO, loginBean.getDatas());
+                                    HashMap<String, Boolean> hm = new HashMap<>();
+                                    hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
+                                    RongIM.getInstance().startConversationList(LoginActivity.this, hm);
                                     finish();
                                 }else if (loginBean.getCode().equals("-1")){
                                     Toast.makeText(LoginActivity.this, "登陆失败", Toast.LENGTH_SHORT).show();

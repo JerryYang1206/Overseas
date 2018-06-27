@@ -3,6 +3,8 @@ package com.overseas.overseas;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.multidex.MultiDex;
 import android.util.Log;
@@ -16,14 +18,17 @@ import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
+import com.overseas.overseas.bean.LoginBean;
 import com.overseas.overseas.utils.CacheUtils;
 import com.overseas.overseas.utils.Constants;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.UserInfo;
 import okhttp3.OkHttpClient;
 
@@ -49,26 +54,26 @@ public class MyApplication extends Application {
         RongIM.init(this);
         RongIM.getInstance().setMessageAttachedUserInfo(true);
 
-//        final LoginBean.DatasBean bean = CacheUtils.get(Constants.USERINFO);
-//
-//        if (bean != null && bean.getRongCloudToken() != null) {
-//            RongIM.connect(bean.getRongCloudToken(), new RongIMClient.ConnectCallback() {
-//                @Override
-//                public void onSuccess(String s) {
-//                    RongIM.getInstance().setCurrentUserInfo(new UserInfo(bean.getId() + "", bean.getNickname(), Uri.parse(bean.getPic())));
-//                }
-//
-//                @Override
-//                public void onError(RongIMClient.ErrorCode errorCode) {
-//                }
-//
-//                @Override
-//                public void onTokenIncorrect() {
-//                    //Connect Token 失效的状态处理，需要重新获取 Token
-//                }
-//            });
-//        }
-//
+        final LoginBean.DatasBean bean = CacheUtils.get(Constants.USERINFO);
+
+        if (bean != null && bean.getRongCloudToken() != null) {
+            RongIM.connect(bean.getRongCloudToken(), new RongIMClient.ConnectCallback() {
+                @Override
+                public void onSuccess(String s) {
+                    RongIM.getInstance().setCurrentUserInfo(new UserInfo(bean.getId() + "", bean.getNickname(), Uri.parse(bean.getPic())));
+                }
+
+                @Override
+                public void onError(RongIMClient.ErrorCode errorCode) {
+                }
+
+                @Override
+                public void onTokenIncorrect() {
+                    //Connect Token 失效的状态处理，需要重新获取 Token
+                }
+            });
+        }
+
 //        setMyExtensionModule();
     }
 
@@ -152,5 +157,85 @@ public class MyApplication extends Application {
         return application.getApplicationContext();
     }
 
+    public static String getUserToken(){
+        LoginBean.DatasBean datasBean = CacheUtils.get(Constants.USERINFO);
+        if (datasBean != null) {
+            return datasBean.getToken();
+        }
+        return null;
+    }
+
+    public static String getUserId(Context context){
+        LoginBean.DatasBean datasBean = CacheUtils.get(Constants.USERINFO);
+        if (datasBean != null) {
+            return datasBean.getId() + "";
+        }
+        return "";
+    }
+
+    public static boolean isLogin(){
+        LoginBean.DatasBean datasBean = CacheUtils.get(Constants.USERINFO);
+        if (datasBean == null) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isNetworkAvailable() {
+        ConnectivityManager connectivity = (ConnectivityManager)
+                application.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo info = connectivity.getActiveNetworkInfo();
+            if (info != null && info.isConnected()) {
+                if (info.getState() == NetworkInfo.State.CONNECTED) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static void logOut(){
+        String language = CacheUtils.get(Constants.COUNTRY);
+
+        String setting = "";
+        if (CacheUtils.get(Constants.MANAGER_T) == null) {
+            setting = "1";
+        } else {
+            setting = CacheUtils.get(Constants.MANAGER_T);
+        }
+
+        CacheUtils.removeAll();
+        CacheUtils.put(Constants.COUNTRY, language);
+        CacheUtils.put(Constants.MANAGER_T, setting);
+
+        if (RongIM.getInstance() != null) {
+
+            List<Conversation> conversationList = RongIM.getInstance().getRongIMClient().getConversationList();
+
+            if (conversationList != null && conversationList.size() > 0) {
+
+                for (Conversation c : conversationList) {
+
+                    RongIM.getInstance().getRongIMClient().removeConversation(c.getConversationType(), c.getTargetId());
+
+                }
+                Log.e("=============>>", "清除成功");
+            }
+
+            RongIM.getInstance().clearConversations(new RongIMClient.ResultCallback() {
+                @Override
+                public void onSuccess(Object o) {
+
+                }
+
+                @Override
+                public void onError(RongIMClient.ErrorCode errorCode) {
+
+                }
+            }, Conversation.ConversationType.PRIVATE);
+            RongIM.getInstance().logout();
+        }
+    }
 }
 

@@ -44,16 +44,6 @@ public class WeiChartFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-    if (mList.size()<=0){
-        mList.add("");
-        mList.add("");
-        mList.add("");
-        mList.add("");
-        mList.add("");
-        mList.add("");
-        mList.add("");
-        mList.add("");
-    }
 //        mrecycler.setNestedScrollingEnabled(false);
 //        mrecycler.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
 //        liebiaoAdapter = new LiebiaoAdapter(R.layout.weiliao_item,mList);
