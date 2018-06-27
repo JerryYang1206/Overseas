@@ -195,6 +195,7 @@ public class RegisterActivity extends BaseActivity {
         }
         params.put("phone", "00"+quhao+edtPhoneNumber.getText().toString());
         params.put("sendType",QuNumber);
+        params.put("vPhone",edtPhoneNumber.getText().toString());
         OkGo.<SuccessBean>post(MyUrls.BASEURL + "/send/msg/sendmsg")
                 .tag(this)
                 .params(params)

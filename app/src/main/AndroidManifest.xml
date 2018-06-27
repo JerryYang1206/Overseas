@@ -113,6 +113,7 @@
 
     <!-- //使用步行AR导航，配置Camera权限 -->
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/flc_logo"
         android:label="@string/app_name"
