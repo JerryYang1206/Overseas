@@ -30,7 +30,7 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:padding="15dp"
-            android:src="@drawable/chat_phone" />
+             />
     </RelativeLayout>
 
     <fragment

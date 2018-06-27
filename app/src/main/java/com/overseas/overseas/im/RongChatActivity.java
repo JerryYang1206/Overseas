@@ -53,7 +53,7 @@ public class RongChatActivity extends BaseActivity {
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImManager.sendImgAndText(targetId);
+//                ImManager.sendImgAndText(targetId);
 //                RongCallClient.getInstance().startCall(Conversation.ConversationType.PRIVATE, targetId, null, RongCallCommon.CallMediaType.AUDIO, "");
             }
         });
@@ -72,7 +72,7 @@ public class RongChatActivity extends BaseActivity {
             }
             if (defaultModule != null) {
                 RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
-                RongExtensionManager.getInstance().registerExtensionModule(new ImageExtensionModule());
+//                RongExtensionManager.getInstance().registerExtensionModule(new ImageExtensionModule());
             }
         }
         super.finish();

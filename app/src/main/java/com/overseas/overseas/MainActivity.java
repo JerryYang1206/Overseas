@@ -12,18 +12,14 @@ import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseFragment;
 import com.overseas.overseas.fragment.MineFragment;
 import com.overseas.overseas.fragment.WeiChartFragment;
-import com.overseas.overseas.im.ImManager;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.rong.imkit.RongIM;
-import io.rong.imlib.model.Conversation;
 
 public class MainActivity extends BaseActivity {
 

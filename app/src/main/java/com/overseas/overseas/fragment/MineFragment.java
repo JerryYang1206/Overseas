@@ -5,12 +5,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseFragment;
-import com.overseas.overseas.im.MyExtensionModule;
 import com.overseas.overseas.mine.LiShiActivity;
-import com.overseas.overseas.mine.LianxirenActivity;
 import com.overseas.overseas.mine.MyDataActivity;
 import com.overseas.overseas.mine.PingJiaActivity;
 import com.overseas.overseas.mine.SettingActivity;
@@ -124,7 +121,7 @@ public class MineFragment extends BaseFragment {
             }
             if (defaultModule != null) {
                 RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
-                RongExtensionManager.getInstance().registerExtensionModule(new MyExtensionModule());
+//                RongExtensionManager.getInstance().registerExtensionModule(new MyExtensionModule());
             }
         }
     }
