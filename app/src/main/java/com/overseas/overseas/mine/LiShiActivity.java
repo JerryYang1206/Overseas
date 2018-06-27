@@ -46,7 +46,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
 
     private List<View> popupViews = new ArrayList<>();
     private SwipeMenuRecyclerView mrecycler;
-    private List<String> mList=new ArrayList();
+    private List<String> mList = new ArrayList();
     private LiebiaoAdapter liebiaoAdapter;
 
     @Override
@@ -58,12 +58,14 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
         initView();
 
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void myEvent(CloseSelectBean messageEvent) {
         if (messageEvent.getClose().equals("close")) {
             mDropDownMenu.closeMenu();
         }
     }
+
     private void initView() {
         String headers[] = {getResources().getString(R.string.leixing), getResources().getString(R.string.shijian)};
 
@@ -88,17 +90,18 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
         mDropDownMenu.setDropDownMenu(Arrays.asList(headers), popupViews, fifthView);
         initData();
     }
+
     private void initData() {
-        if (mList.size()<=0){
+        if (mList.size() <= 0) {
             mList.add("");
             mList.add("");
             mList.add("");
             mList.add("");
             mList.add("");
         }
-        liebiaoAdapter = new LiebiaoAdapter(R.layout.item_zuijin,mList);
+        liebiaoAdapter = new LiebiaoAdapter(R.layout.item_zuijin, mList);
         mrecycler.setNestedScrollingEnabled(false);
-        mrecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        mrecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         // 设置监听器。
         mrecycler.setSwipeMenuCreator(mSwipeMenuCreator);
@@ -106,7 +109,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
         mrecycler.setSwipeMenuItemClickListener(new SwipeMenuItemClickListener() {
             @Override
             public void onItemClick(SwipeMenuBridge menuBridge) {
-                mList.remove( menuBridge.getAdapterPosition());
+                mList.remove(menuBridge.getAdapterPosition());
                 menuBridge.closeMenu();
                 liebiaoAdapter.notifyDataSetChanged();
 
@@ -120,8 +123,8 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
     SwipeMenuCreator mSwipeMenuCreator = new SwipeMenuCreator() {
         @Override
         public void onCreateMenu(SwipeMenu leftMenu, SwipeMenu rightMenu, int viewType) {
-//            SwipeMenuItem deleteItem = new SwipeMenuItem(mContext); // 各种文字和图标属性设置。
-//            leftMenu.addMenuItem(deleteItem); // 在Item左侧添加一个菜单。
+            //            SwipeMenuItem deleteItem = new SwipeMenuItem(mContext); // 各种文字和图标属性设置。
+            //            leftMenu.addMenuItem(deleteItem); // 在Item左侧添加一个菜单。
             SwipeMenuItem deleteItem = new SwipeMenuItem(LiShiActivity.this); // 各种文字和图标属性设置。
             deleteItem.setWeight(100);
             deleteItem.setHeight(380);
@@ -135,49 +138,49 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
     };
 
 
-
     class LiebiaoAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         public LiebiaoAdapter(@LayoutRes int layoutResId, @Nullable List<String> data) {
-            super(layoutResId,data);
+            super(layoutResId, data);
         }
 
         @Override
-        protected void convert(BaseViewHolder helper,String item) {
+        protected void convert(BaseViewHolder helper, String item) {
             LinearLayout layout_all_height = helper.getView(R.id.layout_all_height);
             layout_all_height.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     String leixing = SharedPreferencesUtils.getInstace(LiShiActivity.this).getStringPreference("leixing", "");
-                    if (leixing.equals("二手房")){
-                        Intent intent=new Intent(LiShiActivity.this,LishiOldHouseActivity.class);
+                    if (leixing.equals("二手房")) {
+                        Intent intent = new Intent(LiShiActivity.this, LishiOldHouseActivity.class);
                         startActivity(intent);
                         return;
-                    }else if (leixing.equals("租房")){
-                        Intent intent=new Intent(LiShiActivity.this,LishiZuHouseActivity.class);
+                    } else if (leixing.equals("租房")) {
+                        Intent intent = new Intent(LiShiActivity.this, LishiZuHouseActivity.class);
                         startActivity(intent);
                         return;
-                    }else if (leixing.equals("新房")){
-                        Intent intent=new Intent(LiShiActivity.this,LishiNewHouseActivity.class);
+                    } else if (leixing.equals("新房")) {
+                        Intent intent = new Intent(LiShiActivity.this, LishiNewHouseActivity.class);
                         startActivity(intent);
                         return;
-                    }else if (leixing.equals("海外地产")){
-                        Intent intent=new Intent(LiShiActivity.this,LishiHaiwaiActivity.class);
+                    } else if (leixing.equals("海外地产")) {
+                        Intent intent = new Intent(LiShiActivity.this, LishiHaiwaiActivity.class);
                         startActivity(intent);
                         return;
-                    }else if (leixing.equals("商业地产")){
-                        Intent intent=new Intent(LiShiActivity.this,LishiShangyeActivity.class);
+                    } else if (leixing.equals("商业地产")) {
+                        Intent intent = new Intent(LiShiActivity.this, LishiShangyeActivity.class);
                         startActivity(intent);
                         return;
-                    }else if (leixing.equals("中国房源")){
-                        Intent intent=new Intent(LiShiActivity.this,LishiZhongGuoActivity.class);
+                    } else if (leixing.equals("中国房源")) {
+                        Intent intent = new Intent(LiShiActivity.this, LishiZhongGuoActivity.class);
                         startActivity(intent);
-                    return;
+                        return;
                     }
                 }
             });
         }
     }
+
     @Override
     public void onBackPressed() {
         //退出activity前关闭菜单
@@ -187,9 +190,10 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener {
             super.onBackPressed();
         }
     }
+
     @Override
     public void onItemClick(View view, int postion, String string) {
-        switch (postion){
+        switch (postion) {
             case 1:
                 mDropDownMenu.setTabText(string);
                 mDropDownMenu.closeMenu();

@@ -1,7 +1,6 @@
 package com.overseas.overseas.mine;
 
 import android.content.Intent;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -13,26 +12,13 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baidu.location.LocationClient;
-import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.map.BaiduMap;
-import com.baidu.mapapi.map.MapPoi;
-import com.baidu.mapapi.map.MapStatus;
-import com.baidu.mapapi.map.MapStatusUpdateFactory;
-import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.MyLocationData;
-import com.baidu.mapapi.map.UiSettings;
-import com.baidu.mapapi.model.LatLng;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
-import com.overseas.overseas.map.MapActivity;
-import com.overseas.overseas.map.MyLocationListenner;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
@@ -60,16 +46,6 @@ public class LishiNewHouseActivity extends BaseActivity {
     ImageView imgStart;
     @BindView(R.id.tv_See_More)
     TextView tvSeeMore;
-    @BindView(R.id.bmapView)
-    MapView mapView;
-    @BindView(R.id.shop_layout)
-    LinearLayout shop_layout;
-    @BindView(R.id.school_layout)
-    LinearLayout school_layout;
-    @BindView(R.id.youeryuan_layout)
-    LinearLayout youeryuan_layout;
-    @BindView(R.id.yiyuan_layout)
-    LinearLayout yiyuan_layout;
     private LiebiaoAdapter mLiebiaoAdapter;
     private List<String> mList = new ArrayList();
     private List<Fragment> mBaseFragmentList = new ArrayList<>();
@@ -164,15 +140,15 @@ public class LishiNewHouseActivity extends BaseActivity {
     }
 
     private void initViewPager() {
-        if (mBaseFragmentList.size() <= 0) {
+        if (mBaseFragmentList.size()<=0){
             mBaseFragmentList.add(new VidioFragment());
             mBaseFragmentList.add(new BannerFragment());
             mBaseFragmentList.add(new BannerFragment());
             mBaseFragmentList.add(new BannerFragment());
         }
-        tvAllNum.setText(mBaseFragmentList.size() + "");
+        tvAllNum.setText(mBaseFragmentList.size()+"");
         fm = getSupportFragmentManager();
-        myAdapter = new MyAdapter(fm);
+        myAdapter=new MyAdapter(fm);
         vpVidio.setAdapter(myAdapter);
         vpVidio.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -183,7 +159,7 @@ public class LishiNewHouseActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 tvToNum.setText((position + 1) + "");
-                if (position == 1) {
+                if (position==1){
                     JZVideoPlayer.releaseAllVideos();
                 }
             }
@@ -208,7 +184,6 @@ public class LishiNewHouseActivity extends BaseActivity {
         super.onPause();
         JZVideoPlayer.releaseAllVideos();
     }
-
     private void initData() {
         if (mList.size() <= 0) {
             mList.add("");

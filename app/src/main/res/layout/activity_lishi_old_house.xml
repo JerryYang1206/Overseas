@@ -129,22 +129,6 @@
                     android:layout_width="0dip"
                     android:layout_weight="1"
                     android:layout_height="match_parent" />
-                <TextView
-                    android:id="@+id/tv_See_More"
-                    android:layout_marginRight="5dip"
-                    android:paddingLeft="15dip"
-                    android:gravity="center_vertical"
-                    android:textSize="15sp"
-                    android:textColor="#888"
-                    android:text="@string/activity_details_seemore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
-                <ImageView
-                    android:layout_marginRight="10dip"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/gengduo"
-                    android:layout_width="15dip"
-                    android:layout_height="15dip" />
             </LinearLayout>
             <LinearLayout
                 android:background="#fff"
@@ -193,6 +177,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
             </LinearLayout>
+
+            <TextView
+                android:layout_marginLeft="15dip"
+                android:background="#fff6f2"
+                android:id="@+id/tv_See_More"
+                android:layout_width="match_parent"
+                android:layout_height="45dip"
+                android:layout_marginRight="15dip"
+                android:gravity="center"
+                android:paddingLeft="15dip"
+                android:text="@string/see_more"
+                android:textColor="@color/shihuangse"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp" />
+
             <View
                 android:layout_marginRight="15dip"
                 android:layout_marginLeft="15dip"
