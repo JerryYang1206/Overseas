@@ -14,6 +14,7 @@ import com.overseas.overseas.bean.NoDataBean;
 import com.overseas.overseas.callback.DialogCallback;
 import com.overseas.overseas.callback.JsonCallback;
 import com.overseas.overseas.utils.MyUrls;
+import com.overseas.overseas.utils.SharedPreferencesUtils;
 
 /**
  * Created by Administrator on 2018/6/27.
@@ -54,11 +55,12 @@ public class HistroyPresenter {
     /*删除历史记录*/
     public void deteleHouseRecord(int hId, int hType, int shType) {
         HttpParams params = new HttpParams();
-        params.put("token", MyApplication.getUserToken());
         params.put("hType", hType);
         params.put("hId", hId);
-        params.put("shType", shType);
-        OkGo.<NoDataBean>post(MyUrls.BASEURL + "/app/seehouselog/deletekflog")
+        if (shType != 100)
+            params.put("shType", shType);
+        params.put("brokerId", SharedPreferencesUtils.getInstace(activity).getStringPreference("brokerId", ""));
+        OkGo.<NoDataBean>post(MyUrls.BASEURL + "/app/indent/deletehistoryindent")
                 .tag(this)
                 .params(params)
                 .execute(new JsonCallback<NoDataBean>(NoDataBean.class) {

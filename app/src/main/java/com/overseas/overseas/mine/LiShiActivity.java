@@ -95,7 +95,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
     }
 
     private void initView() {
-        headers= new String[]{getResources().getString(R.string.leixing), getResources().getString(R.string.shijian)};
+        headers = new String[]{getResources().getString(R.string.leixing), getResources().getString(R.string.shijian)};
         /**
          * 第一个界面
          * */
@@ -169,7 +169,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
         tvNoContent.setVisibility(View.GONE);
         springview.setVisibility(View.VISIBLE);
         if (mDatas == null || mDatas.size() == 0) {
-            if (mDatas == null || mDatas.size() == 0) {
+            if (datas == null || datas.size() == 0) {
                 tvNoContent.setVisibility(View.VISIBLE);
                 springview.setVisibility(View.GONE);
                 if (liebiaoAdapter != null) {
@@ -181,7 +181,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
             liebiaoAdapter = new LiebiaoAdapter(R.layout.item_zuijin, mDatas);
             mrecycler.setAdapter(liebiaoAdapter);
         } else {
-            if (mDatas == null || mDatas.size() == 0) {
+            if (datas == null || datas.size() == 0) {
                 TUtils.showFail(this, getString(R.string.meiyougengduoshujule));
                 return;
             }
@@ -197,8 +197,12 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
         mrecycler.setSwipeMenuItemClickListener(new SwipeMenuItemClickListener() {
             @Override
             public void onItemClick(SwipeMenuBridge menuBridge) {
-                presenter.deteleHouseRecord(mDatas.get(menuBridge.getPosition()).getId(), typeId,
-                        Integer.parseInt(mDatas.get(menuBridge.getPosition()).getShType()));
+                String shType = mDatas.get(menuBridge.getPosition()).getShType();
+                if (TextUtils.isEmpty(shType)) {
+                    presenter.deteleHouseRecord(mDatas.get(menuBridge.getPosition()).getId(), typeId, 100);
+                }else {
+                    presenter.deteleHouseRecord(mDatas.get(menuBridge.getPosition()).getId(), typeId, Integer.parseInt(shType));
+                }
                 mDatas.remove(menuBridge.getAdapterPosition());
                 menuBridge.closeMenu();
                 liebiaoAdapter.notifyDataSetChanged();
@@ -274,9 +278,9 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
                             intent.putExtra("houseId", houseId + "");
                             startActivity(intent);
                         } else if (TextUtils.equals(ShType, "3")) { //商铺
-//                            Intent intent = new Intent(LiShiActivity.this, ShangpuDetailsActivity.class);
-//                            intent.putExtra("houseId", houseId + "");
-//                            startActivity(intent);
+                            //                            Intent intent = new Intent(LiShiActivity.this, ShangpuDetailsActivity.class);
+                            //                            intent.putExtra("houseId", houseId + "");
+                            //                            startActivity(intent);
                         }
                     } else if (TextUtils.equals(hType, "6")) { //中国房源
                         Intent intent = new Intent(LiShiActivity.this, LishiZhongGuoActivity.class);

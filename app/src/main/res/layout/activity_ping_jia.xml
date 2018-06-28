@@ -34,7 +34,7 @@
         android:id="@+id/springview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/huise">
+        >
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_liebiao"
             android:layout_width="match_parent"
