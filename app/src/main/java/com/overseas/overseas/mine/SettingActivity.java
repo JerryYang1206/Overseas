@@ -99,6 +99,9 @@ public class SettingActivity extends BaseActivity {
         btnclear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferencesUtils.getInstace(SettingActivity.this).setStringPreference("uid","");
+                SharedPreferencesUtils.getInstace(SettingActivity.this).setStringPreference("token","");
+                SharedPreferencesUtils.getInstace(SettingActivity.this).setStringPreference("brokerId","");
                 MyApplication.logOut();
                 removeAllActivitys();
                 startActivity(new Intent(SettingActivity.this, LoginActivity.class));

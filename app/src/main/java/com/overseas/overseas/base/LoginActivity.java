@@ -159,7 +159,7 @@ public class LoginActivity extends BaseActivity {
                                 if (loginBean.getCode().equals("200")){
                                     SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("uid",loginBean.getDatas().getId()+"");
                                     SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("token",loginBean.getDatas().getToken()+"");
-                                    SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("brokerId",loginBean.getDatas().getBrokerId()+"");
+                                    SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("brokerId",loginBean.getDatas().getId()+"");
                                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
                                     RcConnect.rongCloudConection(loginBean.getDatas().getRongCloudToken());
                                     CacheUtils.put(Constants.USERINFO, loginBean.getDatas());

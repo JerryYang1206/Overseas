@@ -27,14 +27,6 @@
                 android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_refresh_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dip"
-                    android:background="#f5f5f5"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dip"
-                    />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/Mrecycler"

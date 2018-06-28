@@ -93,8 +93,8 @@ public class ManagerActivity extends BaseActivity {
     }
 
     private void initManager() {
-
         String brokerId = getIntent().getStringExtra("brokerId");
+        Log.d("ManagerActivity", brokerId+"-----------");
         HttpParams params = new HttpParams();
         params.put("brokerId", brokerId);
         OkGo.<ManagerBean>post(MyUrls.BASEURL + "/app/broker/getbrokerinfo")
@@ -116,7 +116,6 @@ public class ManagerActivity extends BaseActivity {
                         if (datas.getBrokerinfo()==null){
                             return;
                         }
-
 
                         avgStar = datas.getBrokerinfo().getAvgStar();
                         if (code1.equals("200")) {
