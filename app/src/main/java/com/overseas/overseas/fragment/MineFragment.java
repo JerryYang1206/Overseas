@@ -12,6 +12,7 @@ import com.overseas.overseas.mine.ManagerActivity;
 import com.overseas.overseas.mine.MyDataActivity;
 import com.overseas.overseas.mine.PingJiaActivity;
 import com.overseas.overseas.mine.SettingActivity;
+import com.overseas.overseas.utils.SharedPreferencesUtils;
 import com.overseas.overseas.view.CircleImageView;
 
 import java.util.List;
@@ -106,7 +107,10 @@ public class MineFragment extends BaseFragment {
                 startActivity(intent4);
                 break;
             case R.id.Manager_Layout:
+                String brokerId = SharedPreferencesUtils.getInstace(mContext).getStringPreference("brokerId", "");
+
                 Intent intent5 = new Intent(mContext, ManagerActivity.class);
+                intent5.putExtra("brokerId",brokerId);
                 startActivity(intent5);
                 break;
         }

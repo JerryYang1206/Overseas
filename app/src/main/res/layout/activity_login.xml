@@ -87,6 +87,7 @@
                 android:layout_width="25dip"
                 android:layout_height="25dip" />
             <EditText
+                android:inputType="textPassword"
                 android:background="@null"
                 android:id="@+id/edt_password"
                 android:paddingLeft="15dip"

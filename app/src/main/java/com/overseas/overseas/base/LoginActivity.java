@@ -50,8 +50,6 @@ public class LoginActivity extends BaseActivity {
     EditText edtPhoneNumber;
     @BindView(R.id.edt_password)
     EditText edtPassword;
-    @BindView(R.id.edt_code)
-    EditText edtCode;
     @BindView(R.id.btn_login)
     Button btnLogin;
     @BindView(R.id.tv_show_pop)
@@ -63,6 +61,13 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        String token = SharedPreferencesUtils.getInstace(mContext).getStringPreference("token", "");
+        if (token.equals("")){
+
+        }else {
+            startActivity(new Intent(mContext,MainActivity.class));
+            finish();
+        }
         boolean ja = MyUtils.isJa(this);
         if (!ja){
             tvShowPop.setText("+86");
@@ -138,13 +143,11 @@ public class LoginActivity extends BaseActivity {
                 return;
             }else if (!MyUtils.isPswRuleNO(edtPassword.getText().toString())){
                 Toast.makeText(this, "请输入6-16位数字和字母组成的密码", Toast.LENGTH_SHORT).show();
-            }else if (TextUtils.isEmpty(edtCode.getText().toString())){
-                Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
             }else {
                 HttpParams params = new HttpParams();
-                params.put("tPhone", edtPhoneNumber.getText().toString());
+                params.put("phone", edtPhoneNumber.getText().toString());
                 params.put("passWord", edtPassword.getText().toString());
-                OkGo.<LoginBean>post(MyUrls.BASEURL + "/app/user/login")
+                OkGo.<LoginBean>post(MyUrls.BASEURL + "/app/broker/brokerlogin")
                         .tag(this)
                         .params(params)
                         .execute(new DialogCallback<LoginBean>(this, LoginBean.class) {
@@ -156,10 +159,9 @@ public class LoginActivity extends BaseActivity {
                                 if (loginBean.getCode().equals("200")){
                                     SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("uid",loginBean.getDatas().getId()+"");
                                     SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("token",loginBean.getDatas().getToken()+"");
-                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                    SharedPreferencesUtils.getInstace(LoginActivity.this).setStringPreference("brokerId",loginBean.getDatas().getBrokerId()+"");
                                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
                                     RcConnect.rongCloudConection(loginBean.getDatas().getRongCloudToken());
-
                                     CacheUtils.put(Constants.USERINFO, loginBean.getDatas());
                                     HashMap<String, Boolean> hm = new HashMap<>();
                                     hm.put(Conversation.ConversationType.PRIVATE.getName(), false);

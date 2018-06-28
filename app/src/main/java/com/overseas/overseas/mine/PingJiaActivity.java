@@ -71,7 +71,6 @@ public class PingJiaActivity extends BaseActivity implements MyPingjiaPresenter.
                 presenter.getAllPingjiaData(page);
                 springview.onFinishFreshAndLoad();
             }
-
             @Override
             public void onLoadmore() {
                 isLoadMore = true;

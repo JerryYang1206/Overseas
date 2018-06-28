@@ -255,4 +255,11 @@
     <string name="cainixihuan">猜你喜欢</string>
     <string name="weiliao">微聊</string>
     <string name="dianhua">电话</string>
+    <string name="weiliaohuifulv">微聊回复率</string>
+    <string name="zhuying">主营</string>
+    <string name="fuwumianxian">服务年限</string>
+    <string name="fuwurenshu">服务人数</string>
+    <string name="zaishoufang">在售房</string>
+    <string name="zaizufang">在租房</string>
+    <string name="managerhome">经纪人主页</string>
 </resources>
