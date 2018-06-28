@@ -6,7 +6,11 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     >
-
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/springview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/huise">
     <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
         android:background="#fff"
         android:layout_marginTop="10dip"
@@ -14,6 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
-
-
+    </com.liaoinstan.springview.widget.SpringView>
+    <TextView
+        android:id="@+id/tv_noContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/zanwugengduoshuju"
+        android:textColor="@color/text_black"
+        android:visibility="gone"/>
 </LinearLayout>

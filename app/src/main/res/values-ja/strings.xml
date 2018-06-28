@@ -232,6 +232,8 @@
 	<string name="string_meiqihedianli">ガスと電力：</string>
 	<string name="string_feiyong">費&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;用：</string>
 	<string name="lxk_jianzhugouzao">建築構造</string>
+	<string name="shanchu">削除</string>
+	<string name="zhonggguofangyuan">中国物件</string>
 	<string name="leixing">種類</string>
 	<string name="shijian">時間</string>
 	<string name="ershoufang">中古物件</string>
@@ -241,7 +243,13 @@
 	<string name="shangyedichan">商業不動産</string>
 	<string name="zhongguofangyuan">中国物件</string>
 	<string name="geyue">ヶ月</string>
-	<string name="jiazaizhong">加载中</string>
+	<string name="jiazaizhong">読み込み中...</string>
+	<string name="tudi">土地</string>
+	<string name="bieshu">ヴィラ</string>
+	<string name="zanwugengduoshuju">データはこれ以上ありません</string>
+	<string name="meiyougengduoshujule">データはこれ以上ありません</string>
+	<string name="shuaxinchenggong">リフレッシュにできました</string>
+	<string name="haoping">好評</string>
 	<string name="quxiao">取消</string>
 	<string name="hujiao">呼叫</string>
 	<string name="quxiaoshoucangchenggong">取消收藏成功</string>

@@ -3,6 +3,7 @@ package com.overseas.overseas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -21,7 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.fl_content)
     FrameLayout flContent;
@@ -32,9 +33,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.rgp)
     RadioGroup rgp;
     private List<BaseFragment> mBaseFragmentList = new ArrayList<>();
-    private BaseFragment preFragment;
     private long preTime;
-    private int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +43,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        HashMap<String, Boolean> hashMap = new HashMap<>();
-//        //会话类型 以及是否聚合显示
-//        hashMap.put(Conversation.ConversationType.PRIVATE.getName(), false);
-////        hashMap.put(Conversation.ConversationType.PUSH_SERVICE.getName(),true);
-////        hashMap.put(Conversation.ConversationType.SYSTEM.getName(),true);
-//        RongIM.getInstance().startConversationList(this, hashMap);
+        //        HashMap<String, Boolean> hashMap = new HashMap<>();
+        //        //会话类型 以及是否聚合显示
+        //        hashMap.put(Conversation.ConversationType.PRIVATE.getName(), false);
+        ////        hashMap.put(Conversation.ConversationType.PUSH_SERVICE.getName(),true);
+        ////        hashMap.put(Conversation.ConversationType.SYSTEM.getName(),true);
+        //        RongIM.getInstance().startConversationList(this, hashMap);
 
         initData();
         //设置Tab
@@ -75,54 +74,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initListener() {
-        rgp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.rb_Game:
-                        position = 0;
-                        break;
-                    case R.id.rb_Okami:
-                        position = 1;
-                        break;
-                    default:
-                        position = 0;
-                        break;
-                }
-                switchFragment(preFragment, mBaseFragmentList.get(position));
-            }
-        });
-        rgp.check(R.id.rb_Game);//默认选中发现
-    }
-
-    private void switchFragment(BaseFragment from, BaseFragment to) {
-        if (from == to) {
-            return;
-        }
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        //判断有没有被添加
-        if (!to.isAdded()) {
-            //to没有被添加
-            //from隐藏
-            if (from != null) {
-                ft.hide(from);
-            }
-            //添加to
-            if (to != null) {
-                ft.add(R.id.fl_content, to).commit();//不要忘记commit
-            }
-        } else {
-            //to已经被添加
-            }
-            // from隐藏
-            if (from != null) {
-                ft.hide(from);
-            //显示to
-            if (to != null) {
-                ft.show(to).commit();//不要忘记commit
-            }
-        }
-        preFragment = to;//将要显示的fragment当然就成为了下一次切换的preFragment
+        rbGame.setOnClickListener(this);
+        rbOkami.setOnClickListener(this);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        //注意add方法会走fragment的生命周期方法，相当于加载了一遍数据
+        fragmentTransaction.add(R.id.fl_content, mBaseFragmentList.get(0));
+        fragmentTransaction.add(R.id.fl_content, mBaseFragmentList.get(1));
+        fragmentTransaction.show(mBaseFragmentList.get(0));
+        fragmentTransaction.hide(mBaseFragmentList.get(1));
+        rgp.check(R.id.rb_Game);//刷新radiobutton的状态
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
     @Override
@@ -133,7 +94,23 @@ public class MainActivity extends BaseActivity {
         } else {
             super.onBackPressed();//相当于finish()
             removeAllActivitys();//删除所有引用
+        }
+    }
 
+    @Override
+    public void onClick(View v) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        switch (v.getId()) {
+            case R.id.rb_Game:
+                fragmentTransaction.show(mBaseFragmentList.get(0));
+                fragmentTransaction.hide(mBaseFragmentList.get(1));
+                fragmentTransaction.commitAllowingStateLoss();
+                break;
+            case R.id.rb_Okami:
+                fragmentTransaction.show(mBaseFragmentList.get(1));
+                fragmentTransaction.hide(mBaseFragmentList.get(0));
+                fragmentTransaction.commitAllowingStateLoss();
+                break;
         }
     }
 }

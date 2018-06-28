@@ -228,6 +228,8 @@
     <string name="string_meiqihedianli">煤气和电力：</string>
     <string name="string_feiyong">费&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;用：</string>
     <string name="lxk_jianzhugouzao">建筑构造</string>
+    <string name="shanchu">删除</string>
+    <string name="zhonggguofangyuan">中国房源</string>
     <string name="leixing">类型</string>
     <string name="shijian">时间</string>
     <string name="ershoufang">二手房</string>
@@ -238,6 +240,12 @@
     <string name="zhongguofangyuan">中国房源</string>
     <string name="geyue">个月</string>
     <string name="jiazaizhong">加载中</string>
+    <string name="tudi">土地</string>
+    <string name="bieshu">别墅</string>
+    <string name="zanwugengduoshuju">暂无更多数据</string>
+    <string name="meiyougengduoshujule">没有更多数据了</string>
+    <string name="shuaxinchenggong">刷新成功</string>
+    <string name="haoping">好评</string>
     <string name="quxiao">取消</string>
     <string name="hujiao">呼叫</string>
     <string name="quxiaoshoucangchenggong">取消收藏成功</string>

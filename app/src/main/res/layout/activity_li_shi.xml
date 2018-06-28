@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dip">
         <ImageView
-            android:id="@+id/back_img"
+            android:id="@+id/iv_back"
             android:padding="15dp"
             android:src="@drawable/back"
             android:layout_width="50dip"
@@ -46,6 +46,5 @@
         app:ddtextSelectedColor="@color/shihuangse"
         app:ddtextUnselectedColor="@color/drop_down_unselected"
         app:ddunderlineColor="#dbdcdc"
-
         />
 </LinearLayout>

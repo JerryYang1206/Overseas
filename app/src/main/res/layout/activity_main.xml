@@ -40,8 +40,6 @@
                 android:drawableTop="@drawable/tab_mine_selector"
                 android:text="@string/activity_main_mine"
                 />
-
-
         </RadioGroup>
     </LinearLayout>
 </LinearLayout>
