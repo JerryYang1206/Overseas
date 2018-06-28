@@ -311,10 +311,8 @@ public class ImManager {
     }
 
     public static void enterChat(Context context, final String userId, final String chatName, final String avatar) {
-        SharedPreferencesUtils.getInstace(context).setStringPreference(Constants.CHAT, Constants.CHAT_TALK);
         if (RongIM.getInstance() != null) {
             RongIM.getInstance().startPrivateChat(context, userId, chatName);
-
             RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
                 @Override
                 public UserInfo getUserInfo(String s) {

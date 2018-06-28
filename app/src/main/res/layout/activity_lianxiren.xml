@@ -4,47 +4,46 @@
     android:id="@+id/activity_lianxiren"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.overseas.overseas.mine.LianxirenActivity">
-    <LinearLayout
-        android:background="@color/shihuangse"
-        android:orientation="horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="50dip"
+        android:background="@color/shihuangse">
+
         <ImageView
             android:id="@+id/back_img"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
             android:padding="15dp"
-            android:src="@drawable/back"
-            android:layout_width="50dip"
-            android:layout_height="50dip" />
+            android:src="@drawable/back" />
+
         <TextView
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="@string/activity_lianxiren_title"
-            android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-        <ImageView
-            android:padding="13dp"
-            android:layout_width="50dip"
-            android:layout_height="50dip" />
-    </LinearLayout>
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </RelativeLayout>
 
-
-    <android.support.v4.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/no_more_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
         <android.support.v7.widget.RecyclerView
-            android:background="#fff"
-            android:layout_marginTop="10dip"
-            android:id="@+id/Mrecycler"
-            android:nestedScrollingEnabled="false"
+            android:id="@+id/act_linkman_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </android.support.v7.widget.RecyclerView>
-    </android.support.v4.widget.NestedScrollView>
-
-
-
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:nestedScrollingEnabled="false" />
+    </RelativeLayout>
 </LinearLayout>

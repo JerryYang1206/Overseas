@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.overseas.overseas.R;
+import com.overseas.overseas.activity.SearchActivity;
 import com.overseas.overseas.base.BaseFragment;
-import com.overseas.overseas.base.SearchActivity;
 
 import java.util.ArrayList;
 import java.util.List;

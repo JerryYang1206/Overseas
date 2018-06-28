@@ -4,18 +4,13 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:textColor="#444"
+        android:id="@+id/item_linkman_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        android:background="#eee"
         android:gravity="center_vertical"
         android:paddingLeft="15dip"
+        android:textSize="14sp"
         android:text="A"
-        android:background="#eee"
-        android:layout_width="match_parent"
-        android:layout_height="30dip" />
-    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
-        android:background="#fff"
-        android:nestedScrollingEnabled="false"
-        android:id="@+id/mrecycler_item"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
+        android:textColor="#444" />
 </LinearLayout>

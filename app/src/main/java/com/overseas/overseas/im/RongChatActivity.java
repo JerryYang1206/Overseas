@@ -14,9 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.lzy.okgo.model.Response;
+import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseDialog;
+import com.overseas.overseas.model.UserBean;
 import com.overseas.overseas.presenter.FromPhonePresenter;
 import com.overseas.overseas.utils.CacheUtils;
 import com.overseas.overseas.utils.Constants;
@@ -45,8 +48,6 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
 
     private FromPhonePresenter presenter;
 
-    private String strPhone = "";
-
     private String targetId;
 
     private int state = 0; //0否 1是
@@ -67,6 +68,7 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
         //会话界面 对方id
         targetId = getIntent().getData().getQueryParameter("targetId");
         presenter = new FromPhonePresenter(this, this);
+        presenter.getUserPhone(targetId);
 
         //对方 昵称
         name = getIntent().getData().getQueryParameter("title");
@@ -91,35 +93,34 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
             }
         });
 
-        RongIM.getInstance().setSendMessageListener(new RongIM.OnSendMessageListener() {
-            @Override
-            public Message onSend(Message message) {
-                /**
-                 * getTargetId   接受者id
-                 * 如果不使用的话将此方法删除
-                 */
-                return message;
-            }
-
-            @Override
-            public boolean onSent(Message message, RongIM.SentMessageErrorCode sentMessageErrorCode) {
-                return false;
-            }
-        });
-    }
-//
-//    @Override
-//    public void getUserPhone(Response<UserBean> response) {
-//        if (response != null && response.body() != null && response.body().getDatas() != null) {
-//
-//            strPhone = response.body().getDatas().getPhone();
-//            state = response.body().getDatas().getIstxl();
-//
-//            if (response.body().getDatas().getIstxl() == 1) {
-//                star.setChecked(true);
-//            } else {
-//                star.setChecked(false);
+//        RongIM.getInstance().setSendMessageListener(new RongIM.OnSendMessageListener() {
+//            @Override
+//            public Message onSend(Message message) {
+//                /**
+//                 * getTargetId   接受者id
+//                 * 如果不使用的话将此方法删除
+//                 */
+//                return message;
 //            }
-//        }
-//    }
+//
+//            @Override
+//            public boolean onSent(Message message, RongIM.SentMessageErrorCode sentMessageErrorCode) {
+//                return false;
+//            }
+//        });
+    }
+
+    @Override
+    public void getUserPhone(Response<UserBean> response) {
+        if (response != null && response.body() != null && response.body().getDatas() != null) {
+
+            state = response.body().getDatas().getIstxl();
+
+            if (response.body().getDatas().getIstxl() == 1) {
+                star.setChecked(true);
+            } else {
+                star.setChecked(false);
+            }
+        }
+    }
 }

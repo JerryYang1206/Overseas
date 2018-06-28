@@ -187,9 +187,6 @@
 
         <!--会话界面-->
         <!--添加配置信息-->
-        <activity
-            android:name=".im.ChatActivity"
-        />
 
         <activity
             android:name=".im.RongChatActivity"
@@ -220,6 +217,8 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".activity.SearchActivity"></activity>
+        <activity android:name=".activity.LianxirenActivity"></activity>
     </application>
 
 </manifest>

@@ -255,6 +255,9 @@
     <string name="cainixihuan">猜你喜欢</string>
     <string name="weiliao">微聊</string>
     <string name="dianhua">电话</string>
+    <string name="meiyousousuojieguo">没有搜索结果</string>
+    <string name="item_delete">删除</string>
+    <string name="no_more_linkman">暂无联系人</string>
     <string name="weiliaohuifulv">微聊回复率</string>
     <string name="zhuying">主营</string>
     <string name="fuwumianxian">服务年限</string>

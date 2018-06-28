@@ -6,39 +6,38 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.model.Response;
 import com.overseas.overseas.MyApplication;
+import com.overseas.overseas.callback.DialogCallback;
 import com.overseas.overseas.callback.JsonCallback;
+import com.overseas.overseas.model.LinkmanBean;
 import com.overseas.overseas.model.NoDataBean;
-import com.overseas.overseas.model.UserBean;
 import com.overseas.overseas.utils.MyUrls;
 
 /**
  * admin  2018/6/13
  */
-public class FromPhonePresenter {
+public class LinkmanPresenter {
     private Activity activity;
-    private PhoneCallBack callBack;
 
-    public FromPhonePresenter(Activity activity, PhoneCallBack callBack) {
+    private LinkmanCallBack callBack;
+
+    public LinkmanPresenter(Activity activity, LinkmanCallBack callBack) {
         this.activity = activity;
         this.callBack = callBack;
     }
 
     /**
-     * 获取手机号
-     *
-     * @param userId
+     * 获取联系人列表
      */
-    public void getUserPhone(String userId) {
+    public void getLinkmanList() {
         HttpParams params = new HttpParams();
-        params.put("userId", MyApplication.getUserId(activity));
-        params.put("brokerId", userId);
-        OkGo.<UserBean>post(MyUrls.BASEURL + "/app/user/getuserinfo")
+        params.put("token", MyApplication.getUserToken());
+        OkGo.<LinkmanBean>post(MyUrls.BASEURL + "/app/contact/mycontact")
                 .tag(this)
                 .params(params)
-                .execute(new JsonCallback<UserBean>(UserBean.class) {
+                .execute(new DialogCallback<LinkmanBean>(activity, LinkmanBean.class) {
                     @Override
-                    public void onSuccess(Response<UserBean> response) {
-                        callBack.getUserPhone(response);
+                    public void onSuccess(Response<LinkmanBean> response) {
+                        callBack.getLinkmanList(response);
                     }
                 });
     }
@@ -83,7 +82,10 @@ public class FromPhonePresenter {
                 });
     }
 
-    public interface PhoneCallBack {
-        void getUserPhone(Response<UserBean> response);
+    public interface LinkmanCallBack {
+        void getLinkmanList(Response<LinkmanBean> response);
+
+        void getLinkmanListFail();
     }
+
 }

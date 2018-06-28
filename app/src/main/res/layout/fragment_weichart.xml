@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:paddingTop="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
         android:background="@color/shihuangse"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="60dip">
+        android:paddingTop="10dip">
+
         <ImageView
-            android:padding="15dp"
             android:layout_width="50dip"
-            android:layout_height="50dip" />
+            android:layout_height="50dip"
+            android:padding="15dp" />
+
         <TextView
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="#fff"
-            android:text="@string/activity_main_weichar"
             android:layout_width="0dip"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:gravity="center"
+            android:text="@string/activity_main_weichar"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
         <ImageView
             android:id="@+id/img_search"
-            android:src="@drawable/sousuo_white"
-            android:padding="15dp"
             android:layout_width="50dip"
-            android:layout_height="50dip" />
+            android:layout_height="50dip"
+            android:padding="15dp"
+            android:src="@drawable/sousuo_white" />
     </LinearLayout>
     <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:background="#fff"-->
-        <!--android:layout_marginTop="10dip"-->
-        <!--android:id="@+id/mrecycler"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    <!--android:background="#fff"-->
+    <!--android:layout_marginTop="10dip"-->
+    <!--android:id="@+id/mrecycler"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
     <!--</android.support.v7.widget.RecyclerView>-->
 
     <fragment
