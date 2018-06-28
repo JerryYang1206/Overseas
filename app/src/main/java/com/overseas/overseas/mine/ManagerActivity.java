@@ -93,6 +93,7 @@ public class ManagerActivity extends BaseActivity {
     }
 
     private void initManager() {
+
         String brokerId = getIntent().getStringExtra("brokerId");
         HttpParams params = new HttpParams();
         params.put("brokerId", brokerId);
