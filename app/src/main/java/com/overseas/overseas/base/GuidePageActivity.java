@@ -17,6 +17,11 @@ import com.overseas.overseas.utils.SharedPreferencesUtils;
 
 import org.zackratos.ultimatebar.UltimateBar;
 
+import java.util.HashMap;
+
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
+
 
 /**
  * Created by lxk on 2017/6/30.
@@ -90,8 +95,9 @@ public class GuidePageActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     SharedPreferencesUtils.getInstace(GuidePageActivity.this).setBooleanPreference( "guide", true);
-                    Intent intent = new Intent(GuidePageActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    HashMap<String, Boolean> hm = new HashMap<>();
+                    hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
+                    RongIM.getInstance().startConversationList(GuidePageActivity.this, hm);
                     finish();
                 }
             });

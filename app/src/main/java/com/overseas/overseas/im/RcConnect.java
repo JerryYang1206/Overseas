@@ -45,12 +45,24 @@ public class RcConnect {
         if (loginBean == null)
             return;
 
-        RongIM.getInstance().setCurrentUserInfo(new UserInfo(loginBean.getId() + "", loginBean.getNickname(), Uri.parse(loginBean.getPic())));
-        RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
-            @Override
-            public UserInfo getUserInfo(String s) {
-                return new UserInfo(loginBean.getId() + "", loginBean.getNickname(), Uri.parse(loginBean.getPic()));
-            }
-        }, true);
+        if (loginBean.getPic() == null && loginBean.getPic().equals("")) {
+            RongIM.getInstance().setCurrentUserInfo(new UserInfo("broker" + loginBean.getId(), loginBean.getNickname(), Uri.parse("")));
+            RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+                @Override
+                public UserInfo getUserInfo(String s) {
+                    return new UserInfo("broker" + loginBean.getId(), loginBean.getNickname(), Uri.parse(""));
+                }
+            }, true);
+
+        } else {
+            RongIM.getInstance().setCurrentUserInfo(new UserInfo("broker" + loginBean.getId(), loginBean.getNickname(), Uri.parse(loginBean.getPic())));
+
+            RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+                @Override
+                public UserInfo getUserInfo(String s) {
+                    return new UserInfo("broker" + loginBean.getId(), loginBean.getNickname(), Uri.parse(loginBean.getPic()));
+                }
+            }, true);
+        }
     }
 }

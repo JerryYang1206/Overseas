@@ -31,7 +31,7 @@ public class LinkmanPresenter {
     public void getLinkmanList() {
         HttpParams params = new HttpParams();
         params.put("token", MyApplication.getUserToken());
-        OkGo.<LinkmanBean>post(MyUrls.BASEURL + "/app/contact/mycontact")
+        OkGo.<LinkmanBean>post(MyUrls.BASEURL + "/app/contact/mycontactbybroker")
                 .tag(this)
                 .params(params)
                 .execute(new DialogCallback<LinkmanBean>(activity, LinkmanBean.class) {

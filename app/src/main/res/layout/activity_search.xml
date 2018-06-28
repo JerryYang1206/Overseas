@@ -37,6 +37,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@null"
+                android:singleLine="true"
+                android:paddingRight="5dp"
                 android:gravity="center_vertical"
                 android:hint="@string/activity_search_title"
                 android:paddingLeft="10dip"
@@ -73,11 +75,5 @@
             android:text="@string/meiyousousuojieguo"
             android:textColor="@color/text_black"
             android:visibility="gone" />
-
-        <Button
-            android:id="@+id/test_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="test"/>
     </RelativeLayout>
 </LinearLayout>

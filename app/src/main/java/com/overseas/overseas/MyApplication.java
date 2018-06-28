@@ -20,6 +20,7 @@ import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.HttpParams;
 import com.overseas.overseas.bean.LoginBean;
+import com.overseas.overseas.im.TalkExtensionModule;
 import com.overseas.overseas.utils.CacheUtils;
 import com.overseas.overseas.utils.Constants;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
@@ -28,6 +29,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import io.rong.imkit.DefaultExtensionModule;
+import io.rong.imkit.IExtensionModule;
+import io.rong.imkit.RongExtensionManager;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
@@ -63,7 +67,11 @@ public class MyApplication extends Application {
             RongIM.connect(bean.getRongCloudToken(), new RongIMClient.ConnectCallback() {
                 @Override
                 public void onSuccess(String s) {
-                    RongIM.getInstance().setCurrentUserInfo(new UserInfo(bean.getId() + "", bean.getNickname(), Uri.parse(bean.getPic())));
+                    if (bean.getPic() == null || bean.getPic().equals("")) {
+                        RongIM.getInstance().setCurrentUserInfo(new UserInfo("broker" + bean.getId(), bean.getNickname(), Uri.parse("")));
+                    } else {
+                        RongIM.getInstance().setCurrentUserInfo(new UserInfo("broker" + bean.getId(), bean.getNickname(), Uri.parse(bean.getPic())));
+                    }
                 }
 
                 @Override
@@ -81,20 +89,20 @@ public class MyApplication extends Application {
     }
 
     public void setMyExtensionModule() {
-//        List<IExtensionModule> moduleList = RongExtensionManager.getInstance().getExtensionModules();
-//        IExtensionModule defaultModule = null;
-//        if (moduleList != null) {
-//            for (IExtensionModule module : moduleList) {
-//                if (module instanceof DefaultExtensionModule) {
-//                    defaultModule = module;
-//                    break;
-//                }
-//            }
-//            if (defaultModule != null) {
-//                RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
-//                RongExtensionManager.getInstance().registerExtensionModule(new TalkExtensionModule());
-//            }
-//        }
+        List<IExtensionModule> moduleList = RongExtensionManager.getInstance().getExtensionModules();
+        IExtensionModule defaultModule = null;
+        if (moduleList != null) {
+            for (IExtensionModule module : moduleList) {
+                if (module instanceof DefaultExtensionModule) {
+                    defaultModule = module;
+                    break;
+                }
+            }
+            if (defaultModule != null) {
+                RongExtensionManager.getInstance().unregisterExtensionModule(defaultModule);
+                RongExtensionManager.getInstance().registerExtensionModule(new TalkExtensionModule());
+            }
+        }
     }
 
     /**

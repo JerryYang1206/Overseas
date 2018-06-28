@@ -19,7 +19,6 @@ public class TalkExtensionModule extends DefaultExtensionModule {
         List<IPluginModule> pluginModules = new ArrayList<>();
         pluginModules.add(new ImagePlugin());
         pluginModules.add(new DefaultLocationPlugin());
-        pluginModules.add(new CollectPlugin());
         pluginModules.add(new HousePlugin());
         pluginModules.add(new MaskPlugin());
         return pluginModules;

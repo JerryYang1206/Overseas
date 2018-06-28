@@ -27,7 +27,7 @@ public class CharSearchPresenter {
         params.put("token", MyApplication.getUserToken());
         params.put("pageNo", pageNo);
         params.put("searchText", searchText);
-        OkGo.<ChatSearchBean>post(MyUrls.BASEURL + "/app/broker/searchbroker")
+        OkGo.<ChatSearchBean>post(MyUrls.BASEURL + "/app/user/searchuser")
                 .tag(this)
                 .params(params)
                 .execute(new JsonCallback<ChatSearchBean>( ChatSearchBean.class) {

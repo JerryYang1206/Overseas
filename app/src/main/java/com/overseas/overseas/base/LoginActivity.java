@@ -65,7 +65,9 @@ public class LoginActivity extends BaseActivity {
         if (token.equals("")){
 
         }else {
-            startActivity(new Intent(mContext,MainActivity.class));
+            HashMap<String, Boolean> hm = new HashMap<>();
+            hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
+            RongIM.getInstance().startConversationList(LoginActivity.this, hm);
             finish();
         }
         boolean ja = MyUtils.isJa(this);

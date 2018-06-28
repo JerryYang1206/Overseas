@@ -64,7 +64,6 @@ public class SearchActivity extends BaseActivity implements CharSearchPresenter.
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
 //                if (s.length() > 0) {
 //                    mList.clear();
 //                    adapter.setSearchContent(actSearchManager.getText().toString());
@@ -80,13 +79,6 @@ public class SearchActivity extends BaseActivity implements CharSearchPresenter.
 
             }
         });
-
-        findViewById(R.id.test_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ImManager.enterChat(SearchActivity.this, "", "嘿","");
-            }
-        });
     }
 
     @OnClick({R.id.back_img, R.id.tv_search})
@@ -97,6 +89,8 @@ public class SearchActivity extends BaseActivity implements CharSearchPresenter.
                 finish();
                 break;
             case R.id.tv_search:
+                SoftKeyboardTool.closeKeyboard(this);
+                adapter.setSearchContent(actSearchManager.getText().toString());
                 presenter.getSearchList(page, actSearchManager.getText().toString());
                 break;
         }

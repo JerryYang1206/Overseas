@@ -56,13 +56,13 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
 //                builder.setSpan(span1, indexOf, indexOf + searchContent.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //                holder.tv_Search_list.setText(builder);
 //            } else {
-            holder.tv_Search_list.setText(list.get(position).getBrokerName());
+            holder.tv_Search_list.setText(list.get(position).getNickname());
 //            }
 
             holder.layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ImManager.enterChat(context, list.get(position).getId() + "", list.get(position).getBrokerName(), list.get(position).getPic());
+                    ImManager.enterChat(context, list.get(position).getId() + "", list.get(position).getNickname(), list.get(position).getPic());
                 }
             });
         }
