@@ -45,8 +45,6 @@ import okhttp3.OkHttpClient;
 public class MyApplication extends Application {
     private static MyApplication application;
 
-    public static final String token1 = "f2+AlWV8zuooyGsXatiiuZtacAbWKJAKs7xt/96ZapGfFyCIuQAUQ6GvccmqXXIgyZaVJawFDNQXfFYeg33Oyw==";
-
     @Override
     public void onCreate() {
         super.onCreate();

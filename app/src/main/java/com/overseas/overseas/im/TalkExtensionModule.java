@@ -7,6 +7,7 @@ import io.rong.imkit.DefaultExtensionModule;
 import io.rong.imkit.plugin.DefaultLocationPlugin;
 import io.rong.imkit.plugin.IPluginModule;
 import io.rong.imkit.plugin.ImagePlugin;
+import io.rong.imkit.widget.provider.LocationPlugin;
 import io.rong.imlib.model.Conversation;
 
 /**
@@ -19,7 +20,6 @@ public class TalkExtensionModule extends DefaultExtensionModule {
         List<IPluginModule> pluginModules = new ArrayList<>();
         pluginModules.add(new ImagePlugin());
         pluginModules.add(new DefaultLocationPlugin());
-        pluginModules.add(new HousePlugin());
         pluginModules.add(new MaskPlugin());
         return pluginModules;
     }

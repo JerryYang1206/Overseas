@@ -13,7 +13,6 @@
     <string name="rc_ext_exit_location_sharing_confirm">共有を終了</string>
     <string name="rc_ext_cancel">取り消す</string>
     <string name="rc_location_fetching">取得中&#8230;&#8230;</string>
-    <string name="rc_location_fail">位置決め失敗</string>
     <string name="rc_location_sharing_exceed_max">最大位置共有人数を超えます</string>
     <string name="rc_you_are_sharing_location">あなたが位置を共有しています</string>
     <string name="rc_other_is_sharing_location">%s位置を共有しています</string>

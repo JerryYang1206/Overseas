@@ -13,6 +13,7 @@ import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.base.LoginActivity;
 import com.overseas.overseas.utils.Constants;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
+import com.overseas.overseas.utils.TUtils;
 
 import java.io.File;
 import java.util.List;
@@ -260,7 +261,7 @@ public class ImManager {
         RongIM.getInstance().addToBlacklist(userId, new RongIMClient.OperationCallback() {
             @Override
             public void onSuccess() {
-//                TUtils.showFail(context, "拉黑成功");
+                TUtils.showFail(context, "拉黑成功");
             }
 
             @Override
@@ -279,7 +280,7 @@ public class ImManager {
         RongIM.getInstance().removeFromBlacklist(userId, new RongIMClient.OperationCallback() {
             @Override
             public void onSuccess() {
-//                TUtils.showFail(context, "移除成功");
+                TUtils.showFail(context, "移除成功");
             }
 
             @Override
@@ -311,6 +312,11 @@ public class ImManager {
     }
 
     public static void enterChat(Context context, final String userId, final String chatName, final String avatar) {
+        if (!MyApplication.isLogin()) {
+            context.startActivity(new Intent(context, LoginActivity.class));
+            return;
+        }
+
         if (RongIM.getInstance() != null) {
             RongIM.getInstance().startPrivateChat(context, userId, chatName);
             RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
@@ -321,7 +327,6 @@ public class ImManager {
             }, true);
         }
     }
-
 
     public static void setMyExtensionModule() {
         List<IExtensionModule> moduleList = RongExtensionManager.getInstance().getExtensionModules();
