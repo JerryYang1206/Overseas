@@ -1,6 +1,5 @@
 package com.overseas.overseas.base;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.overseas.overseas.MainActivity;
 import com.overseas.overseas.R;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
 

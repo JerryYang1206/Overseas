@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_zui_jin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="@color/shihuangse"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_img"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:padding="15dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/see_more_fy"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:padding="13dp" />
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dip"
+                        android:layout_height="13dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:background="@color/shihuangse"></View>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="6dip"
+                        android:text="@string/string_jibenxinxi"
+                        android:textColor="#444"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_wujianmingcheng"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_wujian_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_zujin"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_mianji"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_louceng"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_more_louceng"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_jianzhunianfen"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_years"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_jianzhugouzao"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_gouzao"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_chaoxiang"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_chaoxiang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_chuqifeiyong"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_chuqi_feiyong"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_rujuriqi"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_ruzhu_riqi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="#eee"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dip"
+                        android:layout_height="13dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:background="@color/shihuangse"></View>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="6dip"
+                        android:text="@string/string_shiwaixinxi"
+                        android:textColor="#444"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_diduan"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_diduan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_jutiweizhi"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_jutiweizhi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_zhuyaochezhan"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_zhuyaochezhan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_chezhanjuli"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_chezhanjuli"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_tingchewei"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_stop_car"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_shangpuzhaopai"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_shangpu_zhaopai"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_jujiagaodu"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_jujiagaodu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_shiwaishezhi"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_shiwaishezhi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="#eee"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dip"
+                        android:layout_height="13dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:background="@color/shihuangse"></View>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="6dip"
+                        android:text="@string/string_shineixinxi"
+                        android:textColor="#444"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_shineishebei"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_shineishebei"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="#eee"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dip"
+                        android:layout_height="13dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:background="@color/shihuangse"></View>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="6dip"
+                        android:text="@string/string_qitaxinxi"
+                        android:textColor="#444"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_tezheng"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_tezheng"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_tiaojian"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_tiaojian"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="#eee"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dip"
+                        android:layout_height="13dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:background="@color/shihuangse"></View>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="6dip"
+                        android:text="@string/string_beizhuxinxi"
+                        android:textColor="#444"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_beizhu"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_beizhu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

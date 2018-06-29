@@ -128,7 +128,7 @@ public class ZufangFragment extends BaseFragmentL {
                                             startActivity(intent);
                                         } else if (TextUtils.equals(datas.get(position).getHouseType(), "5")) {  //商业地产
                                             if (TextUtils.equals(datas.get(position).getZfType() + "", "0")) {    //酒店
-                                                Intent intent = new Intent(mContext, LishiShangyeActivity.class);
+                                                Intent intent = new Intent(mContext, LishiJiuDianActivity.class);
                                                 intent.putExtra("houseId", datas.get(position).getId() + "");
                                                 startActivity(intent);
                                             } else if (TextUtils.equals(datas.get(position).getZfType() + "", "1")) { //高尔夫球场

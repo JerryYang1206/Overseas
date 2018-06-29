@@ -18,6 +18,7 @@
             android:orientation="vertical"
             android:layout_height="match_parent" >
             <TextView
+                android:id="@+id/map_title"
                 android:textColor="#333"
                 android:textSize="14sp"
                 android:gravity="center_vertical"
@@ -26,6 +27,7 @@
                 android:layout_height="0dip"
                 android:layout_weight="1"/>
             <TextView
+                android:id="@+id/map_station"
                 android:textColor="#666"
                 android:textSize="13sp"
                 android:gravity="center_vertical"
@@ -43,6 +45,7 @@
 
         </View>
         <ImageView
+            android:id="@+id/img_open_location"
             android:layout_gravity="center_vertical"
             android:src="@drawable/luxian"
             android:layout_width="wrap_content"

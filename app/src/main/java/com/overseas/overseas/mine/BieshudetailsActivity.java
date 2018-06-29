@@ -158,6 +158,9 @@ public class BieshudetailsActivity extends BaseActivity implements VillaDetailsP
 
         if (response != null && response.body() != null) {
             villaDetailsBean = response.body().getDatas();
+            if (villaDetailsBean==null){
+                return;
+            }
             if (villaDetailsBean.getHwdcBroker()==null){
                 return;
             }
@@ -378,7 +381,7 @@ public class BieshudetailsActivity extends BaseActivity implements VillaDetailsP
         switch (view.getId()) {
             case R.id.manager_data:
                 Intent Managerintent = new Intent(BieshudetailsActivity.this, ManagerActivity.class);
-                Managerintent.putExtra("ManagerId",villaDetailsBean.getHwdcBroker().getId()+"");
+                Managerintent.putExtra("brokerId",villaDetailsBean.getHwdcBroker().getId()+"");
                 startActivity(Managerintent);
                 break;
             case R.id.img_share:
@@ -555,18 +558,18 @@ public class BieshudetailsActivity extends BaseActivity implements VillaDetailsP
                 //设置监听事件
                 .builder();
         dialog.show();
-        LinearLayout weiliao_layout = (LinearLayout) dialog.findViewById(R.id.weiliao_layout);
+//        LinearLayout weiliao_layout = (LinearLayout) dialog.findViewById(R.id.weiliao_layout);
         LinearLayout weixin_layout = (LinearLayout) dialog.findViewById(R.id.weixin_layout);
         LinearLayout pengyouquan_layout = (LinearLayout) dialog.findViewById(R.id.pengyouquan_layout);
         LinearLayout weibo_layout = (LinearLayout) dialog.findViewById(R.id.weibo_layout);
         TextView tv_dismiss = (TextView) dialog.findViewById(R.id.tv_dismiss);
         //微聊分享
-        weiliao_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        weiliao_layout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
         //微信分享
         weixin_layout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -266,7 +266,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
                         startActivity(intent);
                     } else if (TextUtils.equals(hType, "4")) {  //商业地产
                         if (TextUtils.equals(ShType, "0")) {    //酒店
-                            Intent intent = new Intent(LiShiActivity.this, LishiShangyeActivity.class);
+                            Intent intent = new Intent(LiShiActivity.this, LishiJiuDianActivity.class);
                             intent.putExtra("houseId", houseId + "");
                             startActivity(intent);
                         } else if (TextUtils.equals(ShType, "1")) { //高尔夫球场
@@ -278,9 +278,9 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
                             intent.putExtra("houseId", houseId + "");
                             startActivity(intent);
                         } else if (TextUtils.equals(ShType, "3")) { //商铺
-                            //                            Intent intent = new Intent(LiShiActivity.this, ShangpuDetailsActivity.class);
-                            //                            intent.putExtra("houseId", houseId + "");
-                            //                            startActivity(intent);
+                                                        Intent intent = new Intent(LiShiActivity.this, LishiShangPuActivity.class);
+                                                        intent.putExtra("houseId", houseId + "");
+                                                        startActivity(intent);
                         }
                     } else if (TextUtils.equals(hType, "6")) { //中国房源
                         Intent intent = new Intent(LiShiActivity.this, LishiZhongGuoActivity.class);

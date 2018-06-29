@@ -13,30 +13,30 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="150dip">
+            android:layout_height="75dip">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dip">
-                <LinearLayout
-                    android:id="@+id/weiliao_layout"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_width="0dip"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                    <ImageView
-                        android:src="@drawable/weiliao_icon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:layout_marginTop="5dip"
-                        android:textColor="#444"
-                        android:text="微聊"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/weiliao_layout"-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_width="0dip"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_height="match_parent">-->
+                    <!--<ImageView-->
+                        <!--android:src="@drawable/weiliao_icon"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+                    <!--<TextView-->
+                        <!--android:layout_marginTop="5dip"-->
+                        <!--android:textColor="#444"-->
+                        <!--android:text="微聊"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+                <!--</LinearLayout>-->
                 <LinearLayout
                     android:id="@+id/weixin_layout"
                     android:gravity="center"
@@ -73,12 +73,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dip">
                 <LinearLayout
                     android:id="@+id/weibo_layout"
                     android:gravity="center"
@@ -97,21 +91,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_width="0dip"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                </LinearLayout>
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_width="0dip"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
         <TextView
             android:id="@+id/tv_dismiss"

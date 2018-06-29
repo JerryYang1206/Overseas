@@ -129,7 +129,7 @@ public class ShoufangFragment extends BaseFragmentL{
                                             startActivity(intent);
                                         } else if (TextUtils.equals(datas.get(position).getHType(), "5")) {  //商业地产
                                             if (TextUtils.equals(datas.get(position).getShType() + "", "0")) {    //酒店
-                                                Intent intent = new Intent(mContext, LishiShangyeActivity.class);
+                                                Intent intent = new Intent(mContext, LishiJiuDianActivity.class);
                                                 intent.putExtra("houseId", datas.get(position).getId() + "");
                                                 startActivity(intent);
                                             } else if (TextUtils.equals(datas.get(position).getShType() + "", "1")) { //高尔夫球场
@@ -141,7 +141,7 @@ public class ShoufangFragment extends BaseFragmentL{
                                                 intent.putExtra("houseId", datas.get(position).getId() + "");
                                                 startActivity(intent);
                                             } else if (TextUtils.equals(datas.get(position).getShType() + "", "3")) { //商铺
-//                                                Intent intent = new Intent(mContext, LishiShangyeActivity.class);
+//                                                Intent intent = new Intent(mContext, LishiJiuDianActivity.class);
 //                                                intent.putExtra("houseId", datas.get(position).getId() + "");
 //                                                startActivity(intent);
                                             }

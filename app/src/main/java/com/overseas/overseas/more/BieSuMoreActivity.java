@@ -10,6 +10,8 @@ import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.bean.VillaDetailsBean;
+import com.overseas.overseas.utils.CacheUtils;
+import com.overseas.overseas.utils.Constants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -96,6 +98,7 @@ public class BieSuMoreActivity extends BaseActivity {
 
         datasBean = getIntent().getParcelableExtra("details");
 
+        String country = CacheUtils.get(Constants.COUNTRY);
 
 
         show();

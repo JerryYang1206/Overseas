@@ -10,6 +10,7 @@ import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -24,6 +25,8 @@ import com.overseas.overseas.im.TalkExtensionModule;
 import com.overseas.overseas.utils.CacheUtils;
 import com.overseas.overseas.utils.Constants;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -50,11 +53,34 @@ public class MyApplication extends Application {
         super.onCreate();
         application = this;
         CacheUtils.init(application);
-//        SDKInitializer.initialize(this);
+        SDKInitializer.initialize(this);
         setOkGo();//OkGo----第三方网络框架
         initRc();
+        initUMPush();
     }
+    private void initUMPush() {
 
+//        Toast.makeText(getApplicationContext(), "Push", Toast.LENGTH_SHORT).show();
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+        //注册推送服务，每次调用register方法都会回调该接口
+        mPushAgent.register(new IUmengRegisterCallback() {
+
+            @Override
+            public void onSuccess(String deviceToken) {
+//                Toast.makeText(getContext(), "友盟推送注册成功", Toast.LENGTH_SHORT).show();
+
+                System.out.println("友盟推送注册成功" + deviceToken);
+                SharedPreferencesUtils.getInstace(application).setStringPreference("UMPUSHID", deviceToken);
+            }
+
+            @Override
+            public void onFailure(String s, String s1) {
+//                Toast.makeText(getContext(), "友盟推送注册失败", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
     private void initRc() {
         RongIM.init(this);
         RongIM.getInstance().setMessageAttachedUserInfo(true);

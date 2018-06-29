@@ -4,7 +4,8 @@
     android:id="@+id/activity_zui_jin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -134,6 +135,29 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:text="@string/string_mianji"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/string_huxing"
                             android:textSize="14sp" />
 
@@ -157,7 +181,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_dongcengshu"
+                            android:text="@string/string_louceng"
                             android:textSize="14sp" />
 
                         <TextView
@@ -168,53 +192,6 @@
                             android:textColor="#222"
                             android:textSize="14sp" />
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dip"
-                        android:layout_marginTop="6dip"
-                        android:orientation="horizontal"
-                        android:paddingLeft="15dip">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/string_tudimianji"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/tv_tudi_area"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text=""
-                            android:textColor="#222"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dip"
-                        android:layout_marginTop="6dip"
-                        android:orientation="horizontal"
-                        android:paddingLeft="15dip">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/string_jianzhumianji"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:id="@+id/tv_jianzhu_area"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text=""
-                            android:textColor="#222"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -295,7 +272,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/lxk_jianzhugouzao"
+                            android:text="@string/string_jianzhugouzao"
                             android:textSize="14sp" />
 
                         <TextView
@@ -341,11 +318,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_jianzhufugailv"
+                            android:text="@string/string_zonghushu"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_house_fugailv"
+                            android:id="@+id/tv_house_zonghushu"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""
@@ -364,11 +341,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_rongjilv"
+                            android:text="@string/string_huibaolv"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_house_rongjilv"
+                            android:id="@+id/tv_house_huibaolv"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""
@@ -399,6 +376,51 @@
                             android:textSize="14sp" />
                     </LinearLayout>
 
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="#eee"
+                android:layout_width="match_parent"
+                android:layout_height="1dip"></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dip"
+                        android:layout_height="13dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:background="@color/shihuangse"></View>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="6dip"
+                        android:text="@string/string_guanlixinxi"
+                        android:textColor="#444"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -410,11 +432,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_xianzhuang"
+                            android:text="@string/string_guanlihuishe"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_house_xianzhuang"
+                            android:id="@+id/tv_house_guanlihuishe"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""
@@ -433,11 +455,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_tingchechang"
+                            android:text="@string/string_guanlifei"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_stop_car"
+                            android:id="@+id/tv_house_guanlifei"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""
@@ -456,17 +478,41 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_gongkaiqingbaori"
+                            android:text="@string/string_xiushanfei"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_house_gongkai"
+                            android:id="@+id/tv_house_xiushanfei"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""
                             android:textColor="#222"
                             android:textSize="14sp" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_guanli"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_guanli"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
 
                 </LinearLayout>
             </LinearLayout>
@@ -613,11 +659,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_daolulinjiejuli"
+                            android:text="@string/string_chuangwaifengjing"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_house_linjiejuli"
+                            android:id="@+id/tv_house_chuangwaifengjing"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""
@@ -636,11 +682,56 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="@string/string_tudi"
+                            android:text="@string/string_gongyongbufen"
                             android:textSize="14sp" />
 
                         <TextView
-                            android:id="@+id/tv_house_tudi"
+                            android:id="@+id/tv_house_gongyong"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_zhoubianhuanjing"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_house_zhoubian"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="#222"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dip">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/string_tingchewei"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_stop_car"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text=""

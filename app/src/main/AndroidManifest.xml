@@ -145,8 +145,8 @@
         <activity android:name=".base.LoginActivity" />
         <activity android:name=".base.GuidePageActivity" />
         <activity android:name=".mine.ManagerActivity" />
-        <activity android:name=".mine.LianxirenActivity"></activity>
-        <activity android:name=".mine.LishiShangyeActivity"></activity>
+        <activity android:name=".activity.LianxirenActivity"></activity>
+        <activity android:name=".mine.LishiJiuDianActivity"></activity>
         <activity android:name=".mine.LishiZuHouseActivity"></activity>
         <activity android:name=".mine.LishiOldHouseActivity"></activity>
         <activity android:name=".mine.LishiGaoerfuActivity"></activity>
@@ -166,6 +166,16 @@
         <activity android:name=".more.XieZiLouMoreActivity" />
         <activity android:name=".mine.BieshudetailsActivity" />
         <activity android:name=".map.MapActivity"></activity>
+        <activity android:name=".more.JiuDianMoreActivity"></activity>
+        <activity android:name=".more.ShangPuMoreActivity"></activity>
+        <activity android:name=".more.TuanDiMoreActivity"></activity>
+        <activity android:name=".more.ZuBanGongMoreActivity"></activity>
+        <activity android:name=".more.ZuBieSuMoreActivity"></activity>
+        <activity android:name=".more.ZuDuoCengMoreActivity"></activity>
+        <activity android:name=".more.ZuErCengMoreActivity"></activity>
+        <activity android:name=".more.ZuShangPuMoreActivity"></activity>
+        <activity android:name=".more.ZuXueShengMoreActivity"></activity>
+        <activity android:name=".mine.LishiShangPuActivity"></activity>
 
         <activity
             android:name=".MainActivity"
@@ -219,7 +229,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.administrator.japanhouse.FileProvider"
+            android:authorities="${applicationId}.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -237,7 +247,16 @@
                 android:resource="@xml/file_paths"/>
         </provider>
         <activity android:name=".activity.SearchActivity"></activity>
-        <activity android:name=".activity.LianxirenActivity"></activity>
+        <!-- 友盟第三方登录及分享start -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5b04cda9f29d987702000155"/>
+        <!-- android:value="59b62fe05312dd89f80001f3" /> -->
+        <!-- 友盟推送 -->
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="67d247da0b61805b6f41c89545d6a6aa"/>
+
     </application>
 
 </manifest>
