@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/rc_ac_ll_base_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#C7977F"
-        android:orientation="horizontal">
+        android:background="#C7977F">
 
         <FrameLayout
             android:layout_width="50dp"
@@ -33,12 +32,11 @@
 
         <TextView
             android:id="@+id/rc_action_bar_title"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical|left"
             android:singleLine="true"
+            android:layout_centerInParent="true"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 
@@ -48,12 +46,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:background="@android:color/transparent"
-            android:paddingRight="10dp"
-            android:text="@string/rc_action_bar_ok"
+            android:text="@string/rc_picsel_toolbar_send"
             android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:visibility="gone" />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+    </RelativeLayout>
 
     <ViewFlipper
         android:id="@+id/rc_base_container"

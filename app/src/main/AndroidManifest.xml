@@ -145,7 +145,6 @@
         <activity android:name=".base.LoginActivity" />
         <activity android:name=".base.GuidePageActivity" />
         <activity android:name=".mine.ManagerActivity" />
-        <activity android:name=".mine.LianxirenActivity"></activity>
         <activity android:name=".mine.LishiShangyeActivity"></activity>
         <activity android:name=".mine.LishiZuHouseActivity"></activity>
         <activity android:name=".mine.LishiOldHouseActivity"></activity>

@@ -32,9 +32,9 @@
             android:id="@+id/rc_ext_my_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:layout_marginBottom="70dp"
-            android:layout_marginRight="5dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="15dp"
             android:src="@drawable/rc_ext_locator" />
     </FrameLayout>
 </LinearLayout>
