@@ -493,7 +493,7 @@ public class MyDataActivity extends BaseActivity implements UserPresenter.UserCa
             MyApplication.logOut();
             return;
         }
-//        Toast.makeText(this, " " + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+        //        Toast.makeText(this, " " + response.body().getMsg(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
