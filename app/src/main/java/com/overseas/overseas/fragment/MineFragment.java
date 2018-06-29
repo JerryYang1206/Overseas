@@ -154,8 +154,20 @@ public class MineFragment extends BaseFragment implements UserPresenter.UserCall
             //给微聊设置最新信息
             if (broker.getPic() == null || broker.getPic().equals("")) {
                 RongIM.getInstance().setCurrentUserInfo(new io.rong.imlib.model.UserInfo("broker" + broker.getId(), broker.getBrokerName(), Uri.parse("")));
+                RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+                    @Override
+                    public io.rong.imlib.model.UserInfo getUserInfo(String s) {
+                        return new io.rong.imlib.model.UserInfo(broker.getId() + "", broker.getNickname(), Uri.parse(""));
+                    }
+                }, true);
             } else {
                 RongIM.getInstance().setCurrentUserInfo(new io.rong.imlib.model.UserInfo("broker" + broker.getId(), broker.getBrokerName(), Uri.parse(broker.getPic())));
+                RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+                    @Override
+                    public io.rong.imlib.model.UserInfo getUserInfo(String s) {
+                        return new io.rong.imlib.model.UserInfo(broker.getId() + "", broker.getNickname(), Uri.parse(broker.getPic()));
+                    }
+                }, true);
             }
         }
     }
