@@ -257,6 +257,7 @@
         </android.support.v4.widget.NestedScrollView>
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="50dip"
             android:layout_alignParentBottom="true"
@@ -340,6 +341,7 @@
             android:src="@drawable/back" />
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/img_start"
             android:layout_width="50dip"
             android:layout_height="50dip"

@@ -27,11 +27,12 @@ import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseDialog;
 import com.overseas.overseas.bean.ManagerBean;
 import com.overseas.overseas.callback.DialogCallback;
-import com.overseas.overseas.im.ImManager;
 import com.overseas.overseas.utils.MyUrls;
 import com.overseas.overseas.view.CircleImageView;
 import com.overseas.overseas.view.NoCacheViewPager;
 import com.overseas.overseas.view.RatingBarView;
+
+import org.zackratos.ultimatebar.UltimateBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +85,9 @@ public class ManagerActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //拉伸图片覆盖标题栏
+        UltimateBar ultimateBar = new UltimateBar(this);
+        ultimateBar.setImmersionBar(false);
         setContentView(R.layout.activity_manager);
         ButterKnife.bind(this);
         initManager();
@@ -120,7 +124,7 @@ public class ManagerActivity extends BaseActivity {
                         avgStar = datas.getBrokerinfo().getAvgStar();
                         if (code1.equals("200")) {
                             Glide.with(ManagerActivity.this).load(datas.getBrokerinfo().getPic()).into(managerHeadImg);
-                            managerName.setText(datas.getBrokerinfo().getNickname() + "");
+                            managerName.setText(datas.getBrokerinfo().getBrokerName() + "");
                             managerHuifulv.setText(datas.getBrokerinfo().getTurnover() + "%");
                             managerYears.setText(datas.getDaynum() + "");
                             managerCount.setText(datas.getFwrs() + "");
@@ -129,7 +133,7 @@ public class ManagerActivity extends BaseActivity {
                                 @Override
                                 public void onClick(View view) {
                                     Log.d("ManagerActivity", "-------点击-----");
-                                    ImManager.enterChat(ManagerActivity.this,datas.getBrokerinfo().getId()+"",datas.getBrokerinfo().getBrokerName(),datas.getBrokerinfo().getPic());
+//                                    ImManager.enterChat(ManagerActivity.this,datas.getBrokerinfo().getId()+"",datas.getBrokerinfo().getBrokerName(),datas.getBrokerinfo().getPic());
                                 }
                             });
                         } else {

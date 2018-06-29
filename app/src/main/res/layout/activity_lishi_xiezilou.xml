@@ -295,6 +295,7 @@
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
         <LinearLayout
+            android:visibility="gone"
             android:layout_alignParentBottom="true"
             android:background="#fff"
             android:orientation="horizontal"
@@ -380,6 +381,7 @@
             android:src="@drawable/shar" />
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/img_start"
             android:layout_width="50dip"
             android:layout_height="50dip"

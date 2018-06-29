@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.chat.ManagerActivity">
+    >
 
     <LinearLayout
+        android:paddingTop="20dip"
         android:background="@color/shihuangse"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="75dip">
         <ImageView
             android:id="@+id/back_img"
             android:padding="15dp"
@@ -27,6 +28,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent" />
         <ImageView
+            android:visibility="gone"
             android:id="@+id/img_share"
             android:src="@drawable/shar"
             android:padding="13dp"

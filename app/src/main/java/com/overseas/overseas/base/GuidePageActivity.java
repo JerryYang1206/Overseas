@@ -89,9 +89,6 @@ public class GuidePageActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     SharedPreferencesUtils.getInstace(GuidePageActivity.this).setBooleanPreference( "guide", true);
-//                    HashMap<String, Boolean> hm = new HashMap<>();
-//                    hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
-//                    RongIM.getInstance().startConversationList(GuidePageActivity.this, hm);
                     startActivity(new Intent(GuidePageActivity.this,LoginActivity.class));
                     finish();
                 }
