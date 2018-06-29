@@ -122,7 +122,8 @@
     <string name="select_canner">取消</string>
     <string name="put_your_name">请输入昵称</string>
     <string name="mine_title">我的</string>
-    <string name="mine_jieshao">您加入平台已经0天，累计交易额0.00元</string>
+    <string name="mine_jiarupingtai">您加入平台已经</string>
+    <string name="mine_leijijiaoyie">累计交易额</string>
     <string name="mine_sellhouse">买房卖房</string>
     <string name="mine_lishichengjiao">历史成交</string>
     <string name="mine_pingjun">平均成交</string>
@@ -265,4 +266,8 @@
     <string name="zaishoufang">在售房</string>
     <string name="zaizufang">在租房</string>
     <string name="managerhome">经纪人主页</string>
+    <string name="name_max_char">昵称最多输入20字</string>
+    <string name="paizhao">拍照</string>
+    <string name="congxiangcexuanze">从相册中选择</string>
+    <string name="input_select">请选择</string>
 </resources>

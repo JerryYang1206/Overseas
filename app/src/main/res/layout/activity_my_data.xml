@@ -1,122 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_my_data"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.overseas.overseas.mine.MyDataActivity">
+<LinearLayout android:id="@+id/activity_my_data"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.overseas.overseas.mine.MyDataActivity">
     <LinearLayout
-        android:background="@color/shihuangse"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="50dip"
+        android:background="@color/shihuangse"
+        android:orientation="horizontal">
         <ImageView
             android:id="@+id/back_img"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
             android:padding="15dp"
-            android:src="@drawable/back"
-            android:layout_width="50dip"
-            android:layout_height="50dip" />
+            android:src="@drawable/back"/>
         <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="#fff"
             android:text="@string/activity_mydata_title"
-            android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:textColor="#fff"
+            android:textSize="18sp"/>
         <ImageView
-            android:padding="13dp"
             android:layout_width="50dip"
-            android:layout_height="50dip" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="10dip"
-        android:layout_marginTop="10dip"
-        android:background="#fff"
-        android:layout_width="match_parent"
-        android:layout_height="80dip">
-        <TextView
-            android:gravity="center_vertical"
-            android:textColor="#444"
-            android:text="@string/activity_mydata_phone"
-            android:textSize="16sp"
-            android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-        <com.overseas.overseas.view.CircleImageView
-            android:id="@+id/see_large_photo"
-            android:layout_gravity="center_vertical"
-            android:layout_width="65dip"
-            android:src="@drawable/deful_touxiang"
-            android:layout_height="65dip" />
-        <ImageView
-            android:id="@+id/select_photo"
-            android:src="@drawable/gengduo"
-            android:layout_gravity="center_vertical"
-            android:padding="10dp"
-            android:layout_width="40dip"
-            android:layout_height="40dip" />
+            android:layout_height="50dip"
+            android:padding="13dp"/>
     </LinearLayout>
     <View
-        android:layout_marginRight="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
         android:layout_marginLeft="10dip"
-        android:background="#eee"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"></View>
+        android:layout_marginRight="10dip"
+        android:background="#eee"></View>
     <LinearLayout
-        android:paddingLeft="10dip"
-        android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="80dip"
+        android:layout_marginTop="10dip"
+        android:background="#fff"
+        android:paddingLeft="10dip">
         <TextView
-            android:gravity="center_vertical"
-            android:textColor="#444"
-            android:text="@string/activity_mydaya_name"
-            android:textSize="16sp"
-            android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
-        <EditText
-            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/activity_mydata_phone"
+            android:textColor="#444"
+            android:textSize="16sp"/>
+        <com.overseas.overseas.view.CircleImageView
+            android:id="@+id/see_large_photo"
+            android:layout_width="65dip"
+            android:layout_height="65dip"
+            android:layout_gravity="center_vertical"/>
+        <ImageView
+            android:id="@+id/select_photo"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:src="@drawable/gengduo"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="#fff"
+        android:paddingLeft="10dip">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/activity_mydaya_name"
+            android:textColor="#444"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_marginRight="10dip"
-            android:gravity="right|center_vertical"
+            android:layout_weight="1"
             android:background="@null"
             android:cursorVisible="false"
+            android:gravity="right|center_vertical"
+            android:maxLength="20"
             android:minWidth="100dp"
-            android:text="sense"
             android:textSize="15dip"/>
     </LinearLayout>
     <View
-        android:layout_marginRight="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
         android:layout_marginLeft="10dip"
-        android:background="#eee"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"></View>
+        android:layout_marginRight="10dip"
+        android:background="#eee"></View>
     <LinearLayout
-        android:paddingLeft="10dip"
-        android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="50dip"
+        android:background="#fff"
+        android:paddingLeft="10dip">
         <TextView
-            android:gravity="center_vertical"
-            android:textColor="#444"
-            android:text="@string/activity_mydaya_sex"
-            android:textSize="16sp"
             android:layout_width="0dip"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:gravity="center_vertical"
+            android:text="@string/activity_mydaya_sex"
+            android:textColor="#444"
+            android:textSize="16sp"/>
         <LinearLayout
             android:id="@+id/ll_man"
-            android:layout_marginRight="25dip"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginRight="25dip"
+            android:orientation="horizontal">
             <CheckBox
-                android:checked="true"
-                android:clickable="false"
                 android:id="@+id/cb_nan"
                 android:layout_width="20dip"
                 android:layout_height="20dip"
@@ -124,144 +122,147 @@
                 android:layout_marginLeft="5dip"
                 android:background="@drawable/tab_housing_selector"
                 android:button="@null"
-                />
+                android:checked="true"
+                android:clickable="false"
+            />
             <TextView
-                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="10dip"
-                android:textColor="#333"
                 android:gravity="center"
                 android:text="男"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:textColor="#333"
+                android:textSize="15sp"/>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_woman"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginRight="15dip"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-        <CheckBox
-            android:clickable="false"
-            android:id="@+id/cb_nv"
-            android:layout_width="20dip"
-            android:layout_height="20dip"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dip"
-            android:background="@drawable/tab_housing_selector"
-            android:button="@null"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/cb_nv"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dip"
+                android:background="@drawable/tab_housing_selector"
+                android:button="@null"
+                android:clickable="false"
             />
-        <TextView
-            android:textSize="15sp"
-            android:layout_marginLeft="10dip"
-            android:textColor="#333"
-            android:gravity="center"
-            android:text="女"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dip"
+                android:gravity="center"
+                android:text="女"
+                android:textColor="#333"
+                android:textSize="15sp"/>
+        </LinearLayout>
     </LinearLayout>
     <View
-        android:layout_marginRight="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
         android:layout_marginLeft="10dip"
-        android:background="#eee"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"></View>
+        android:layout_marginRight="10dip"
+        android:background="#eee"></View>
     <LinearLayout
-        android:paddingLeft="10dip"
-        android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="50dip"
+        android:background="#fff"
+        android:paddingLeft="10dip">
         <TextView
-            android:gravity="center_vertical"
-            android:textColor="#444"
-            android:text="@string/activity_mydaya_birth"
-            android:textSize="16sp"
             android:layout_width="0dip"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:gravity="center_vertical"
+            android:text="@string/activity_mydaya_birth"
+            android:textColor="#444"
+            android:textSize="16sp"/>
         <TextView
             android:id="@+id/tv_shengri"
-            android:textSize="15dip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginRight="10dip"
             android:gravity="center"
-            android:text="1982.02.21"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:text=""
+            android:textSize="15dip"/>
     </LinearLayout>
     <View
-        android:layout_marginRight="10dip"
-        android:layout_marginLeft="10dip"
-        android:background="#eee"
         android:layout_width="match_parent"
-        android:layout_height="1dip"></View>
+        android:layout_height="1dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="#eee"></View>
     <LinearLayout
         android:id="@+id/layout_Erweima"
-        android:paddingLeft="10dip"
-        android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="50dip"
+        android:background="#fff"
+        android:paddingLeft="10dip">
         <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:clickable="false"
             android:gravity="center_vertical"
-            android:textColor="#444"
             android:text="@string/activity_mydaya_erweima"
-            android:textSize="16sp"
-            android:layout_width="0dip"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:textColor="#444"
+            android:textSize="16sp"/>
         <ImageView
-            android:clickable="false"
-            android:layout_gravity="center_vertical"
             android:layout_width="25dip"
-            android:src="@drawable/erweima"
-            android:layout_height="25dip" />
-        <ImageView
-            android:clickable="false"
-            android:src="@drawable/gengduo"
+            android:layout_height="25dip"
             android:layout_gravity="center_vertical"
-            android:padding="10dp"
+            android:clickable="false"
+            android:src="@drawable/erweima"/>
+        <ImageView
             android:layout_width="40dip"
-            android:layout_height="40dip" />
+            android:layout_height="40dip"
+            android:layout_gravity="center_vertical"
+            android:clickable="false"
+            android:padding="10dp"
+            android:src="@drawable/gengduo"/>
     </LinearLayout>
     <View
-        android:layout_marginRight="10dip"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
         android:layout_marginLeft="10dip"
-        android:background="#eee"
-        android:layout_width="match_parent"
-        android:layout_height="1dip"></View>
+        android:layout_marginRight="10dip"
+        android:background="#eee"></View>
     <TextView
-        android:textSize="15sp"
-        android:paddingLeft="10dip"
-        android:gravity="center_vertical"
-        android:text="@string/activity_mydaya_bing_number"
         android:layout_width="match_parent"
-        android:layout_height="30dip" />
+        android:layout_height="30dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dip"
+        android:text="@string/activity_mydaya_bing_number"
+        android:textSize="15sp"/>
     <LinearLayout
         android:id="@+id/ll_bing_number"
-        android:paddingLeft="10dip"
-        android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="50dip">
+        android:layout_height="50dip"
+        android:background="#fff"
+        android:paddingLeft="10dip">
         <TextView
-            android:gravity="center_vertical"
-            android:textColor="#444"
-            android:text="@string/activity_mydaya_bing"
-            android:textSize="16sp"
             android:layout_width="0dip"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:gravity="center_vertical"
+            android:text="@string/activity_mydaya_bing"
+            android:textColor="#444"
+            android:textSize="16sp"/>
         <TextView
-            android:textSize="15dip"
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginRight="10dip"
             android:gravity="center"
-            android:text="18888888888"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:text=""
+            android:textSize="15dip"/>
     </LinearLayout>
     <View
-        android:layout_marginRight="10dip"
-        android:layout_marginLeft="10dip"
-        android:background="#eee"
         android:layout_width="match_parent"
-        android:layout_height="1dip"></View>
+        android:layout_height="1dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="#eee"></View>
 </LinearLayout>

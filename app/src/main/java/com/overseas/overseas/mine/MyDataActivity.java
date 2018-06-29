@@ -1,8 +1,8 @@
 package com.overseas.overseas.mine;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -10,33 +10,40 @@ import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bigkoo.pickerview.TimePickerView;
 import com.bigkoo.pickerview.listener.CustomListener;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.FutureTarget;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.compress.Luban;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
+import com.lzy.okgo.model.Response;
+import com.overseas.overseas.MyApplication;
 import com.overseas.overseas.R;
 import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.base.BaseDialog;
-import com.overseas.overseas.utils.MyUtils;
-import com.overseas.overseas.view.BaseSelectPopupWindow;
+import com.overseas.overseas.base.LoginActivity;
+import com.overseas.overseas.bean.FileBean;
+import com.overseas.overseas.bean.NoDataBean;
+import com.overseas.overseas.bean.UserInfo;
+import com.overseas.overseas.presenter.UpFilePresenter;
+import com.overseas.overseas.presenter.UserPresenter;
+import com.overseas.overseas.utils.QRCode;
+import com.overseas.overseas.utils.SharedPreferencesUtils;
+import com.overseas.overseas.utils.TUtils;
 import com.overseas.overseas.view.CircleImageView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -44,13 +51,17 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import id.zelory.compressor.Compressor;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
-public class MyDataActivity extends BaseActivity {
+public class MyDataActivity extends BaseActivity implements UserPresenter.UserCallBack, UpFilePresenter.UpFileCallBack {
 
     @BindView(R.id.see_large_photo)
     CircleImageView seeLargePhoto;
     @BindView(R.id.select_photo)
-    ImageView selectPhoto;
+    ImageView ivArrow;
     @BindView(R.id.back_img)
     ImageView backimg;
     @BindView(R.id.cb_nan)
@@ -59,8 +70,8 @@ public class MyDataActivity extends BaseActivity {
     CheckBox cbNv;
     @BindView(R.id.layout_Erweima)
     LinearLayout layoutErweima;
-    @BindView(R.id.tv_name)
-    EditText tvName;
+    @BindView(R.id.et_name)
+    EditText et_name;
     @BindView(R.id.tv_shengri)
     TextView tvShengri;
     @BindView(R.id.ll_man)
@@ -71,37 +82,87 @@ public class MyDataActivity extends BaseActivity {
     LinearLayout activityMyData;
     @BindView(R.id.ll_bing_number)
     LinearLayout llBingNumber;
+    @BindView(R.id.ll_name)
+    LinearLayout llName;
+    @BindView(R.id.tv_phone)
+    TextView tvPhone;
     private BaseDialog dialog;
-    private BaseSelectPopupWindow popWiw;// 昵称 编辑框
     private TimePickerView pvCustomLunar;
-
+    private List<String> cameraList;
+    private String name;
+    private String pic;
+    private String sex;
+    private String birthday;
+    private String birthday2;
+    private String phone;
+    private UserPresenter presenter;
+    private List<LocalMedia> selectList;
+    private String cutPath;
+    private UpFilePresenter filePresenter;
+    private Bitmap picbitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_data);
         ButterKnife.bind(this);
+        presenter = new UserPresenter(this, this);
+        filePresenter = new UpFilePresenter(this, this);
+        cameraList = new ArrayList<>();
+        cameraList.add(getString(R.string.paizhao));
+        cameraList.add(getString(R.string.congxiangcexuanze));
+        name = getIntent().getStringExtra("name");
+        pic = getIntent().getStringExtra("pic");
+        sex = getIntent().getStringExtra("sex");
+        phone = getIntent().getStringExtra("phone");
+        birthday = getIntent().getStringExtra("birthday");
+        birthday2 = getTime4(birthday);
+        Glide.with(MyApplication.getGloableContext()).load(pic).into(seeLargePhoto);
+        if (sex.equals("0")) {
+            cbNan.setChecked(true);
+            cbNv.setChecked(false);
+        } else {
+            cbNan.setChecked(false);
+            cbNv.setChecked(true);
+        }
+        et_name.setText(name);
+        if (!TextUtils.isEmpty(birthday)) {
+            tvShengri.setText(getTime3(birthday));
+        } else {
+            tvShengri.setText(getString(R.string.input_select));
+        }
+        tvPhone.setText(phone);
         initLunarPicker();//初始化时间选择器
+        initListener();
+        /*glide将url转换成bitmap，在这先弄好了，省的弹出的时候浪费时间*/
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    FutureTarget<Bitmap> target = Glide.with(MyApplication.getGloableContext()).asBitmap().load(pic).submit();
+                    final Bitmap bimap = target.get();
+                    picbitmap = bimap;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
-    @OnClick({R.id.see_large_photo, R.id.select_photo, R.id.back_img, R.id.layout_Erweima,R.id. tv_name, R.id.tv_shengri, R.id.ll_man, R.id.ll_woman,R.id.ll_bing_number})
+    @OnClick({R.id.see_large_photo, R.id.select_photo, R.id.back_img, R.id.layout_Erweima, R.id.tv_shengri, R.id.ll_man, R.id.ll_woman, R.id.ll_bing_number})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.see_large_photo:
-                Toast.makeText(this, "查看大头像", Toast.LENGTH_SHORT).show();
+                showCamera(Gravity.BOTTOM, R.style.Bottom_Top_aniamtion);
                 break;
             case R.id.back_img:
                 finish();
                 break;
             case R.id.select_photo:
-                showDialog(Gravity.BOTTOM, R.style.Bottom_Top_aniamtion);
+                showCamera(Gravity.BOTTOM, R.style.Bottom_Top_aniamtion);
                 break;
             case R.id.layout_Erweima:
                 showcallDialog();
-                break;
-            case R.id. tv_name:
-//                initListener();
-                showNickName();
                 break;
             case R.id.tv_shengri:
                 pvCustomLunar.show();
@@ -109,29 +170,32 @@ public class MyDataActivity extends BaseActivity {
             case R.id.ll_man:
                 cbNan.setChecked(true);
                 cbNv.setChecked(false);
+                sex = "0";
                 break;
             case R.id.ll_woman:
                 cbNan.setChecked(false);
                 cbNv.setChecked(true);
+                sex = "1";
                 break;
             case R.id.ll_bing_number:
-                startActivity(new Intent(this, MineBindPhoneActivity.class));
+                //                startActivity(new Intent(this, MineBindPhoneActivity.class));
                 break;
         }
     }
+
     private void initListener() {
-        tvName.setOnTouchListener(new View.OnTouchListener() {
+        et_name.setOnTouchListener(new View.OnTouchListener() {
 
             @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
-                    tvName.setCursorVisible(true);// 再次点击显示光标
+                    et_name.setCursorVisible(true);// 再次点击显示光标
                 }
                 return false;
             }
         });
-        tvName.addTextChangedListener(new TextWatcher() {
+        et_name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -144,78 +208,13 @@ public class MyDataActivity extends BaseActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                tvName.setCursorVisible(false);// 再次点击显示光标
-            }
-        });
-    }
-    //修改昵称
-    private void showNickName() {
-        if (popWiw == null) {
-            popWiw = new BaseSelectPopupWindow(this, R.layout.edit_name_data);
-            // popWiw.setOpenKeyboard(true);
-            popWiw.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
-
-            popWiw.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-            popWiw.setShowTitle(false);
-        }
-        popWiw.setFocusable(true);
-        InputMethodManager im = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
-        im.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-
-        final ImageView send = (ImageView) popWiw.getContentView().findViewById(R.id.query_iv);
-        final EditText edt = (EditText) popWiw.getContentView().findViewById(R.id.edt_content);
-        final ImageView close = (ImageView) popWiw.getContentView().findViewById(R.id.cancle_iv);
-
-        edt.setInputType(EditorInfo.TYPE_CLASS_TEXT);
-        //        edt.setImeOptions(EditorInfo.IME_ACTION_SEND);
-        edt.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before,
-                                      int count) {
-                if (TextUtils.isEmpty(edt.getText())) {
-                    send.setEnabled(false);
-                } else {
-                    send.setEnabled(true);
+                if (s.length() >= 20) {
+                    TUtils.showFail(MyDataActivity.this, getString(R.string.name_max_char));
                 }
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-
+                et_name.setCursorVisible(false);// 再次点击显示光标
+                name = et_name.getText().toString();
             }
         });
-
-        send.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (!TextUtils.isEmpty(edt.getText().toString().trim())) {
-                    // 昵称
-                    String content = edt.getText().toString().trim();
-                    tvName.setText(content);
-                    //                    requestEditInfo(NAME, content);
-                    popWiw.dismiss();
-                }
-            }
-        });
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popWiw.dismiss();
-            }
-        });
-
-        popWiw.showAtLocation(tvName, Gravity.BOTTOM
-                | Gravity.CENTER_HORIZONTAL, 0, 0);
     }
 
 
@@ -241,11 +240,14 @@ public class MyDataActivity extends BaseActivity {
                 .isOnTouchCanceled(true)
                 //设置监听事件
                 .builder();
+        ImageView iv_code = dialog.getView(R.id.iv_code);
+        String content = SharedPreferencesUtils.getInstace(this).getStringPreference("brokerId", "");
+        Bitmap bitmap = QRCode.createQRCodeWithLogo(content, 700, picbitmap);
+        iv_code.setImageBitmap(bitmap);
         dialog.show();
-
     }
 
-    private void showDialog(int grary, int animationStyle) {
+    private void showCamera(int grary, int animationStyle) {
         BaseDialog.Builder builder = new BaseDialog.Builder(this);
         //设置触摸dialog外围是否关闭
         //设置监听事件
@@ -338,12 +340,20 @@ public class MyDataActivity extends BaseActivity {
 
 
     private void requestCamera() {
-        PictureSelector.create(MyDataActivity.this)
+        PictureSelector.create(this)
                 .openCamera(PictureMimeType.ofImage())// 单独拍照，也可录像或也可音频 看你传入的类型是图片or视频
                 .theme(R.style.picture_default_style)// 主题样式设置 具体参考 values/styles
-                .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
-//                .selectionMedia(list)// 是否传入已选图片
-                .previewEggs(true)//预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
+                .enableCrop(true)// 是否裁剪
+                .compress(true)// 是否压缩
+                .compressMode(PictureConfig.LUBAN_COMPRESS_MODE)//系统自带 or 鲁班压缩 PictureConfig.SYSTEM_COMPRESS_MODE or LUBAN_COMPRESS_MODE
+                .freeStyleCropEnabled(true)// 裁剪框是否可拖拽
+                .circleDimmedLayer(true)// 是否圆形裁剪
+                .showCropFrame(false)// 是否显示裁剪矩形边框 圆形裁剪时建议设为false
+                .showCropGrid(false)// 是否显示裁剪矩形网格 圆形裁剪时建议设为false
+                .scaleEnabled(false)// 裁剪是否可放大缩小图片
+                //                .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                //                .selectionMedia(list)// 是否传入已选图片
+                //                .previewEggs(true)//预览图片时 是否增强左右滑动图片体验(图片滑动一半即可看到上一张是否选中)
                 .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
     }
 
@@ -355,33 +365,29 @@ public class MyDataActivity extends BaseActivity {
             switch (requestCode) {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片选择结果回调
-                    List<LocalMedia> localMedias = PictureSelector.obtainMultipleResult(data);
                     // 例如 LocalMedia 里面返回三种path
                     // 1.media.getPath(); 为原图path
                     // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true
                     // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true
                     // 如果裁剪并压缩了，已取压缩路径为准，因为是先裁剪后压缩的
-                    String compressPath = localMedias.get(0).getPath();
-                    MyUtils.syso("照片地址是：" + compressPath);
-//                Toast.makeText(this, "照片地址是：" + compressPath, Toast.LENGTH_SHORT).show();
-//        SpUtils.putString(this, "userhead", compressPath);
-                    Glide.with(this).load(compressPath).into(seeLargePhoto);
-//                    Bitmap bitmap = BitmapFactory.decodeFile(compressPath);
-//
-//                    OkGo.post(MyContants.BASEURL+"User/update/")
-//                            .tag(this)
-//                            .params("userid",userid)
-//                            .execute(new StringCallback() {
-//                                @Override
-//                                public void onSuccess(String s, Call call, Response response) {
-//                                }
-//
-//                                @Override
-//                                public void onError(Call call, Response response, Exception e) {
-//                                    Toast.makeText(MyDaTaActivity.this, "请检查网络或重试", Toast.LENGTH_SHORT).show();
-//                                    Log.e("请求失败", "失败原因：" + response);
-//                                }
-//                            });
+                    selectList = PictureSelector.obtainMultipleResult(data);
+                    cutPath = selectList.get(0).getCutPath();
+                    new Compressor(this)
+                            .compressToFileAsFlowable(new File(cutPath))
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Consumer<File>() {
+                                @Override
+                                public void accept(File file) {
+                                    filePresenter.upFilePicRequest(file);
+                                }
+                            }, new Consumer<Throwable>() {
+                                @Override
+                                public void accept(Throwable throwable) {
+                                    throwable.printStackTrace();
+
+                                }
+                            });
                     break;
             }
         }
@@ -406,6 +412,7 @@ public class MyDataActivity extends BaseActivity {
                     return;
                 }*/
                 tvShengri.setText(getTime(date));
+                birthday2 = getTime2(date);
                 //                requestEditInfo(BIRTHDAY, getTime(date));
             }
         })
@@ -447,9 +454,62 @@ public class MyDataActivity extends BaseActivity {
     }
 
     private String getTime(Date date) {//可根据需要自行截取数据显示
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
         //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return format.format(date);
     }
+
+    private String getTime2(Date date) {//可根据需要自行截取数据显示
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return format.format(date);
+    }
+
+    private String getTime3(String time) {//可根据需要自行截取数据显示
+        long lcc_time = Long.valueOf(time);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
+        //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = sdf.format(new Date(lcc_time));
+        return format;
+    }
+
+    private String getTime4(String time) {//可根据需要自行截取数据显示
+        long lcc_time = Long.valueOf(time);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = sdf.format(new Date(lcc_time));
+        return format;
+    }
+
+    @Override
+    public void getUserInfo(Response<UserInfo> response) {
+
+    }
+
+    @Override
+    public void updateUserInfo(Response<NoDataBean> response) {
+        if (TextUtils.equals(response.body().getCode(), "201")) {
+            startActivity(new Intent(this, LoginActivity.class));
+            MyApplication.logOut();
+            return;
+        }
+//        Toast.makeText(this, " " + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void finish() {
+        presenter.updateUserInfo(MyApplication.getUserToken(), name, Integer.parseInt(sex), birthday2, pic);
+        setResult(1, new Intent());
+        super.finish();
+    }
+
+    @Override
+    public void upFileRequest(Response<FileBean> response) {
+        if (response != null && response.body() != null && response.body().getDatas() != null) {
+            pic = response.body().getDatas();
+            Glide.with(MyApplication.getGloableContext()).load(pic).into(seeLargePhoto);
+        }
+    }
+
 }
 

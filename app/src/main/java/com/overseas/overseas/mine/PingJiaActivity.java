@@ -87,7 +87,7 @@ public class PingJiaActivity extends BaseActivity implements MyPingjiaPresenter.
         tvNoContent.setVisibility(View.GONE);
         springview.setVisibility(View.VISIBLE);
         if (mDatas == null || mDatas.size() == 0) {
-            if (mDatas == null || mDatas.size() == 0) {
+            if (datas == null || datas.size() == 0) {
                 tvNoContent.setVisibility(View.VISIBLE);
                 springview.setVisibility(View.GONE);
                 if (liebiaoAdapter != null) {
@@ -99,7 +99,7 @@ public class PingJiaActivity extends BaseActivity implements MyPingjiaPresenter.
             liebiaoAdapter = new LiebiaoAdapter(R.layout.liebiao_item, mDatas);
             mrecycler.setAdapter(liebiaoAdapter);
         } else {
-            if (mDatas == null || mDatas.size() == 0) {
+            if (datas == null || datas.size() == 0) {
                 TUtils.showFail(this, getString(R.string.meiyougengduoshujule));
                 return;
             }

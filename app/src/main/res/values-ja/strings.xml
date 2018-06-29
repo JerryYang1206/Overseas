@@ -124,7 +124,8 @@
 	<string name="select_canner">キャンセル</string>
 	<string name="put_your_name">ニックネームを入力してください</string>
 	<string name="mine_title">私</string>
-	<string name="mine_jieshao">あなたは0日間プラットフォームに参加しました。累積取引金額は0.00元です</string>
+	<string name="mine_jiarupingtai">您加入平台已经</string>
+	<string name="mine_leijijiaoyie">累计交易额</string>
 	<string name="mine_sellhouse">家を買う</string>
 	<string name="mine_lishichengjiao">過去の取引</string>
 	<string name="mine_pingjun">平均取引</string>
@@ -269,4 +270,8 @@
 	<string name="zaishoufang">在售房</string>
 	<string name="zaizufang">在租房</string>
 	<string name="managerhome">经纪人主页</string>
+	<string name="name_max_char">愛称は最大20字</string>
+	<string name="paizhao">アルバム</string>
+	<string name="congxiangcexuanze">アルバムから</string>
+	<string name="input_select">選択してください</string>
 </resources>

@@ -223,7 +223,7 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
                 @Override
                 public void onClick(View view) {
                     int houseId = item.getId();
-                    String hType = item.getHType();
+                    String hType = typeId+"";
                     String ShType = item.getShType();
                     if (TextUtils.equals(hType, "2")) { //二手房
                         Intent intent = new Intent(LiShiActivity.this, LishiOldHouseActivity.class);
