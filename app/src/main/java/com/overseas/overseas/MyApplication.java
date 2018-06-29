@@ -60,14 +60,14 @@ public class MyApplication extends Application {
     }
     private void initUMPush() {
 
-//        Toast.makeText(getApplicationContext(), "Push", Toast.LENGTH_SHORT).show();
+        //        Toast.makeText(getApplicationContext(), "Push", Toast.LENGTH_SHORT).show();
         PushAgent mPushAgent = PushAgent.getInstance(this);
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback() {
 
             @Override
             public void onSuccess(String deviceToken) {
-//                Toast.makeText(getContext(), "友盟推送注册成功", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(getContext(), "友盟推送注册成功", Toast.LENGTH_SHORT).show();
 
                 System.out.println("友盟推送注册成功" + deviceToken);
                 SharedPreferencesUtils.getInstace(application).setStringPreference("UMPUSHID", deviceToken);
@@ -75,7 +75,7 @@ public class MyApplication extends Application {
 
             @Override
             public void onFailure(String s, String s1) {
-//                Toast.makeText(getContext(), "友盟推送注册失败", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(getContext(), "友盟推送注册失败", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -1,6 +1,7 @@
 package com.overseas.overseas.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import io.rong.imkit.RongIM;
 
 /**
  * Created by Administrator on 2018/1/18.
@@ -149,6 +151,12 @@ public class MineFragment extends BaseFragment implements UserPresenter.UserCall
             tvLishiCount.setText(datas.getLscjNum()+"");
             tvPingjunCount.setText(datas.getPjcjNum()+"");
             Glide.with(MyApplication.getGloableContext()).load(broker.getPic()).into(myData);
+            //给微聊设置最新信息
+            if (broker.getPic() == null || broker.getPic().equals("")) {
+                RongIM.getInstance().setCurrentUserInfo(new io.rong.imlib.model.UserInfo("broker" + broker.getId(), broker.getBrokerName(), Uri.parse("")));
+            } else {
+                RongIM.getInstance().setCurrentUserInfo(new io.rong.imlib.model.UserInfo("broker" + broker.getId(), broker.getBrokerName(), Uri.parse(broker.getPic())));
+            }
         }
     }
 

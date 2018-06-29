@@ -134,6 +134,10 @@ public class MyDataActivity extends BaseActivity implements UserPresenter.UserCa
         tvPhone.setText(phone);
         initLunarPicker();//初始化时间选择器
         initListener();
+        initBitmap();
+    }
+
+    private void initBitmap() {
         /*glide将url转换成bitmap，在这先弄好了，省的弹出的时候浪费时间*/
         new Thread(new Runnable() {
             @Override
@@ -508,6 +512,7 @@ public class MyDataActivity extends BaseActivity implements UserPresenter.UserCa
         if (response != null && response.body() != null && response.body().getDatas() != null) {
             pic = response.body().getDatas();
             Glide.with(MyApplication.getGloableContext()).load(pic).into(seeLargePhoto);
+            initBitmap();
         }
     }
 

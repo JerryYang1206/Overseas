@@ -1,5 +1,6 @@
 package com.overseas.overseas.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
@@ -14,11 +15,6 @@ import com.overseas.overseas.R;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
 
 import org.zackratos.ultimatebar.UltimateBar;
-
-import java.util.HashMap;
-
-import io.rong.imkit.RongIM;
-import io.rong.imlib.model.Conversation;
 
 
 /**
@@ -93,9 +89,10 @@ public class GuidePageActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     SharedPreferencesUtils.getInstace(GuidePageActivity.this).setBooleanPreference( "guide", true);
-                    HashMap<String, Boolean> hm = new HashMap<>();
-                    hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
-                    RongIM.getInstance().startConversationList(GuidePageActivity.this, hm);
+//                    HashMap<String, Boolean> hm = new HashMap<>();
+//                    hm.put(Conversation.ConversationType.PRIVATE.getName(), false);
+//                    RongIM.getInstance().startConversationList(GuidePageActivity.this, hm);
+                    startActivity(new Intent(GuidePageActivity.this,LoginActivity.class));
                     finish();
                 }
             });
