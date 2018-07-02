@@ -126,7 +126,7 @@ public class MyDataActivity extends BaseActivity implements UserPresenter.UserCa
             cbNv.setChecked(true);
         }
         et_name.setText(name);
-        if (!TextUtils.isEmpty(birthday)) {
+        if (!TextUtils.isEmpty(birthday) && !birthday.equals("0")) {
             tvShengri.setText(getTime3(birthday));
         } else {
             tvShengri.setText(getString(R.string.input_select));
