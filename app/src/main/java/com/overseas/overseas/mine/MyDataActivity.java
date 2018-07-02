@@ -38,6 +38,7 @@ import com.overseas.overseas.presenter.UpFilePresenter;
 import com.overseas.overseas.presenter.UserPresenter;
 import com.overseas.overseas.utils.QRCode;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
+import com.overseas.overseas.utils.SoftKeyboardTool;
 import com.overseas.overseas.utils.TUtils;
 import com.overseas.overseas.view.CircleImageView;
 
@@ -169,6 +170,7 @@ public class MyDataActivity extends BaseActivity implements UserPresenter.UserCa
                 showcallDialog();
                 break;
             case R.id.tv_shengri:
+                SoftKeyboardTool.closeKeyboard2(this);
                 pvCustomLunar.show();
                 break;
             case R.id.ll_man:
