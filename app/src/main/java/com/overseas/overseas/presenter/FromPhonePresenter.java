@@ -30,8 +30,8 @@ public class FromPhonePresenter {
      */
     public void getUserPhone(String userId) {
         HttpParams params = new HttpParams();
-        params.put("userId", MyApplication.getUserId(activity));
-        params.put("brokerId", userId);
+        params.put("userId", userId);
+        params.put("brokerId", MyApplication.getUserId(activity));
         OkGo.<UserBean>post(MyUrls.BASEURL + "/app/user/getuserinfo")
                 .tag(this)
                 .params(params)

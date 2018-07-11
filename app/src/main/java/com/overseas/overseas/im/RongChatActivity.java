@@ -87,22 +87,12 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
                  * getTargetId   接受者id
                  * 如果不使用的话将此方法删除
                  */
-                presenter.recordReply(targetId);
 
                 if (switchState == 1) {
-                    RongIM.getInstance().sendMessage(Conversation.ConversationType.PRIVATE, targetId, InformationNotificationMessage.obtain(getString(R.string.message_hint)), "", "", new RongIMClient.SendMessageCallback() {
-                        @Override
-                        public void onError(Integer integer, RongIMClient.ErrorCode errorCode) {
-
-                        }
-
-                        @Override
-                        public void onSuccess(Integer integer) {
-
-                        }
-                    });
                     return null;
                 }
+
+                presenter.recordReply(targetId);
 
                 return message;
             }
@@ -120,7 +110,19 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
 
             state = response.body().getDatas().getIstxl();
 
-            switchState = response.body().getDatas().getIsbrokersay();
+            if (response.body().getDatas().getIsbrokersay() == 1) {
+                RongIM.getInstance().sendMessage(Conversation.ConversationType.PRIVATE, targetId, InformationNotificationMessage.obtain(getString(R.string.message_hint)), "", "", new RongIMClient.SendMessageCallback() {
+                    @Override
+                    public void onError(Integer integer, RongIMClient.ErrorCode errorCode) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Integer integer) {
+                        switchState = 1;
+                    }
+                });
+            }
 
             if (response.body().getDatas().getIstxl() == 1) {
                 star.setChecked(true);
