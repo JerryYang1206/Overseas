@@ -314,4 +314,5 @@
     <string name="congxiangcexuanze">从相册中选择</string>
     <string name="input_select">请选择</string>
     <string name="zhoubiansheshi">周边设施</string>
+    <string name="message_hint">用户不允许经纪人发送消息</string>
 </resources>

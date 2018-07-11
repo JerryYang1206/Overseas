@@ -13,7 +13,10 @@ import com.overseas.overseas.base.BaseActivity;
 import com.overseas.overseas.model.UserBean;
 import com.overseas.overseas.presenter.FromPhonePresenter;
 import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
+import io.rong.message.InformationNotificationMessage;
 
 
 /**
@@ -32,6 +35,8 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
     private int state = 0; //0否 1是
 
     private String name;
+
+    private int switchState = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,6 +88,22 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
                  * 如果不使用的话将此方法删除
                  */
                 presenter.recordReply(targetId);
+
+                if (switchState == 1) {
+                    RongIM.getInstance().sendMessage(Conversation.ConversationType.PRIVATE, targetId, InformationNotificationMessage.obtain(getString(R.string.message_hint)), "", "", new RongIMClient.SendMessageCallback() {
+                        @Override
+                        public void onError(Integer integer, RongIMClient.ErrorCode errorCode) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(Integer integer) {
+
+                        }
+                    });
+                    return null;
+                }
+
                 return message;
             }
 
@@ -98,6 +119,8 @@ public class RongChatActivity extends BaseActivity implements FromPhonePresenter
         if (response != null && response.body() != null && response.body().getDatas() != null) {
 
             state = response.body().getDatas().getIstxl();
+
+            switchState = response.body().getDatas().getIsbrokersay();
 
             if (response.body().getDatas().getIstxl() == 1) {
                 star.setChecked(true);

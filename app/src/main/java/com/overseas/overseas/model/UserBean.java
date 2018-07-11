@@ -48,6 +48,15 @@ public class UserBean {
 
         private int istxl;
         private String phone;
+        private int isbrokersay;
+
+        public int getIsbrokersay() {
+            return isbrokersay;
+        }
+
+        public void setIsbrokersay(int isbrokersay) {
+            this.isbrokersay = isbrokersay;
+        }
 
         public int getIstxl() {
             return istxl;
