@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dip">
         <ImageView
+            android:visibility="invisible"
             android:id="@+id/back_img"
             android:padding="15dp"
             android:src="@drawable/back"

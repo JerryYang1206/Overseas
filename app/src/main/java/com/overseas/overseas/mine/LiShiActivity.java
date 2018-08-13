@@ -295,8 +295,17 @@ public class LiShiActivity extends BaseActivity implements MyItemClickListener, 
             });
             Glide.with(MyApplication.getGloableContext()).load(item.getImageUrl())
                     .into((ImageView) helper.getView(R.id.img_house));
+            String area;
+            if (isJa) {
+                area = item.getAddressJpn();
+            } else {
+                area = item.getAddressCn();
+            }
+            if (area.length()>5){
+                area = area.substring(0, 5) + "...";
+            }
+            helper.setText(R.id.tv_house_address, area);
             helper.setText(R.id.tv_house_name, isJa ? item.getTitleJpn() : item.getTitleCn())
-                    .setText(R.id.tv_house_address, isJa ? item.getAddressJpn() : item.getAddressCn())
                     .setText(R.id.tv_house_area, isJa ? item.getAreaJpn() : item.getAreaCn())
                     .setText(R.id.tv_price, isJa ? item.getPriceJpn() : item.getPriceCn())
                     .setText(R.id.tv_house_room, isJa ? item.getDoorModelJpn() : item.getDoorModelCn());

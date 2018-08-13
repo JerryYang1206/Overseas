@@ -28,7 +28,7 @@ public class WeiChartFragment extends BaseFragment {
 
     @BindView(R.id.img_search)
     ImageView imgSearch;
-//    @BindView(R.id.mrecycler)
+    //    @BindView(R.id.mrecycler)
 //    RecyclerView mrecycler;
     Unbinder unbinder;
     private List<String> mList=new ArrayList();

@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.lzy.okgo.OkGo;
@@ -27,6 +28,8 @@ import com.overseas.overseas.utils.Constants;
 import com.overseas.overseas.utils.SharedPreferencesUtils;
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
+//import com.umeng.message.IUmengRegisterCallback;
+//import com.umeng.message.PushAgent;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -60,7 +63,7 @@ public class MyApplication extends Application {
     }
     private void initUMPush() {
 
-        //        Toast.makeText(getApplicationContext(), "Push", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Push", Toast.LENGTH_SHORT).show();
         PushAgent mPushAgent = PushAgent.getInstance(this);
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback() {

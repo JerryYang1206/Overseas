@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="120dip">
             <ImageView
+                android:id="@+id/img_house"
                 android:src="@drawable/house"
                 android:layout_marginLeft="15dip"
                 android:layout_gravity="center_vertical"
@@ -31,6 +32,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent">
                 <TextView
+                    android:id="@+id/tv_house_name"
                     android:gravity="center_vertical"
                     android:layout_marginTop="15dip"
                     android:textSize="14sp"
@@ -61,6 +63,7 @@
                                 android:layout_width="15dip"
                                 android:layout_height="15dip" />
                             <TextView
+                                android:id="@+id/tv_house_address"
                                 android:gravity="center_vertical"
                                 android:textSize="13sp"
                                 android:text="东京"
@@ -74,12 +77,14 @@
                             android:layout_height="20dip"
                             >
                             <TextView
+                                android:id="@+id/tv_house_room"
                                 android:gravity="center_vertical"
                                 android:textSize="13sp"
                                 android:text="3室1厅"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent" />
                             <TextView
+                                android:id="@+id/tv_house_area"
                                 android:layout_marginLeft="10dip"
                                 android:gravity="center_vertical"
                                 android:textSize="13sp"
@@ -90,6 +95,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tv_price"
                         android:layout_marginRight="10dip"
                         android:textColor="@color/shihuangse"
                         android:textSize="14sp"

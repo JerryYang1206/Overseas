@@ -110,6 +110,7 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <!-- //鉴权所需该权限获取进程列表 -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <!-- //使用步行AR导航，配置Camera权限 -->
     <application
@@ -247,6 +248,8 @@
                 android:resource="@xml/file_paths"/>
         </provider>
         <activity android:name=".activity.SearchActivity"></activity>
+        <activity android:name=".activity.LianxirenActivity"></activity>
+        <activity android:name=".im.MapActiviy"></activity>
         <!-- 友盟第三方登录及分享start -->
         <meta-data
             android:name="UMENG_APPKEY"

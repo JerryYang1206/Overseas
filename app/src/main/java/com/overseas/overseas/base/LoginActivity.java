@@ -94,7 +94,7 @@ public class LoginActivity extends BaseActivity {
 ////        hashMap.put(Conversation.ConversationType.PUSH_SERVICE.getName(),true);
 ////        hashMap.put(Conversation.ConversationType.SYSTEM.getName(),true);
 //                RongIM.getInstance().startConversationList(this, hashMap);
-                finish();
+//                finish();
                 break;
             case R.id.tv_register:
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
